@@ -66,11 +66,11 @@ foreach ($pdo->query($result) as $values) {
     echo '<div class=" efeito-hover p-3 h-100">';
 
     $nome1 =  '<h1>' . utf8_encode($values['nome1']) . '</h1><br>';
-    $nome2 =  utf8_encode($values['nome2']) . '<br>';
-    $nome3 =  utf8_encode($values['nome3']) . '<br>';
-    $nome4 =  utf8_encode($values['nome4']) . '<br>';
-    $nome5 =  utf8_encode($values['nome5']) . '<br>';
-    $nome6 =  utf8_encode($values['nome6']) . '<br>';
+    $nome2 =  '<h1>' . utf8_encode($values['nome2']) . '</h1><br>';
+    $nome3 =  '<h1>' . utf8_encode($values['nome3']) . '</h1><br>';
+    $nome4 = '<h1>' . utf8_encode($values['nome4']) . '</h1><br>';
+    $nome5 =  '<h1>' . utf8_encode($values['nome5']) . '</h1><br>';
+    $nome6 =  '<h1>' . utf8_encode($values['nome6']) . '</h1><br>';
     $quantidade1 = utf8_encode($values['quantidade1']);
     $quantidade2 = utf8_encode($values['quantidade2']);
     $quantidade3 = utf8_encode($values['quantidade3']);
@@ -91,16 +91,8 @@ foreach ($pdo->query($result) as $values) {
             </div> 
             <div class='text-center'>$imagem  </div>
             <div class='desc text-center'>
+            
 
-                <h1>$nome1</h1>
-                <h1>$nome2</h1>
-                <h1>$nome3</h1>
-                <h1>$nome4</h1>
-                <h1>$nome5</h1>
-                <h1>$nome6</h1>
-
-
-                                
                 <p>R$:$preco</p>
                 <a href='telaDeCompra.php?idProduto=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
             </div>";
