@@ -1,0 +1,103 @@
+<?php
+session_start();
+if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
+    echo 'voce nao pode acessar essa pagina';
+    die();
+}
+if (isset($_POST['enviar'])) {
+    $statusMsg = "";
+
+    $nome = $_POST['nome'];
+    $preco = $_POST['preco'];
+
+    if (!empty($_FILES["imagem"]["name"])) {
+        // Get file info 
+        $fileName = basename($_FILES["imagem"]["name"]);
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
+
+        // Allow certain file formats 
+        $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+        if (in_array($fileType, $allowTypes)) {
+            $imagem = $_FILES['imagem']['tmp_name'];
+            $imgContent = addslashes(file_get_contents($imagem));
+
+            include_once('../inc/banco.php');
+            $sql = "INSERT INTO bebidas (nome,imagem,preco) VALUES ('$nome' , '$imgContent','$preco')";
+
+            $exe = $pdo->prepare($sql);
+
+            $exe->execute();
+
+            /*if( $exe->execute()){ 
+                $status = 'success'; 
+                $statusMsg = "File uploaded successfully."; 
+            }else{ 
+                $statusMsg = "File upload failed, please try again."; 
+            }*/
+        } else {
+            $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.';
+        }
+    } else {
+        $statusMsg = 'Please select an image file to upload.';
+    }
+    echo $statusMsg;
+}
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro</title>
+    <link rel="stylesheet" href="../assets/css/estilo.css">
+</head>
+
+<style>
+    body {
+        background-color: #fb5607;
+    }
+</style>
+
+<body>
+
+    <div class="login-1Cadastro">
+        <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
+        <form action="" method="POST" enctype="multipart/form-data">
+            <div class="loginCadastro">
+                <div>
+                    <label for="nome" class="">nome</label>
+                    <br>
+                    <input type="text" name="nome" />
+                </div>
+                <div>
+                    <label for="telefone" class="">Preço</label>
+                    <br>
+                    <input type="text" name="preco" />
+                </div>
+                <div>
+                    <label for="imagem" class="">Imagem da bebida</label>
+                    <br>
+                    <input type="file" name="imagem" />
+                </div>
+
+            </div>
+
+            <div class="button">
+                <br>
+                <button type="submit" class="email buttonCadastro" name="enviar">cadastrar</button>
+            </div>
+        </form>
+        <br>
+
+
+
+
+
+
+    </div>
+    </div>
+</body>
+
+</html>
