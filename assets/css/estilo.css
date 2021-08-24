@@ -818,3 +818,12 @@
                 text-align: center;
                 padding: 15px;
             }
+            
+            .h1pontos {
+                color: #8338ec;
+                font-weight: bold;
+            }
+            
+            .ppontos {
+                font-weight: bold;
+            }
