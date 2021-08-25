@@ -134,13 +134,28 @@ if ($sql->execute()) {
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="fotosCa1" src="cardapio/assets/images/coxinha.jpeg" alt="Primeiro Slide">
+                <img class="fotosCa1" src="cardapio/assets/images/3pãesdequeijo.png" alt="Primeiro Slide">
             </div>
             <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/kibe.jpeg" alt="Segundo Slide">
+                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (1).png" alt="Segundo Slide">
             </div>
             <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/pastel.jpeg" alt="Terceiro Slide">
+                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (2).png" alt="Terceiro Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (3).png" alt="quarto Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (4).png" alt="quinto Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (5).png" alt="sexto Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (6).png" alt="sétimo Slide">
+            </div>
+            <div class="carousel-item">
+                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (7).png" alt="oitavo Slide">
             </div>
 
             <div class="AntPro">
