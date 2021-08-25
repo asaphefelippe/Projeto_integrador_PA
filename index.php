@@ -243,7 +243,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 
 </div>
 
-<div>
+<div id="pontos">
     <h1 class="h1pontos">sistema de pontos</h1>
     <p class="ppontos">o sistema de pontos funciona da seguinte forma: Primeiramente o cliente só terá esse benefício se tiver login em no nosso site. Ao acessar o site, o cliente entrará em nosso cardápio onde todos os produtos terão uma quantia de pontos, a cada produto que o cliente comprar ele acumulará pontos. Esse acumulo de pontos transformará em recompensas. Por exemplo, se o cliente acumulou 30 pontos, ele ganhará uma coxinha.</p>
     <img src="assets/images/fidelidade.png" alt="">
