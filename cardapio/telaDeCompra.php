@@ -5,6 +5,7 @@ include_once(dirname(__FILE__) . '/../inc/banco.php');
 $idProd = isset($_GET['idProduto']) ? $_GET['idProduto'] : false;
 $idBebida = isset($_GET['idBebida']) ? $_GET['idBebida'] : false;
 
+
 // -----------------------------------------> COMIDAS <-----------------------------------------
 if ($idProd) {
     $codigo = $_GET['idProduto'];
@@ -39,15 +40,16 @@ if ($idBebida) {
         $preco = utf8_encode($produto['preco']);
         $imagem = utf8_encode($produto['imagem']);
         $cod = utf8_encode($produto['codigo']);
-        if(@$pontos == ""){
+        if (@$pontos == "") {
             $pontos = "";
             $pts = "";
         }
-       
+
 
         $imagem = '<img class= "tamanho" src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
     }
 }
+
 $pts = "pts";
 ?>
 
@@ -62,11 +64,7 @@ $pts = "pts";
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-    
-</body>
 
-</html>
-=======
-</div>
->>>>>>> 191c817c0c9c3f9cca7f41c7baf57831cfccc88d
+    </body>
+
+    </html>
