@@ -123,53 +123,44 @@ if ($sql->execute()) {
     </div>
 
 
-
-
+    
+  
 
     <div class="Recompensas">
         <h1>recompensas</h1>
     </div>
 
-
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="fotosCa1" src="images/3pãesdequeijo.png" alt="Primeiro Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (1).png" alt="Segundo Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (2).png" alt="Terceiro Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (3).png" alt="quarto Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (4).png" alt="quinto Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (5).png" alt="sexto Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (6).png" alt="sétimo Slide">
-            </div>
-            <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (7).png" alt="oitavoSlide">
-            </div>
-
-            <div class="AntPro">
-                <a class="carousel-control-prev" style="margin-left: 10%" ; href="#carouselExampleFade" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-
-                <a class="carousel-control-next" style="margin-right: 10%" ;href="#carouselExampleFade" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Próximo</span>
-                </a>
-
-            </div>
-        </div>
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="cardapio/assets/images/3pãesdequeijo.png" class="d-block w-100" alt="...">
     </div>
+    <div class="carousel-item">
+      <img src="cardapio/assets/images/3pães de queijo (2).png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="cardapio/assets/images/3pães de queijo (3).png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="cardapio/assets/images/3pães de queijo (4).png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="cardapio/assets/images/3pães de queijo (5).png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="cardapio/assets/images/3pães de queijo (6).png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="cardapio/assets/images/3pães de queijo (7).png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 </div>
