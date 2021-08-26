@@ -1,9 +1,8 @@
 <script>
-  var mostrarSub = function() {
+    var mostrarSub = function() {
         subMenu = document.querySelector('#subMenu');
         subMenu.style.left = "0.px";
     }
-
 </script>
 
 
@@ -28,6 +27,11 @@
         <div>
             <div> <img src="assets/images/Desenho-Coxinha-PNG.png" alt="" class="png"> </div>
             <div> <a href="index.php"> <img src="assets/images/marca-x.png" alt="" class="marca"> </a> </div>
+     
+            <a href="login.php" class="signin">sign in</a> 
+          <a href="" class="signin">sign out</a>
+          <a href="cadastro.php" class="signin">cadastrar</a>
+        
         </div>
 
 
@@ -47,20 +51,20 @@
 </nav>
 
 <div class="lala">
-<div class="menu" id="menu" onclick="mostrarSub()">
+    <div class="menu" id="menu" onclick="mostrarSub()">
 
-    <img src="assets/images/botao-de-menu-de-tres-linhas-horizontais.png" alt="" class="icon">
-    <div class="Ola">
+        <img src="assets/images/botao-de-menu-de-tres-linhas-horizontais.png" alt="" class="icon">
+        <div class="Ola">
 
-        <?php if (@$_SESSION['logado']) : ?>
+            <?php if (@$_SESSION['logado']) : ?>
 
-            <h4> Ola <?php echo $nom ?>
+                <h4> Ola <?php echo $nom ?>
 
-            <?php else : $_SESSION['logado'] = "";
-        endif
+                <?php else : $_SESSION['logado'] = "";
+            endif
 
-            ?>
-            </h4>
+                ?>
+                </h4>
+        </div>
     </div>
-</div>
 </div>

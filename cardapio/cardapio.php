@@ -37,7 +37,7 @@ $contador = $resultado->fetchAll();
 ?>
 
 <header>
-    <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="img">
+    <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="logo">
 
 </header>
 

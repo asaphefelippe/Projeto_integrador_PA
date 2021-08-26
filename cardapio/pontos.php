@@ -134,7 +134,7 @@ if ($sql->execute()) {
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="fotosCa1" src="cardapio/assets/images/3pãesdequeijo.png" alt="Primeiro Slide">
+                <img class="fotosCa1" src="images/3pãesdequeijo.png" alt="Primeiro Slide">
             </div>
             <div class="carousel-item">
                 <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (1).png" alt="Segundo Slide">
@@ -155,7 +155,7 @@ if ($sql->execute()) {
                 <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (6).png" alt="sétimo Slide">
             </div>
             <div class="carousel-item">
-                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (7).png" alt="oitavo Slide">
+                <img class="fotosCa1" src="cardapio/assets/images/3pães de queijo (7).png" alt="oitavoSlide">
             </div>
 
             <div class="AntPro">
