@@ -65,12 +65,12 @@ foreach ($pdo->query($result) as $values) {
     echo '<div class="col p-3">';
     echo '<div class=" efeito-hover p-3 h-100">';
 
-    $nome1 =  '<h1>' . utf8_encode($values['nome1']) . '</h1><br>';
-    $nome2 =  utf8_encode($values['nome2']) . '<br>';
-    $nome3 =  utf8_encode($values['nome3']) . '<br>';
-    $nome4 =  utf8_encode($values['nome4']) . '<br>';
-    $nome5 =  utf8_encode($values['nome5']) . '<br>';
-    $nome6 =  utf8_encode($values['nome6']) . '<br>';
+    $nome1 =    utf8_encode($values['nome1']);
+    $nome2 =  utf8_encode($values['nome2']);
+    $nome3 =  utf8_encode($values['nome3']);
+    $nome4 = utf8_encode($values['nome4']);
+    $nome5 =  utf8_encode($values['nome5']);
+    $nome6 =  utf8_encode($values['nome6']);
     $quantidade1 = utf8_encode($values['quantidade1']);
     $quantidade2 = utf8_encode($values['quantidade2']);
     $quantidade3 = utf8_encode($values['quantidade3']);
@@ -83,6 +83,46 @@ foreach ($pdo->query($result) as $values) {
     $img =  $values['imagem'];
     $pontos = $values['acumulo'];
     $pts = "pts";
+    if ($nome1 != null) {
+        $nome1 = "<div><h2>↠$nome1</h2></div>";
+    } else {
+        $nome1 = "<div></div>";
+    }
+
+
+    if ($nome2 != null) {
+        $nome2 = "<div><h2>↠$nome2</h2></div>";
+    } else {
+        $nome2 = "<div></div>";
+    }
+
+
+    if ($nome3 != null) {
+        $nome3 = "<div><h2>↠$nome3</h2></div>";
+    } else {
+        $nome3 = "<div></div>";
+    }
+
+
+    if ($nome4 != null) {
+        $nome4 = "<div><h2>↠$nome4</h2></div>";
+    } else {
+        $nome4 = "<div></div>";
+    }
+
+
+    if ($nome5 != null) {
+        $nome5 = "<div><h2↠$nome5</h2></div>";
+    } else {
+        $nome5 = "<div></div>";
+    }
+
+    if ($nome6 != null) {
+        $nome6 = "<div><h2>↠$nome6</h2></div>";
+    } else {
+        $nome6 = "<div></div>";
+    }
+    
     ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
     $imagem = '<img class="img-fluid cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
     echo   $texto = "
@@ -91,18 +131,16 @@ foreach ($pdo->query($result) as $values) {
             </div> 
             <div class='text-center'>$imagem  </div>
             <div class='desc text-center'>
+            
+                $nome1
+                $nome2
+                $nome3
+                $nome4
+                $nome5
+                $nome6
 
-                <h1>$nome1</h1>
-                <h1>$nome2</h1>
-                <h1>$nome3</h1>
-                <h1>$nome4</h1>
-                <h1>$nome5</h1>
-                <h1>$nome6</h1>
-
-
-                                
                 <p>R$:$preco</p>
-                <a href='telaDeCompra.php?idProduto=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
+                <a href='telaDeCompraCupons.php?idCupons=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
             </div>";
 
     echo '</div>'; // acaba a column
