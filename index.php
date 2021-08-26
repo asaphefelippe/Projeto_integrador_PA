@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 
 if (isset($_GET['logout'])) {
@@ -35,7 +34,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 ?>
 
 <script>
-    //menu// 
+    //menu//
 
     var mostrarSub = function() {
         subMenu = document.querySelector('#subMenu');

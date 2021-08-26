@@ -2,6 +2,12 @@
 session_start();
 include_once(dirname(__FILE__) . '/../inc/banco.php');
 
+if ($_SESSION['logado']) {
+    echo "Voce esta logado";
+}else{
+    echo "voce nao esta logado";
+}
+
 
 $result = "SELECT * FROM comidas";
 
@@ -21,6 +27,8 @@ $count = $res->fetchAll();
 <h1>coxinha</h1>
 <p>R$:2,00</p>
 <button class="botaoComprar">comprar</button>
+
+
 </div> -------------------------------------------- Exemplo--------------------------------------------*/
 
 include_once(dirname(__FILE__) . '/../inc/menu.php');
@@ -50,13 +58,17 @@ $contador = $resultado->fetchAll();
         foreach ($pdo->query($result) as $values) {
             echo '<div class="col p-3">';
             echo '<div class=" efeito-hover p-3 h-100">';
-
+            
             $nome =  utf8_encode($values['nome']);
             $preco =  utf8_encode($values['preco']);
             $img =  utf8_encode($values['imagem']);
             $codigo =  utf8_encode($values['codigo']);
             $pontos = $values['acumulos'];
             $pts = "pts";
+            if (!$_SESSION['logado']) {
+                $pontos = "";
+                $pts = "";
+            }
             ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
             $imagem = '<img class="img-fluid" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
             echo   $texto = "
