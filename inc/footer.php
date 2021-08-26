@@ -45,7 +45,12 @@
     </div>
 
 
+<<<<<<< HEAD
     <div class="footer2 col col-md-3">
+=======
+
+    <div class=" col col-md-3">
+>>>>>>> 52995968690e81442351bb31b903059d9e43a817
         <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgF">
     </div>
 
