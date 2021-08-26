@@ -1,3 +1,9 @@
+<?php
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("location:login.php");
+}
+?>
 <script>
     var mostrarSub = function() {
         subMenu = document.querySelector('#subMenu');
