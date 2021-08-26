@@ -52,21 +52,20 @@ if (isset($_POST['enviar'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>trabalho p.a</title>
-    
+
     <link rel="stylesheet" href="assets/css/estilo.css">
-    
+
 </head>
+
 <body>
 
-<!-- NAO DA PARA COLOCAR INCLUIDE POR CAUSA DO MENU NA TELA DE LOGIN NAO TEM MENU-->
+    <!-- NAO DA PARA COLOCAR INCLUIDE POR CAUSA DO MENU NA TELA DE LOGIN NAO TEM MENU-->
 
-<style>
-
-body{
-    background-color: #fb5607;
-}
-
-</style>
+    <style>
+        body {
+            background-color: #fb5607;
+        }
+    </style>
     <form action="" method="POST">
         <div class="login-1">
             <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
