@@ -23,6 +23,7 @@
         </form>
     </div>
 
+    
     <div class="footer2  col col-md-3">
         <h1 class="letrasFO">redes sociais</h1>
         <div class="pagamento">
@@ -44,7 +45,6 @@
     </div>
 
 
-
     <div class="footer2 col col-md-3">
         <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgF">
     </div>
@@ -53,11 +53,8 @@
 </footer>
 
 
-
-
-
-
 <a href="#" id="subir">Topo</a>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
