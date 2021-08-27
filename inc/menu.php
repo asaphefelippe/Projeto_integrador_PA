@@ -39,7 +39,7 @@ if (isset($_GET['logout'])) {
             </div>
             <div class="toptop">
                 <a href="login.php" class="signin">sign in</a>
-                <a href="" class="signin">sign out</a>
+                <a href="?logout=true" class="signin">sign out</a>
                 <a href="cadastro.php" class="signin">cadastrar</a>
             </div>
         </div>
