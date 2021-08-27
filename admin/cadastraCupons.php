@@ -19,7 +19,7 @@ if (isset($_POST['enviar'])) {
             $imgContent = addslashes(file_get_contents($imagem));
             include_once('../inc/banco.php');
 
-            
+
             $nome1 = $_POST['nome1'];
             $nome1 = $_POST['nome2'];
             $nome1 = $_POST['nome3'];
@@ -33,8 +33,9 @@ if (isset($_POST['enviar'])) {
             $quantidade1 = $_POST['quantidade5'];
             $quantidade1 = $_POST['quantidade6'];
             $preco = $_POST['preco'];
-            $acumulos = $_POST['acumulos'];
-            $sql = "INSERT INTO comidas (nome,acumulos,gastarP,imagem,preco) VALUES ('$nome' , '$acumulos', '$gastarP' , '$imgContent','$preco')";
+            $acumulos = $_POST['acumulo'];
+            $gastarP = $_POST['gastarP'];
+            $sql = "INSERT INTO cupons (nome1,nome2,nome3,nome4,nome5,nome6,quantidade1,quantidade2,quantidade3,quantidade4,quantidade5,quantidade6,acumulo,gastarP,imagem,preco) VALUES ('$nome1' ,'$nome2' ,'$nome3' ,'$nome4' ,'$nome5' ,'$nome6' , '$quantidade1','$quantidade2','$quantidade3','$quantidade4','$quantidade5','$quantidade6', '$acumulos', '$gastarP' , '$imgContent','$preco')";
             $exe = $pdo->prepare($sql);
             $exe->execute();
 
@@ -62,11 +63,20 @@ if (isset($_POST['enviar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
     <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <style>
     body {
         background-color: #fb5607;
+    }
+
+    div.login-1Cadastro {
+        margin-left: auto;
+        margin-right: auto;
+        width: 550px;
+        height: auto;
     }
 </style>
 
@@ -75,82 +85,51 @@ if (isset($_POST['enviar'])) {
     <div class="login-1Cadastro">
         <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
         <form action="" method="POST" enctype="multipart/form-data">
-            <div class="loginCadastro">
-                <div>
-                    <label for="nome" class="">Quantidade</label>
-                    <br>
-                    <input type="text" name="quantidade1" />
-                </div>
-                <div>
+            <div class="loginCadastro ">
+                <div class="d-flex">
                     <label for="nome" class="">comida1</label>
-                    <br>
                     <input type="text" name="nome1" />
+                    <input type="text" name="quantidade1" placeholder="quantidade" />
                 </div>
-                <div>
-                    <label for="nome" class="">Quantidade2</label>
-                    <br>
-                    <input type="text" name="quantidade2" />
-                </div>
-                <div>
+                <div class="d-flex">
                     <label for="nome" class="">comida2</label>
-                    <br>
                     <input type="text" name="nome2" />
+                    <input type="text" name="quantidade2" placeholder="quantidade" />
                 </div>
-                <div>
-                    <label for="nome" class="">Quantidade3</label>
-                    <br>
-                    <input type="text" name="quantidade3" />
-                </div>
-                <div>
+                <div class="d-flex">
                     <label for="nome" class="">comida3</label>
-                    <br>
                     <input type="text" name="nome3" />
+                    <input type="text" name="quantidade3" placeholder="quantidade" />
                 </div>
-                <div>
-                    <label for="nome" class="">Quantidade4</label>
-                    <br>
-                    <input type="text" name="quantidade4" />
-                </div>
-                <div>
+                <div class="d-flex">
                     <label for="nome" class="">comida4</label>
-                    <br>
                     <input type="text" name="nome4" />
+                    <input type="text" name="quantidade4" placeholder="quantidade" />
                 </div>
-                <div>
-                    <label for="nome" class="">Quantidade5</label>
-                    <br>
-                    <input type="text" name="quantidade5" />
-                </div>
-                <div>
+                <div class="d-flex">
                     <label for="nome" class="">comida5</label>
-                    <br>
                     <input type="text" name="nome5" />
+                    <input type="text" name="quantidade5" placeholder="quantidade" />
                 </div>
-                <div>
-                    <label for="nome" class="">Quantidade6</label>
-                    <br>
-                    <input type="text" name="quantidade6" />
-                </div>
-                <div>
+                <div class="d-flex">
                     <label for="nome" class="">comida6</label>
-                    <br>
                     <input type="text" name="nome6" />
+                    <input type="text" name="quantidade6" placeholder="quantidade" />
                 </div>
-
+                <br>
                 <div>
-                    <label for="telefone" class="">Preço</label>
+                    <label for="nome" class="">Preço</label>
                     <br>
                     <input type="text" name="preco" />
                 </div>
-
                 <div>
-                    <label for="sobrenome" class="">quantos pontos o cliente ganha</label>
+                    <label for="nome" class="">quantos ponto client ganha</label>
                     <br>
-                    <input type="text" name="acumulos" />
+                    <input type="text" name="acumulo"/>
                 </div>
                 <!-- O P C I O N A L -->
                 <div>
-                    <label for="telefone" class="">quantos pontos gasta</label>
+                    <label for="telefone" class="">quantos pontos gasta:</label>
                     <br>
                     <input type="text" name="gastarP" />
                 </div>
@@ -176,7 +155,3 @@ if (isset($_POST['enviar'])) {
 
 
     </div>
-    </div>
-</body>
-
-</html>

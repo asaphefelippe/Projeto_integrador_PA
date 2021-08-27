@@ -52,13 +52,22 @@ if (isset($_POST['enviar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
     <link rel="stylesheet" href="../assets/css/estilo.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 </head>
 
 <style>
     body {
         background-color: #fb5607;
     }
-</style>
+
+    div.login-1Cadastro {
+        margin-left: auto;
+        margin-right: auto;
+        width: 550px;
+        height: auto;
+    }
+    </style>
 
 <body>
 
@@ -67,17 +76,17 @@ if (isset($_POST['enviar'])) {
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="loginCadastro">
                 <div>
-                    <label for="nome" class="">nome</label>
+                    <label for="nome" class="">Nome:</label>
                     <br>
                     <input type="text" name="nome" />
                 </div>
                 <div>
-                    <label for="telefone" class="">Preço</label>
+                    <label for="telefone" class="">Preço:</label>
                     <br>
                     <input type="text" name="preco" />
                 </div>
                 <div>
-                    <label for="imagem" class="">Imagem da bebida</label>
+                    <label for="imagem" class="">Imagem da bebida:</label>
                     <br>
                     <input type="file" name="imagem" />
                 </div>

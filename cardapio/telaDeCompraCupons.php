@@ -1,9 +1,7 @@
 <?php
 session_start();
 include_once(dirname(__FILE__) . '/../inc/banco.php');
-
 $idCupons = isset($_GET['idCupuns']) ? $_GET['idCupons'] : false;
-
 
     $codigo = $_GET['idCupons'];
 
@@ -30,6 +28,7 @@ $idCupons = isset($_GET['idCupuns']) ? $_GET['idCupons'] : false;
         $num_comb = utf8_encode($values['numero_comb']);
         $preco =  utf8_encode($values['preco']);
         $codigo =  utf8_encode($values['codigo']);
+        
         $img =  $values['imagem'];
         $pontos = $values['acumulo'];
         if ($nome1 != null) {
@@ -72,25 +71,14 @@ $idCupons = isset($_GET['idCupuns']) ? $_GET['idCupons'] : false;
             $nome6 = "<div></div>";
         }
     }
-
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
     <div class="laranja">
         <div class="login container">
             <div class="login2 row">
                 <div class="login3 col-4">
                     <?php
                     echo "<div> 
+
                     $nome1
                     $nome2
                     $nome3
@@ -105,9 +93,3 @@ $idCupons = isset($_GET['idCupuns']) ? $_GET['idCupons'] : false;
         </div>
     </div>
 
-</body>
-
-</html>
-</body>
-
-</html>
