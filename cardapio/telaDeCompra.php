@@ -54,17 +54,14 @@ $pts = "pts";
 ?>
 
 
-<div class="laranja">
-    <div class="login container">
-        <div class="login2 row">
-            <div class="login3 col-4">
-                <h1><?php echo "<div class='comida'> $comida <div class='pontos2'>$pontos$pts </div> </div> " ?></h1>
+<div class="laranja d-flex p-5 align-items-center align-center justify-content-center" > 
+    <div class="">
+        <div class="">
+            <div class=" bg-white text-black text-center shadow-lg p-5" >
+                <h1><?php echo "<span class='  position-relative' > $comida <span class='pontos2'>$pontos$pts </span> </span> " ?></h1>
                 <?php echo $imagem ?>
-                <p class="codigo"> codigo: <?php echo  $cod ?> </p>
+                <p> codigo: <?php echo  $cod ?> </p>
             </div>
         </div>
     </div>
-
-    </body>
-
-    </html>
+</div>

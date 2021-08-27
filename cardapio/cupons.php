@@ -112,7 +112,7 @@ foreach ($pdo->query($result) as $values) {
 
 
     if ($nome5 != null) {
-        $nome5 = "<div><h2↠$nome5</h2></div>";
+        $nome5 = "<div><h2>↠$nome5</h2></div>";
     } else {
         $nome5 = "<div></div>";
     }
@@ -122,14 +122,17 @@ foreach ($pdo->query($result) as $values) {
     } else {
         $nome6 = "<div></div>";
     }
-    
+
     ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
-    $imagem = '<img class="img-fluid cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
+    $imagem = '<img class=" cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
+
+
     echo   $texto = "
+    <div class='container1 row row-cols-4' style='margin-left: 0px;'>
             <div class='pontos'>
                 $pontos$pts   
-            </div> 
-            <div class='text-center'>$imagem  </div>
+            </div>
+            <div class='text-center cupomIMG'>$imagem</div>
             <div class='desc text-center'>
             
                 $nome1
@@ -141,7 +144,9 @@ foreach ($pdo->query($result) as $values) {
 
                 <p>R$:$preco</p>
                 <a href='telaDeCompraCupons.php?idCupons=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
-            </div>";
+            </div>
+            </div>
+            ";
 
     echo '</div>'; // acaba a column
     echo '</div>'; // acaba a column
@@ -151,8 +156,8 @@ foreach ($pdo->query($result) as $values) {
 <div class="container1 row row-cols-4" style="margin-left: 0px;">
     <div class="cupom">
         <img src="cardapio/assets/images/bolinhafanta.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas">combo</h1>
-        <p class="preco">6,00</p>
+        <h1 class="comidas"><?php echo "$nome1 $nome2 $nome3 $nome4 $nome5 $nome6" ?></h1>
+        <p class="preco">R$ <?php echo "$preco"?></p>
         <button class="botaoComprar">comprar</button>
     </div>
 

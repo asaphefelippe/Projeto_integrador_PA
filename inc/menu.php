@@ -7,7 +7,11 @@ if (isset($_GET['logout'])) {
 <script>
     var mostrarSub = function() {
         subMenu = document.querySelector('#subMenu');
-        subMenu.style.left = "0.px";
+        subMenu.style.left = "0px";
+    }
+    var escondeSub = function() {
+        subMenu = document.querySelector('#subMenu');
+        subMenu.style.left = "-100%";
     }
 </script>
 
@@ -35,7 +39,7 @@ if (isset($_GET['logout'])) {
                 <img src="assets/images/Desenho-Coxinha-PNG.png" alt="" class="png">
             </div>
             <div>
-                <a href="index.php"> <img src="assets/images/marca-x.png" alt="" class="marca"> </a>
+                <a href="#" onclick="escondeSub();"> <img src="assets/images/marca-x.png" alt="" class="marca"> </a>
             </div>
             <div class="toptop">
                 <a href="login.php" class="signin">sign in</a>
