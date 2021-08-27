@@ -46,6 +46,9 @@ if (isset($_GET['logout'])) {
                 <a href="?logout=true" class="signin">sign out</a>
                 <a href="cadastro.php" class="signin">cadastrar</a>
             </div>
+            
+                <a href="index.php" class="inicialMenu">inicial </a>
+           
         </div>
 
 

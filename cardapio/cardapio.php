@@ -36,7 +36,6 @@ $contador = $resultado->fetchAll();
 
 <div class="titulo"> COMIDAS </div>
 
-<div class="">
     <div class="row row-cols-4">
 
         <?php
@@ -55,7 +54,7 @@ $contador = $resultado->fetchAll();
                 $pts = "";
             }
             ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
-            $imagem = '<img class="img-fluid" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
+            $imagem = '<img class="fotosPizza" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
             echo   $texto = "
             <div class='pontos'>
                 $pontos$pts   
@@ -74,7 +73,7 @@ $contador = $resultado->fetchAll();
         ?>
 
     </div>
-</div>
+
 <div class="titulo"> BEBIDAS </div>
 <div class="">
     <div class="row row-cols-4">

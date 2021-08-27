@@ -212,8 +212,8 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 
 
 
-<section class="row fotos">
-    <div class="col-12" id="fotos">
+<section class="row fotos" id="fotos">
+    <div class="col-12">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">

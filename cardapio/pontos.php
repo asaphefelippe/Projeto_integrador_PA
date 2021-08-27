@@ -1,166 +1,90 @@
 <?php
 session_start();
-$email = $_SESSION['email'];
+include_once(dirname(__FILE__) . '/../inc/banco.php');
+/*if ($_SESSION['logado']) {
+    echo "Voce esta logado";
+}else{
+    echo "voce nao esta logadoo";
+}------------------------------------------------------------------------------------PARA TESTE------------------------------------------------------------------------------------*/
+$result = "SELECT * FROM comidas";
 
-include(dirname(__FILE__) . '/../inc/banco.php');
-$sql = $pdo->prepare("SELECT * FROM alunospa WHERE email = '$email'");
+$res = $pdo->query($result);
 
-if ($sql->execute()) {
+$count = $res->fetchAll();
 
-    $info = $sql->fetchALL();
 
-    foreach ($info as $key => $values) {
+//echo "There are" . $count . " machine.";  -----------------------------------------PARA TESTES-----------------------------------------
 
-        $acu = $values['acumulo'];
-        $nom = $values['nome'];
-        $cod = $values['codigo'];
-    }
-}
+
+include_once(dirname(__FILE__) . '/../inc/menu.php');
+
+include_once(dirname(__FILE__) . '/../inc/banco.php');
+
+
 ?>
 
 
 
-<script>
-    var mostrarSub = function() {
-        subMenu = document.querySelector('#subMenu');
-        subMenu.style.left = "0.1px";
-    }
-    var slideIndex = [1, 1];
-    var slideId = ["mySlides1", "mySlides2"]
-    showSlides(1, 0);
-    showSlides(1, 1);
+<style>
 
-    function plusSlides(n, no) {
-        showSlides(slideIndex[no] += n, no);
-    }
+body{
+    background-color: #fb5607;
+}
 
-    function showSlides(n, no) {
-        var i;
-        var x = document.getElementsByClassName(slideId[no]);
-        if (n > x.length) {
-            slideIndex[no] = 1
+</style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#ffbe0b" fill-opacity="1" d="M0,32L48,74.7C96,117,192,203,288,213.3C384,224,480,160,576,160C672,160,768,224,864,240C960,256,1056,224,1152,192C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+</svg>
+    <div class="row row-cols-4">
+
+        <?php
+        foreach ($pdo->query($result) as $values) {
+            echo '<div class="col p-3">';
+            echo '<div class=" efeito-hover1 p-3 h-100">';
+            
+            $nome =  utf8_encode($values['nome']);
+            $preco =  utf8_encode($values['preco']);
+            $img =  utf8_encode($values['imagem']);
+            $codigo =  utf8_encode($values['codigo']);
+            $gastaP = utf8_encode($values['gastarP']);
+            $pontos = $values['acumulos'];
+            $pts = "pts";
+            if (!$_SESSION['logado']) {
+                $pontos = "";
+                $pts = "";
+            }
+            
+            ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
+            
+            $imagem = '<img class="fotosPizza" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
+            echo   $texto = "
+            <div class='pontos'>
+                $pontos$pts   
+            </div> 
+            <div class='text-center'>$imagem  </div>
+            <div class='desc text-center'>
+            <div class='pontosh1p'>
+                <h1 class='pontosh1p'>$nome</h1>
+            <p class='pontosP'>pontos : $gastaP  </p>
+          </div>
+                <a href='telaDeCompraPontos.php?idProduto=" . $codigo . "'><button class='botaoComprar'>retirar pontos</button></a>
+            </div>";
+
+            echo '</div>'; // acaba a column
+            echo '</div>'; // acaba a column
         }
-        if (n < 1) {
-            slideIndex[no] = x.length
-        }
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        x[slideIndex[no] - 1].style.display = "block";
-    }
-</script>
-
-
-
-<div class="menu" id="menu" onclick="mostrarSub()">
-    <img src="../assets/images/botao-de-menu-de-tres-linhas-horizontais.png" alt="" class="icon">
-</div>
-
-<nav>
-
-    <div class="lala">
-        <div class="submenu" id="subMenu">
-
-
-            <div class="direita">
-                <div class="padding">
-                    <a href="cupons.php" class="letraMenu"> cupons</a>
-                </div>
-                <div class="padding">
-                    <a href="#contato" class="letraMenu">contato </a>
-                </div>
-
-            </div>
-
-
-            <div>
-                <div> <img src="../assets/images/Desenho-Coxinha-PNG.png" alt="" class="png"> </div>
-                <div> <a href="pontos.php"> <img src="../assets/images/marca-x.png" alt="" class="marca"> </a> </div>
-                <div style="margin-top:25px;"> <a href="../index.php" class="letraMenu"> inicial</a></div>
-            </div>
-
-
-
-            <div class="esquerda">
-                <div class="padding">
-                    <a href="pontos.php" class="letraMenu"> pontos</a>
-                </div>
-                <div class="padding">
-                    <a href="cardapio.php" class="letraMenu"> cardápio</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-</nav>
-<header>
-    <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="img">
-
-</header>
-
-
-<h1 class="TituloPontos">pontos Modern Canteen</h1>
-<div class="ContainerPontos">
-
-
-    <div class="PontRec">
-        <?php if ($_SESSION['logado']) : ?>
-            <h1>pontuações e recompensas de: <?php echo $nom ?></h1>
-        <?php else : $_SESSION['logado'] = "";
-        endif
-
         ?>
-        <?php if ($_SESSION['logado']) : ?>
 
-            <h4 class="Codigo"> Olá <?php echo $nom ?> você tem <?php echo $acu ?> pontos, seu codigo é : <?php echo $cod ?>
-
-            <?php else : $_SESSION['logado'] = "";
-        endif
-
-            ?>
-            </h4>
     </div>
 
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#ffbe0b" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,229.3C384,203,480,117,576,90.7C672,64,768,96,864,133.3C960,171,1056,213,1152,202.7C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+</svg>
 
+<div>
+    <a href="#" id="subir">Topo</a>
+</div>
     
   
 
-    <div class="Recompensas">
-        <h1>recompensas</h1>
-    </div>
 
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="cardapio/assets/images/3pãesdequeijo.png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="cardapio/assets/images/3pães de queijo (2).png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="cardapio/assets/images/3pães de queijo (3).png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="cardapio/assets/images/3pães de queijo (4).png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="cardapio/assets/images/3pães de queijo (5).png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="cardapio/assets/images/3pães de queijo (6).png" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="cardapio/assets/images/3pães de queijo (7).png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</div>
