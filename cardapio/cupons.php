@@ -127,7 +127,7 @@ foreach ($pdo->query($result) as $values) {
     $imagem = '<img class=" cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
 
 
-    echo   $texto = "
+/*    echo   $texto = "
     <div class='container1 row row-cols-4' style='margin-left: 0px;'>
             <div class='pontos'>
                 $pontos$pts   
@@ -150,14 +150,25 @@ foreach ($pdo->query($result) as $values) {
 
     echo '</div>'; // acaba a column
     echo '</div>'; // acaba a column
+*/
+    $texto2 = "<div class='cupom'>
+    $imagem 
+    <h1 class='comidas'>$nome1  $nome2  $nome3  $nome4  $nome5  $nome6 </h1>
+    <p class='preco' $preco </p>
+    <a href='telaDeCompraCupons.php?idCupons=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
+    </div>";
 }
 ?>
 
 <div class="container1 row row-cols-4" style="margin-left: 0px;">
-    <div class="cupom">
+    <?php
+    echo $texto2;
+    ?>
+
+<!--    <div class="cupom">
         <img src="cardapio/assets/images/bolinhafanta.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas"><?php echo "$nome1 $nome2 $nome3 $nome4 $nome5 $nome6" ?></h1>
-        <p class="preco">R$ <?php echo "$preco"?></p>
+        <h1 class="comidas"></h1>
+        <p class="preco">R$ </p>
         <button class="botaoComprar">comprar</button>
     </div>
 
@@ -215,5 +226,5 @@ foreach ($pdo->query($result) as $values) {
         <h1 class="comidas">combo</h1>
         <p class="preco">6,00</p>
         <button class="botaoComprar">comprar</button>
-    </div>
+    </div> -->
 </div>
