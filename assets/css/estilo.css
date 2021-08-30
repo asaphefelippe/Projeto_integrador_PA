@@ -126,6 +126,7 @@ header {
 .logo {
     margin-left: 45%;
     width: 190px;
+    position: relative;
 }
 
 .menu {
@@ -700,6 +701,7 @@ padding: 30px; */
 
 .laranja {
     background-color: #fb5607;
+    margin-bottom: 300px;
 }
 
 .fotosCa {
@@ -870,4 +872,9 @@ padding: 30px; */
     background-color: #f1f1f1;
     margin-left: 130px;
     width: 130px;
+}
+
+.telaDeCompraPontos {
+    background-color: #8338ec;
+    margin-top: 150px;
 }

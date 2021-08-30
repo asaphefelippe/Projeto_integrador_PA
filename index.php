@@ -100,7 +100,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 </script>
 
 <header>
-    <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="logo">
+    <img src="assets/images/logo.png" alt="" class="logo">
 </header>
 
 <section class="row">

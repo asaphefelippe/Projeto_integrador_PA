@@ -72,6 +72,13 @@ $idCupons = isset($_GET['idCupuns']) ? $_GET['idCupons'] : false;
         }
     }
 ?>
+
+<style>
+body{
+    background-color: #fb5607;
+}
+
+</style>
     <div class="laranja">
         <div class="login container">
             <div class="login2 row">
