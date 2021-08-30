@@ -44,9 +44,18 @@
         </div>
     </div>
 </nav>
-<header>
-    <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="img">
-</header>
+<style>
+
+body{
+    background-color:#ff006e ;
+}
+
+</style>
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+
+  <path fill="#ffbe0b" fill-opacity="1" d="M0,32L48,74.7C96,117,192,203,288,213.3C384,224,480,160,576,160C672,160,768,224,864,240C960,256,1056,224,1152,192C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+</svg>
 
 <div class="titulo"> CUPONS</div>
 
@@ -220,4 +229,73 @@ $count = $res->fetchAll();
     }
     ?>
 
+<<<<<<< HEAD
 </div>
+=======
+<!--    <div class="cupom">
+        <img src="cardapio/assets/images/bolinhafanta.jpg" alt="" class="cupomIMG">
+        <h1 class="comidas"></h1>
+        <p class="preco">R$ </p>
+        <button class="botaoComprar">comprar</button>
+    </div>
+
+
+    <div class="cupom">
+        <img src="cardapio/assets/images/coxinhacoca.jpg" alt="" class="cupomIMG">
+        <h1 class="comidas">combo</h1>
+        <p class="preco">6,00</p>
+        <button class="botaoComprar">comprar</button>
+    </div>
+
+
+    <div class="cupom">
+        <img src="cardapio/assets/images/coxinhaFanta.jpg" alt="" class="cupomIMG">
+        <h1 class="comidas">combo</h1>
+        <p class="preco">6,00</p>
+        <button class="botaoComprar">comprar</button>
+    </div>
+
+
+    <div class="cupom">
+        <img src="cardapio/assets/images/kibesuco.jpg" alt="" class="cupomIMG">
+        <h1 class="comidas">combo</h1>
+        <p class="preco">6,00</p>
+        <button class="botaoComprar">comprar</button>
+    </div>
+
+
+    <div class="cupom">
+        <img src="cardapio/assets/images/paoqjSweps.jpg" alt="" class="cupomIMG">
+        <h1 class="comidas">combo</h1>
+        <p class="preco">6,00</p>
+        <button class="botaoComprar">comprar</button>
+    </div>
+
+
+    <div class="cupom">
+        <img src="cardapio/assets/images/pastelGuarana.jpg" alt="" class="cupomIMG">
+        <h1 class="comidas">combo</h1>
+        <p class="preco"> 6,00</p>
+        <button class="botaoComprar">comprar</button>
+    </div>
+
+
+    <div class="cupom">
+        <img src="cardapio/assets/images/pqcfanta.jpg" alt="" class="cupomIMG">
+        <h1 class="comidas">combo</h1>
+        <p class="preco">6,00</p>
+        <button class="botaoComprar">comprar</button>
+    </div>
+
+
+    <div class="cupom">
+        <img src="cardapio/assets/images/salsichasweps.jpg" alt="" class="cupomIMG">
+        <h1 class="comidas">combo</h1>
+        <p class="preco">6,00</p>
+        <button class="botaoComprar">comprar</button>
+    </div> -->
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#ffbe0b" fill-opacity="1" d="M0,192L48,208C96,224,192,256,288,229.3C384,203,480,117,576,90.7C672,64,768,96,864,133.3C960,171,1056,213,1152,202.7C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+</svg>
+>>>>>>> e9f2b5fd2086fac43a8459a92eb6cdfe29e67d81
