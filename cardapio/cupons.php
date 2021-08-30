@@ -61,9 +61,9 @@ $res = $pdo->query($result);
 
 $count = $res->fetchAll();
 
-foreach ($pdo->query($result) as $values) {
-    echo '<div class="col p-3">';
-    echo '<div class=" efeito-hover p-3 h-100">';
+/*foreach ($pdo->query($result) as $values) {
+    //echo '<div class="col p-3">';
+    //echo '<div class=" efeito-hover p-3 h-100">';
 
     $nome1 =    utf8_encode($values['nome1']);
     $nome2 =  utf8_encode($values['nome2']);
@@ -124,107 +124,100 @@ foreach ($pdo->query($result) as $values) {
     }
 
     ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
-    $imagem = '<img class=" cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
+    $imagem = '<img class="cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
 
 
-/*    echo   $texto = "
-    <div class='container1 row row-cols-4' style='margin-left: 0px;'>
-            <div class='pontos'>
-                $pontos$pts   
-            </div>
-            <div class='text-center cupomIMG'>$imagem</div>
-            <div class='desc text-center'>
-            
-                $nome1
-                $nome2
-                $nome3
-                $nome4
-                $nome5
-                $nome6
 
-                <p>R$:$preco</p>
-                <a href='telaDeCompraCupons.php?idCupons=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
-            </div>
-            </div>
-            ";
-
-    echo '</div>'; // acaba a column
-    echo '</div>'; // acaba a column
-*/
     $texto2 = "<div class='cupom'>
     $imagem 
     <h1 class='comidas'>$nome1  $nome2  $nome3  $nome4  $nome5  $nome6 </h1>
     <p class='preco' $preco </p>
     <a href='telaDeCompraCupons.php?idCupons=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
     </div>";
-}
+    //echo "</div>";
+    //echo "</div>";
+}*/
 ?>
 
 <div class="container1 row row-cols-4" style="margin-left: 0px;">
+
     <?php
-    echo $texto2;
+    foreach ($pdo->query($result) as $values) {
+        //echo '<div class="col p-3">';
+        //echo '<div class=" efeito-hover p-3 h-100">';
+
+        $nome1 =    utf8_encode($values['nome1']);
+        $nome2 =  utf8_encode($values['nome2']);
+        $nome3 =  utf8_encode($values['nome3']);
+        $nome4 = utf8_encode($values['nome4']);
+        $nome5 =  utf8_encode($values['nome5']);
+        $nome6 =  utf8_encode($values['nome6']);
+        $quantidade1 = utf8_encode($values['quantidade1']);
+        $quantidade2 = utf8_encode($values['quantidade2']);
+        $quantidade3 = utf8_encode($values['quantidade3']);
+        $quantidade4 = utf8_encode($values['quantidade4']);
+        $quantidade5 = utf8_encode($values['quantidade5']);
+        $quantidade6 = utf8_encode($values['quantidade6']);
+        $num_comb = utf8_encode($values['numero_comb']);
+        $preco =  utf8_encode($values['preco']);
+        $codigo =  utf8_encode($values['codigo']);
+        $img =  $values['imagem'];
+        $pontos = $values['acumulo'];
+        $pts = "pts";
+        if ($nome1 != null) {
+            $nome1 = "<div><h2>↠$nome1</h2></div>";
+        } else {
+            $nome1 = "<div></div>";
+        }
+
+
+        if ($nome2 != null) {
+            $nome2 = "<div><h2>↠$nome2</h2></div>";
+        } else {
+            $nome2 = "<div></div>";
+        }
+
+
+        if ($nome3 != null) {
+            $nome3 = "<div><h2>↠$nome3</h2></div>";
+        } else {
+            $nome3 = "<div></div>";
+        }
+
+
+        if ($nome4 != null) {
+            $nome4 = "<div><h2>↠$nome4</h2></div>";
+        } else {
+            $nome4 = "<div></div>";
+        }
+
+
+        if ($nome5 != null) {
+            $nome5 = "<div><h2>↠$nome5</h2></div>";
+        } else {
+            $nome5 = "<div></div>";
+        }
+
+        if ($nome6 != null) {
+            $nome6 = "<div><h2>↠$nome6</h2></div>";
+        } else {
+            $nome6 = "<div></div>";
+        }
+
+        ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
+        $imagem = '<img class="cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
+
+
+
+        echo $texto2 = "<div class='cupom'>
+        $imagem 
+        <h1 class='comidas'>$nome1  $nome2  $nome3  $nome4  $nome5  $nome6 </h1>
+        <p class='preco' $preco </p>
+        <a href='telaDeCompraCupons.php?idCupons=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
+        </div>";
+        //echo "</div>";
+        //echo "</div>";
+    }
     ?>
 
-<!--    <div class="cupom">
-        <img src="cardapio/assets/images/bolinhafanta.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas"></h1>
-        <p class="preco">R$ </p>
-        <button class="botaoComprar">comprar</button>
-    </div>
-
-
-    <div class="cupom">
-        <img src="cardapio/assets/images/coxinhacoca.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas">combo</h1>
-        <p class="preco">6,00</p>
-        <button class="botaoComprar">comprar</button>
-    </div>
-
-
-    <div class="cupom">
-        <img src="cardapio/assets/images/coxinhaFanta.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas">combo</h1>
-        <p class="preco">6,00</p>
-        <button class="botaoComprar">comprar</button>
-    </div>
-
-
-    <div class="cupom">
-        <img src="cardapio/assets/images/kibesuco.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas">combo</h1>
-        <p class="preco">6,00</p>
-        <button class="botaoComprar">comprar</button>
-    </div>
-
-
-    <div class="cupom">
-        <img src="cardapio/assets/images/paoqjSweps.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas">combo</h1>
-        <p class="preco">6,00</p>
-        <button class="botaoComprar">comprar</button>
-    </div>
-
-
-    <div class="cupom">
-        <img src="cardapio/assets/images/pastelGuarana.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas">combo</h1>
-        <p class="preco"> 6,00</p>
-        <button class="botaoComprar">comprar</button>
-    </div>
-
-
-    <div class="cupom">
-        <img src="cardapio/assets/images/pqcfanta.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas">combo</h1>
-        <p class="preco">6,00</p>
-        <button class="botaoComprar">comprar</button>
-    </div>
-
-
-    <div class="cupom">
-        <img src="cardapio/assets/images/salsichasweps.jpg" alt="" class="cupomIMG">
-        <h1 class="comidas">combo</h1>
-        <p class="preco">6,00</p>
-        <button class="botaoComprar">comprar</button>
-    </div> -->
 </div>

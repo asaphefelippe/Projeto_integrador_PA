@@ -19,25 +19,28 @@ if (isset($_POST['enviar'])) {
             $imgContent = addslashes(file_get_contents($imagem));
             include_once('../inc/banco.php');
 
-
+            $numb_comb = $_POST['numb_comb'];
             $nome1 = $_POST['nome1'];
-            $nome1 = $_POST['nome2'];
-            $nome1 = $_POST['nome3'];
-            $nome1 = $_POST['nome4'];
-            $nome1 = $_POST['nome5'];
-            $nome1 = $_POST['nome6'];
+            $nome2 = $_POST['nome2'];
+            $nome3 = $_POST['nome3'];
+            $nome4 = $_POST['nome4'];
+            $nome5 = $_POST['nome5'];
+            $nome6 = $_POST['nome6'];
             $quantidade1 = $_POST['quantidade1'];
-            $quantidade1 = $_POST['quantidade2'];
-            $quantidade1 = $_POST['quantidade3'];
-            $quantidade1 = $_POST['quantidade4'];
-            $quantidade1 = $_POST['quantidade5'];
-            $quantidade1 = $_POST['quantidade6'];
+            $quantidade2 = $_POST['quantidade2'];
+            $quantidade3 = $_POST['quantidade3'];
+            $quantidade4 = $_POST['quantidade4'];
+            $quantidade5 = $_POST['quantidade5'];
+            $quantidade6 = $_POST['quantidade6'];
             $preco = $_POST['preco'];
             $acumulos = $_POST['acumulo'];
             $gastarP = $_POST['gastarP'];
-            $sql = "INSERT INTO cupons (nome1,nome2,nome3,nome4,nome5,nome6,quantidade1,quantidade2,quantidade3,quantidade4,quantidade5,quantidade6,acumulo,gastarP,imagem,preco) VALUES ('$nome1' ,'$nome2' ,'$nome3' ,'$nome4' ,'$nome5' ,'$nome6' , '$quantidade1','$quantidade2','$quantidade3','$quantidade4','$quantidade5','$quantidade6', '$acumulos', '$gastarP' , '$imgContent','$preco')";
+            $sql = "INSERT INTO cupons (codigo,numero_comb,preco,acumulo,nome1,nome2,nome3,nome4,nome5,nome6,quantidade1,quantidade2,quantidade3,quantidade4,quantidade5,quantidade6,imagem,gastarP) VALUES (NULL ,'$numb_comb' ,'$preco' ,'$acumulos' ,'$nome1' ,'$nome2' ,'$nome3','$nome4','$nome5','$nome6' ,'$quantidade1','$quantidade2','$quantidade3','$quantidade4','$quantidade5','$quantidade6', '$imgContent', '$gastarP')";
             $exe = $pdo->prepare($sql);
             $exe->execute();
+            if($exe){
+                echo "worth";
+            }
 
             /*if( $exe->execute()){ 
                 $status = 'success'; 
@@ -86,35 +89,36 @@ if (isset($_POST['enviar'])) {
         <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
         <form action="" method="POST" enctype="multipart/form-data">
             <div class="loginCadastro ">
+                <input type="text" name="numb_comb" placeholder="Numero Do Combo">
                 <div class="d-flex">
                     <label for="nome" class="">comida1</label>
                     <input type="text" name="nome1" />
-                    <input type="text" name="quantidade1" placeholder="quantidade" />
+                    <input type="text" name="quantidade1" placeholder="quantidade1"/>
                 </div>
                 <div class="d-flex">
                     <label for="nome" class="">comida2</label>
                     <input type="text" name="nome2" />
-                    <input type="text" name="quantidade2" placeholder="quantidade" />
+                    <input type="text" name="quantidade2" placeholder="quantidade2"/>
                 </div>
                 <div class="d-flex">
                     <label for="nome" class="">comida3</label>
                     <input type="text" name="nome3" />
-                    <input type="text" name="quantidade3" placeholder="quantidade" />
+                    <input type="text" name="quantidade3" placeholder="quantidade3"/>
                 </div>
                 <div class="d-flex">
                     <label for="nome" class="">comida4</label>
                     <input type="text" name="nome4" />
-                    <input type="text" name="quantidade4" placeholder="quantidade" />
+                    <input type="text" name="quantidade4" placeholder="quantidade4"/>
                 </div>
                 <div class="d-flex">
                     <label for="nome" class="">comida5</label>
                     <input type="text" name="nome5" />
-                    <input type="text" name="quantidade5" placeholder="quantidade" />
+                    <input type="text" name="quantidade5" placeholder="quantidade5"/>
                 </div>
                 <div class="d-flex">
                     <label for="nome" class="">comida6</label>
                     <input type="text" name="nome6" />
-                    <input type="text" name="quantidade6" placeholder="quantidade" />
+                    <input type="text" name="quantidade6" placeholder="quantidade6"/>
                 </div>
                 <br>
                 <div>
