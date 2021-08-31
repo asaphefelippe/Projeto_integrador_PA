@@ -22,6 +22,11 @@ if ($idProd) {
         $cod = utf8_encode($produto['codigo']);
         $pontos = $produto['acumulos'];
         $imagem = '<img src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
+        $pts = "pts";
+        if (!$_SESSION['logado']) {
+            $pts = "";
+            $pontos = "";
+        }
     }
 }
 
@@ -48,21 +53,24 @@ if ($idBebida) {
 
         $imagem = '<img class= "tamanho" src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
     }
+
 }
 
-$pts = "pts";
+//$pts = "pts";
+
+
+
 ?>
 
 <style>
-body{
-    background-color: #fb5607;
-}
-
+    body {
+        background-color: #fb5607;
+    }
 </style>
 
 <div class="laranja d-flex p-5 align-items-center align-center justify-content-center">
     <div class=" telaDeCompraPontos text-black text-center shadow-lg p-5">
-        <h1><?php echo "<span class='  position-relative' > $comida <span class='pontos2'>$pontos$pts </span> </span> " ?></h1>
+        <h1><?php echo "<span class='  position-relative' > $comida <span class='pontos2'>$pontos $pts</span> </span> " ?></h1>
         <?php echo $imagem ?>
         <p> codigo: <?php echo  $cod ?> </p>
     </div>

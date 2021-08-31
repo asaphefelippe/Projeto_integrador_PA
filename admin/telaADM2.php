@@ -120,18 +120,10 @@ if (isset($_POST['enviar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Document</title>
-<<<<<<< HEAD
 
 </head>
 <body>
     <Form method="POST">
-=======
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="../assets/css/estilo.css">
-    <h1 class="h1Login">tela login</h1>
-    <div class="adm2">
-    <Form method="POST" class="adm py-5">
->>>>>>> 191c817c0c9c3f9cca7f41c7baf57831cfccc88d
         <input type="text" name="codigo" placeholder="NOME DO CLIENTE"><br>
         <br>
         <input type="text" name="comida1" placeholder="CODIGO DA COMIDA"><br>
@@ -143,14 +135,6 @@ if (isset($_POST['enviar'])) {
         <button type="submit" class="btn btn-info botao" name="enviar"> enviar</button>
         <!--<input type="submit" value="enviar" name="enviar" class="botao"> -->
     </Form>
-<<<<<<< HEAD
-=======
-    </div>
-</head>
-
-<body>
-
->>>>>>> 191c817c0c9c3f9cca7f41c7baf57831cfccc88d
 </body>
 
 </html>

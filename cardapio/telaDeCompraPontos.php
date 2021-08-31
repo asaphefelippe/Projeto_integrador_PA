@@ -51,13 +51,16 @@ if ($idBebida) {
 }
 
 $pts = "pts";
+if ($_SESSION['logado']) {
+    $pts = "";
+    $pontos = "";
+}
 ?>
 
 <style>
-body{
-    background-color: #fb5607;
-}
-
+    body {
+        background-color: #fb5607;
+    }
 </style>
 
 
