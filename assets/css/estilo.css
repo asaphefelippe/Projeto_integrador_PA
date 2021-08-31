@@ -12,7 +12,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 body,
 html {
-    overflow-x: hidden !important;
+    /* overflow-x: hidden !important; */
 }
 
 .inicial {
@@ -882,4 +882,11 @@ padding: 30px; */
 .telaDeCompraPontos {
     background-color: #8338ec;
     margin-top: 150px;
+}
+
+@media screen and (max-width:700px){
+    .borda {
+        margin: 0 auto ;
+    }
+    
 }

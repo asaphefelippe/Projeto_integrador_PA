@@ -301,6 +301,6 @@ if (isset($_POST['enviar'])) {
 }
 
 
-include_once(dirname(__FILE__) . "/inc/footer.php");
+ include_once(dirname(__FILE__) . "/inc/footer.php");
 
 ?>
