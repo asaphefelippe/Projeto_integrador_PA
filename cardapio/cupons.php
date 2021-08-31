@@ -148,7 +148,7 @@ $count = $res->fetchAll();
 }*/
 ?>
 
-<div class="container1 row row-cols-4" style="margin-left: 0px;">
+<div class="container1 row row-cols-md-4  row-cols-xs-2" style="margin-left: 0px;">
 
     <?php
     foreach ($pdo->query($result) as $values) {

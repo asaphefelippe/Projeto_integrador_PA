@@ -43,7 +43,7 @@ body{
 
 <div class="titulo"> COMIDAS </div>
 
-    <div class="row row-cols-4">
+    <div class="row row-cols-md-4  row-cols-xs-2">
 
         <?php
         foreach ($pdo->query($result) as $values) {
@@ -83,7 +83,7 @@ body{
 
 <div class="titulo"> BEBIDAS </div>
 
-    <div class="row row-cols-4">
+    <div class="row row-cols-md-4  row-cols-xs-2">
         <?php
 
         foreach ($pdo->query($bebida) as $valores) {
