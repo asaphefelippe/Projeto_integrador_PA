@@ -37,7 +37,7 @@ body{
 
   <path fill="#ffbe0b" fill-opacity="1" d="M0,32L48,74.7C96,117,192,203,288,213.3C384,224,480,160,576,160C672,160,768,224,864,240C960,256,1056,224,1152,192C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
 </svg>
-    <div class="row row-cols-4">
+    <div class="row row-cols-md-4  row-cols-xs-2">
 
         <?php
         foreach ($pdo->query($result) as $values) {
@@ -58,12 +58,12 @@ body{
             
             ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
             
-            $imagem = '<img class="fotosPizza" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
+            $imagem = '<img class="fotosP izza img-fluid"  src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
             echo   $texto = "
             <div class='pontos'>
                 $pontos$pts   
             </div> 
-            <div class='text-center'>$imagem  </div>
+            <div class='text-center' style='min-height:300px'> $imagem  </div>
             <div class='desc text-center'>
             <div class='pontosh1p'>
                 <h1 class='pontosh1p'>$nome</h1>

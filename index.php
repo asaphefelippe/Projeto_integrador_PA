@@ -107,58 +107,64 @@ include_once(dirname(__FILE__) . '/inc/header.php');
     <div class="col-12">
         <div class="inicial">
             <div class="container-bolas">
-                <div class="column">
-                    <a href="#sobreNos">
-                        <div class="borda">
-
-                            <div class="borda-giro"> </div>
-
-                            <div class="borda-conteudo">
-                                <h1 class="fonteBola1">sobre nós</h1>
-                                <div class="borda-conteudo-lala">
-                                    <h1 class="fonteBola">venha saber mais sobre a historia do Modern Canteen</h1>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="#fotos">
-                        <div class="borda" id="#fotos">
-                            <div class="borda-giro"> </div>
-                            <div class="borda-conteudo">
-                                <div>
-                                    <h1 class="fonteBola1">fotos</h1>
+                <div class="column row row-cols-md-4">
+                    
+                        <a href="#sobreNos">
+                            <div class="borda">
+                                <div class="borda-giro"> </div>
+                                <div class="borda-conteudo">
+                                    <h1 class="fonteBola1">sobre nós</h1>
                                     <div class="borda-conteudo-lala">
-                                        <h1 class="fonteBola">acesse nossa galeria de fotos</h1>
+                                        <h1 class="fonteBola">venha saber mais sobre a historia do Modern Canteen</h1>
                                     </div>
                                 </div>
 
                             </div>
-                        </div>
-                    </a>
-                    <a href="#pontos">
-                        <div class="borda">
-                            <div class="borda-giro"> </div>
-                            <div class="borda-conteudo">
-                                <h1 class="fonteBola1">pontos</h1>
-                                <div class="borda-conteudo-lala">
-                                    <h1 class="fonteBola">venha saber como funciona o sistema de pontos </h1>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                   
+                    
+                        <a href="#fotos">
+                            <div class="borda" id="#fotos">
+                                <div class="borda-giro"> </div>
+                                <div class="borda-conteudo">
+                                    <div>
+                                        <h1 class="fonteBola1">fotos</h1>
+                                        <div class="borda-conteudo-lala">
+                                            <h1 class="fonteBola">acesse nossa galeria de fotos</h1>
+                                        </div>
+                                    </div>
 
-                    <a href="#localizacao">
-                        <div class="borda">
-                            <div class="borda-giro"></div>
-                            <div class="borda-conteudo">
-                                <h1 class="fonteBola1">localização</h1>
-                                <div class="borda-conteudo-lala">
-                                    <h1 class="fonteBola">conheça nossa localiação</h1>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                   
+                  
+                        <a href="#pontos">
+                            <div class="borda">
+                                <div class="borda-giro"> </div>
+                                <div class="borda-conteudo">
+                                    <h1 class="fonteBola1">pontos</h1>
+                                    <div class="borda-conteudo-lala">
+                                        <h1 class="fonteBola">venha saber como funciona o sistema de pontos </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                  
+                   
+                        <a href="#localizacao">
+                            <div class="borda">
+                                <div class="borda-giro"></div>
+                                <div class="borda-conteudo">
+                                    <h1 class="fonteBola1">localização</h1>
+                                    <div class="borda-conteudo-lala">
+                                        <h1 class="fonteBola">conheça nossa localiação</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                   
+
                 </div>
             </div>
 
@@ -213,7 +219,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 
 
 <section class="row fotos" id="fotos">
-    <div class="col-12">
+    <div class="col-md-12">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -246,7 +252,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 
 
 <section class="row">
-    <div class="col-12">
+    <div class="col-md-12">
         <div class="imgRoda">
 
 
@@ -256,7 +262,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 
 
 <section class="row">
-    <div class="col-12">
+    <div class="col-md-12">
         <div class="localizacao" id="localizacao">
             <h1 class="fonte5">LOCALIZAÇÃO</h1>
             <div class="mapa">
@@ -268,7 +274,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 </section>
 
 <section class="row">
-    <div class="col-12">
+    <div class="col-md-12">
         <div id="pontos">
             <h1 class="h1pontos">sistema de pontos</h1>
             <p class="ppontos">o sistema de pontos funciona da seguinte forma: Primeiramente o cliente só terá esse benefício se tiver login em no nosso site. Ao acessar o site, o cliente entrará em nosso cardápio onde todos os produtos terão uma quantia de pontos, a cada produto que o cliente comprar ele acumulará pontos. Esse acumulo de pontos transformará em recompensas. Por exemplo, se o cliente acumulou 30 pontos, ele ganhará uma coxinha.</p>
@@ -295,6 +301,6 @@ if (isset($_POST['enviar'])) {
 }
 
 
-include_once(dirname(__FILE__) . "/inc/footer.php");
+ include_once(dirname(__FILE__) . "/inc/footer.php");
 
 ?>

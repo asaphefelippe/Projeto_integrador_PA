@@ -149,6 +149,11 @@ header {
     position: absolute;
     top: 0px;
     display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 }
 
 .direita {
@@ -156,12 +161,12 @@ header {
     font-size: 20px;
     padding: 10px;
     cursor: pointer;
-    left: 200px;
-    margin: 120px;
+    /* left: 200px; */
+    /* margin: 120px; */
     list-style: none;
-    margin-left: 31%;
-    margin-top: 250px;
-    padding: 20px;
+    /* margin-left: 31%; */
+    /* margin-top: 250px; */
+    /* padding: 20px; */
 }
 
 .esquerda {
@@ -169,10 +174,10 @@ header {
     font-size: 20px;
     padding: 10px;
     cursor: pointer;
-    margin: 120px;
+    /* margin: 120px; */
     list-style: none;
-    margin-top: 250px;
-    padding: 20px;
+    /* margin-top: 250px; */
+    /* padding: 20px; */
 }
 
 .letraMenu {
@@ -274,7 +279,7 @@ footer {
 .png {
     width: 80px;
     height: 110px;
-    margin-top: 250px;
+    /* margin-top: 250px; */
 }
 
 .marca {
@@ -877,4 +882,11 @@ padding: 30px; */
 .telaDeCompraPontos {
     background-color: #8338ec;
     margin-top: 150px;
+}
+
+@media screen and (max-width:700px){
+    .borda {
+        margin: 0 auto ;
+    }
+    
 }
