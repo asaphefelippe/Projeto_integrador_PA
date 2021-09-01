@@ -84,6 +84,7 @@ if (isset($_POST['enviar'])) {
 </style>
 
 <body>
+<?php include_once('../inc/menuADM.php') ?>
 
     <div class="login-1Cadastro">
         <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">

@@ -48,6 +48,7 @@ body{
 }
 </style>
 <body>
+<?php include_once('../inc/menuADM.php') ?>
     <div class="altUsuario py-5">
         <form action="" method="POST" class="altUsuario2">
             Codigo: <input type="text" name="codigo" disabled value= <?php echo $codigo ?> >

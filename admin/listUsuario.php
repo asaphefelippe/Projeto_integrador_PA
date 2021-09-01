@@ -48,6 +48,7 @@ body{
 
 </style>
 <body>
+<?php include_once('../inc/menuADM.php') ?>
 </body>
 
 </html>

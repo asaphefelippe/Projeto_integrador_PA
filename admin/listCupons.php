@@ -50,5 +50,5 @@ if ($sql->execute()) {
     }
 }
 
-
+ include_once('../inc/menuADM.php');
 ?>

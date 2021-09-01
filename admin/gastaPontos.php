@@ -41,7 +41,71 @@ if (isset($_POST['enviar'])) {
     include_once('../inc/banco.php');
 
     $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo IN ('$comida1','$comida2','$comida3', '$comida4','$comida5')");
+    if ($comida1 > 100) {
+        if (isset($_POST['comida1'])) {
 
+
+            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida1");
+            $sql->execute();
+            $info = $sql->fetchAll();
+            foreach ($info as $key => $values1) {
+                echo $values1['acumulos'] . '<br>';
+                echo 'Nome : ' . $values1['nome'] . '<br>';
+            }
+        }
+    }
+    if ($comida1 > 100) {
+        if (isset($_POST['comida2'])) {
+
+
+            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida2");
+            $sql->execute();
+            $info = $sql->fetchAll();
+            foreach ($info as $key => $values2) {
+                echo $values2['acumulos'] . '<br>';
+                echo 'Nome : ' . $values3['nome'] . '<br>';
+            }
+        }
+    }
+    if ($comida1 > 100) {
+        if (isset($_POST['comida3'])) {
+
+
+            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida3");
+            $sql->execute();
+            $info = $sql->fetchAll();
+            foreach ($info as $key => $values3) {
+                echo $values3['acumulos'] . '<br>';
+                echo 'Nome : ' . $values3['nome'] . '<br>';
+            }
+        }
+    }
+    if ($comida1 > 100) {
+        if (isset($_POST['comida4'])) {
+
+
+            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida4");
+            $sql->execute();
+            $info = $sql->fetchAll();
+            foreach ($info as $key => $values4) {
+                echo $values4['acumulos'] . '<br>';
+                echo 'Nome : ' . $values4['nome'] . '<br>';
+            }
+        }
+    }
+    if ($comida1 > 100) {
+        if (isset($_POST['comida5'])) {
+
+
+            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida5");
+            $sql->execute();
+            $info = $sql->fetchAll();
+            foreach ($info as $key => $values5) {
+                echo $values5['acumulos'] . '<br>';
+                echo 'Nome : ' . $values5['nome'] . '<br>';
+            }
+        }
+    }
     if (isset($_POST['comida1'])) {
 
 
@@ -49,7 +113,7 @@ if (isset($_POST['enviar'])) {
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values1) {
-            echo $values1['acumulos'];
+            echo $values1['acumulos'] . '<br>';
             echo 'Nome : ' . $values1['nome'] . '<br>';
         }
     }
@@ -60,7 +124,7 @@ if (isset($_POST['enviar'])) {
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values2) {
-            echo $values2['acumulos'];
+            echo $values2['acumulos'] . '<br>';
             echo 'Nome : ' . $values2['nome'] . '<br>';
         }
     }
@@ -71,7 +135,7 @@ if (isset($_POST['enviar'])) {
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values3) {
-            echo $values3['acumulos'];
+            echo $values3['acumulos'] . '<br>';
             echo 'Nome : ' . $values3['nome'] . '<br>';
         }
     }
@@ -82,7 +146,7 @@ if (isset($_POST['enviar'])) {
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values4) {
-            echo $values4['acumulos'];
+            echo $values4['acumulos'] . '<br>';
             echo 'Nome : ' . $values4['nome'] . '<br>';
         }
     }
@@ -93,7 +157,7 @@ if (isset($_POST['enviar'])) {
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values5) {
-            echo $values5['acumulos'];
+            echo $values5['acumulos'] . '<br>';
             echo 'Nome : ' . $values5['nome'] . '<br>';
         }
     }
@@ -105,7 +169,7 @@ if (isset($_POST['enviar'])) {
 
     $sql = $pdo->prepare("UPDATE alunospa SET acumulo=? WHERE codigo=?");
     if ($sql->execute(array($soma, $codigo))) {
-        header("Refresh:3");
+        //header("Refresh:3");
     } else {
         echo 'Dados não cadastrado';
     }
@@ -125,6 +189,7 @@ if (isset($_POST['enviar'])) {
     <title>Document</title>
 
 </head>
+
 <body>
     <?php include_once('../inc/menuADM.php') ?>
     <Form method="POST">

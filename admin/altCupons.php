@@ -6,7 +6,7 @@ if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
 }
 include_once('../inc/banco.php');
 
-$codigo = "";
+
 
 if (isset($_GET['id'])) {
     $codigo = $_GET['id'];
@@ -44,7 +44,7 @@ if (isset($_GET['id'])) {
 
 
 if (isset($_POST['atualizar'])) {
-    echo "TESTER";
+    echo $codigo;
 
 
     echo '<pre>';
@@ -53,7 +53,7 @@ if (isset($_POST['atualizar'])) {
 
 
     if (!empty($_FILES["imagem"]["name"])) {
-        echo "TESTER2";
+        echo "TESTER2".$codigo;
         // Get file info 
         $fileName = basename($_FILES["imagem"]["name"]);
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
@@ -61,7 +61,7 @@ if (isset($_POST['atualizar'])) {
         // Allow certain file formats 
         $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
         if (in_array($fileType, $allowTypes)) {
-            echo "TESTER3";
+            echo "TESTER3".$codigo;
             $imagem = $_FILES['imagem']['tmp_name'];
             $imgContent = addslashes(file_get_contents($imagem));
             include_once('../inc/banco.php');
@@ -82,7 +82,8 @@ if (isset($_POST['atualizar'])) {
             $preco = $_POST['preco'];
             $acumulos = $_POST['acumulo'];
             $gastarP = $_POST['gastarP'];
-            $sql2 =  $pdo->prepare("UPDATE cupons SET codigo=NULL,numero_comb='$numb_comb',preco='$preco',acumulo='$acumulos',nome1='$nome1',nome2='$nome2',nome3='$nome3',nome4='$nome4',nome5='$nome5',nome6='$nome6',quantidade1='$quantidade1',quantidade2='$quantidade2',quantidade3='$quantidade3',quantidade4='$quantidade4',quantidade5='$quantidade5',quantidade6='$quantidade6',imagem='$imgContent',gastarP='$gastarP' WHERE codigo ='$codigo'");
+            echo "TESTER4".$codigo;
+            $sql2 =  $pdo->prepare("UPDATE cupons SET numero_comb='$numb_comb',preco='$preco',acumulo='$acumulos',nome1='$nome1',nome2='$nome2',nome3='$nome3',nome4='$nome4',nome5='$nome5',nome6='$nome6',quantidade1='$quantidade1',quantidade2='$quantidade2',quantidade3='$quantidade3',quantidade4='$quantidade4',quantidade5='$quantidade5',quantidade6='$quantidade6',imagem='$imgContent',gastarP='$gastarP' WHERE codigo ='$codigo'");
             if ($sql2->execute()) {
                 echo "CAIU NO EXECUTE";
             }
@@ -113,6 +114,7 @@ if (isset($_POST['atualizar'])) {
 </style>
 
 <body>
+<?php include_once('../inc/menuADM.php') ?>
     <div class="altUsuario py-5">
         <form action="" method="POST" class="altUsuario2" enctype="multipart/form-data">
             Codigo: <input type="text" name="codigo" disabled value= <?php echo $codigo ?>>

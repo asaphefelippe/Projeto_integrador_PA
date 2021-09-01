@@ -33,5 +33,6 @@ if ($sql->execute()) {
     }
 </style>
 <div>
+<?php include_once('../inc/menuADM.php') ?>
     <link rel="stylesheet" href="../assets/css/estilo.css">
 </div>

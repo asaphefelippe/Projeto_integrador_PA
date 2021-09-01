@@ -78,12 +78,17 @@ if (isset($_POST['enviar'])) {
                 <div>
                     <img src="assets/images/cadeado-trancado.png" alt="" class="cadeado"> <label for="senha" class="email">senha</label>
                     <br>
-                    <input type="text" name="senha" />
+                    <input type="password" name="senha" />
                 </div>
-                <div class="button">
+                <div style="padding-left: 45px;"class="button">
                     <br>
                     <button type="submit" class="email buttonLogin aCadastro" name="enviar"> login</button>
                 </div>
+            </div>
+
+            <div class="flexCadastro">
+                <p class="JaTemConta">não tem cadastro?</p>
+                <p><a href="cadastro.php" class="aCadastro"> ir para o cadastro</a></p>
             </div>
         </div>
     </form>

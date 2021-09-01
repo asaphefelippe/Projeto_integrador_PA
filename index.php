@@ -6,7 +6,7 @@ if (isset($_GET['logout'])) {
     header("location:login.php");
 }
 
-if ($_SESSION['logado']) {
+if (@$_SESSION['logado']) {
     $email = $_SESSION['email'];
     include('inc/banco.php');
     $sql = $pdo->prepare("SELECT * FROM alunospa WHERE email = '$email'");
@@ -196,7 +196,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 
 </section>
 
-<section class="row">
+<section class="row pãoDeQueijo">
     <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt=""></div>
     <div class="col-md-4">
         <div>

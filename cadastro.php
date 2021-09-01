@@ -115,7 +115,7 @@ if (isset($_POST['enviar'])) {
                 </div>
         </form>
         <br>
-        <div class="flexCadastro">
+        <div class="flexCadastro1">
             <p class="JaTemConta">já tem conta?</p>
             <p><a href="login.php" class="aCadastro "> ir para login</a></p>
         </div>
