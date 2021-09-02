@@ -26,7 +26,7 @@
     
     <div class="footer2  col col-md-3">
         <h1 class="letrasFO">redes sociais</h1>
-        <div class="pagamento">
+        <div>
             <a href="https://pt-br.facebook.com/FaculdadeSenacJoinville/"> <img src="assets/images/facebook.png" alt="" class="imgRedes"> </a>
             <a href="https://www.instagram.com/senacjoinville/"> <img src="assets/images/instagram.png" alt="" class="imgRedes"> </a>
             <a href=""> <img src="assets/images/whatsapp.png" alt="" class="imgRedes"> </a>
@@ -36,7 +36,7 @@
 
     <div class="footer2  col col-md-3">
         <h1 class="letrasFO">formas de pagamentos</h1>
-        <div class="pagamento">
+        <div>
             <img src="assets/images/visa.png" alt="" class="imgPagamento">
             <img src="assets/images/paypal.png" alt="" class="imgPagamento">
             <img src="assets/images/forma-de-pagamento.png" alt="" class="imgPagamento">

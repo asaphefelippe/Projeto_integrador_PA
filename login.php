@@ -42,6 +42,10 @@ if (isset($_POST['enviar'])) {
 }
 
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -54,9 +58,18 @@ if (isset($_POST['enviar'])) {
     <title>trabalho p.a</title>
 
     <link rel="stylesheet" href="assets/css/estilo.css">
-
+    
 </head>
-
+<script>
+function show() {
+  var senha = document.getElementById("senha");
+  if (senha.type === "password") {
+    senha.type = "text";
+  } else {
+    senha.type = "password";
+  }
+}
+</script>
 <body>
 
     <!-- NAO DA PARA COLOCAR INCLUIDE POR CAUSA DO MENU NA TELA DE LOGIN NAO TEM MENU-->
@@ -73,12 +86,13 @@ if (isset($_POST['enviar'])) {
                 <div>
                     <img src="assets/images/perfil.png" alt="" class="perfil"> <label for="email" class="email">email</label>
                     <br>
-                    <input type="text" name="email" />
+                    <input type="text" name="email" required/>
                 </div>
                 <div>
                     <img src="assets/images/cadeado-trancado.png" alt="" class="cadeado"> <label for="senha" class="email">senha</label>
                     <br>
-                    <input type="password" name="senha" />
+                    <input type="password" name="senha" id="senha" placeholder="Digite a Senha"  required />
+                    <img id="olho" onclick="show()" src="assets/images/olho.png" class="olho">
                 </div>
                 <div style="padding-left: 45px;"class="button">
                     <br>

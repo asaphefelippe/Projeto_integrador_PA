@@ -43,6 +43,7 @@ if (isset($_POST['enviar'])) {
     } else {
         echo ' Esse email ja esta sendo ultilizado ';
     }
+    header('location:login.php');
 }
 
 
@@ -63,7 +64,40 @@ if (isset($_POST['enviar'])) {
         background-color: #fb5607;
     }
 </style>
+<script>
 
+function mascara(o,f){
+    v_obj=o
+    v_fun=f
+    setTimeout("execmascara()",1)
+}
+function execmascara(){
+    v_obj.value=v_fun(v_obj.value)
+}
+function mtel(v){
+    v=v.replace(/\D/g,""); //Remove tudo o que não é dígito
+    v=v.replace(/^(\d{2})(\d)/g,"($1) $2"); //Coloca parênteses em volta dos dois primeiros dígitos
+    v=v.replace(/(\d)(\d{4})$/,"$1-$2"); //Coloca hífen entre o quarto e o quinto dígitos
+    return v;
+}
+function id( el ){
+	return document.getElementById( el );
+}
+window.onload = function(){
+	id('telefone').onkeyup = function(){
+		mascara( this, mtel );
+	}
+}
+
+function show() {
+  var senha = document.getElementById("senha");
+  if (senha.type === "password") {
+    senha.type = "text";
+  } else {
+    senha.type = "password";
+  }
+}
+</script>
 <body>
 
     <div class="login-1Cadastro">
@@ -73,19 +107,20 @@ if (isset($_POST['enviar'])) {
                 <div>
                     <label for="nome" class="email">nome</label>
                     <br>
-                    <input type="text" name="nome" />
+                    <input type="text" name="nome" required/>
                 </div>
 
                 <div>
                     <label for="sobrenome" class="email">sobrenome</label>
                     <br>
-                    <input type="text" name="sobrenome" />
+                    <input type="text" name="sobrenome" required/>
                 </div>
 
                 <div>
                     <label for="telefone" class="email">telefone</label>
                     <br>
-                    <input type="text" name="telefone" />
+                    <input type="text" name="telefone"  id="telefone" placeholder="Digite um número de telefone" maxlength="15" required/>
+                  
                 </div>
 
 
@@ -93,25 +128,27 @@ if (isset($_POST['enviar'])) {
                 <div>
                     <label for="email" class="email">email</label>
                     <br>
-                    <input type="text" name="email" />
+                    <input type="text" name="email" required/>
                 </div>
 
 
                 <div>
                     <label for="senha" class="email">senha</label>
                     <br>
-                    <input type="text" name="senha" />
+                 <input type="password" name="senha"  id="senha" placeholder="Digite a Senha"   required/>   <img id="olho" onclick="show()" src="assets/images/olho.png" class="olho">
+                  
                 </div>
 
                 <div>
                     <label for="confirmar" class="email"> confirmar senha</label>
                     <br>
-                    <input type="text" name="retry" />
+                    <input type="password" name="retry" required/>
                 </div>
 
                 <div class="button">
                     <br>
                     <button type="submit" class="email buttonCadastro" name="enviar">cadastrar</button>
+
                 </div>
         </form>
         <br>

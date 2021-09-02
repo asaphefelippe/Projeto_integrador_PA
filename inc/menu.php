@@ -42,8 +42,8 @@ if (isset($_GET['logout'])) {
                 <a href="#" onclick="escondeSub();"> <img src="assets/images/marca-x.png" alt="" class="marca"> </a>
             </div>
             <div class="toptop">
-                <a href="login.php" class="signin">sign in</a>
-                <a href="?logout=true" class="signin">sign out</a>
+                <a href="login.php" class="signin">entrar</a>
+                <a href="?logout=true" class="signin">sair</a>
                 <a href="cadastro.php" class="signin">cadastrar</a>
             </div>
             

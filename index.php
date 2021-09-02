@@ -200,7 +200,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
     <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt=""></div>
     <div class="col-md-4">
         <div>
-            <h1 class="PaoTitulo">Modern Canteen</h1>
+            <h1 class="PaoTitulo fonte2">Modern Canteen</h1>
             <div class="Pao">
                 <p class="PaoParagra">Fui em busca de felicidade</p>
                 <p class="PaoParagra1">voltei com</p>
@@ -217,36 +217,29 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 
 
 
-
 <section class="row fotos" id="fotos">
     <div class="col-md-12">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="fotosCa" src="assets/images/fotos (1).jpg" alt="Primeiro Slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="fotosCa" src="assets/images/fotos(2).jpg" alt="Segundo Slide">
-                </div>
-                <div class="carousel-item">
-                    <img class="fotosCa" src="assets/images/fotos(3).jpg" alt="Terceiro Slide">
-                </div>
-
-                <div class="AntPro">
-                    <a class="carousel-control-prev" style="margin-left: 20%" ; href="#carouselExampleFade" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Anterior</span>
-                    </a>
-
-                    <a class="carousel-control-next" style="margin-right: 20%" ;href="#carouselExampleFade" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Próximo</span>
-                    </a>
-
-                </div>
-
-            </div>
-        </div>
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/fotos (1).jpg" class="fotosCa">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/fotos(2).jpg" class="fotosCa">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/fotos(3).jpg" class="fotosCa">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="margin-left: 20%;">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" style="margin-right: 20%;">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
     </div>
 </section>
 
@@ -264,7 +257,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 <section class="row">
     <div class="col-md-12">
         <div class="localizacao" id="localizacao">
-            <h1 class="fonte5">LOCALIZAÇÃO</h1>
+            <h1 class="fonte10">LOCALIZAÇÃO</h1>
             <div class="mapa">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14306.50717950108!2d-48.85367!3d-26.306196!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x661bda354760a096!2sFaculdade%20Senac%20Joinville!5e0!3m2!1spt-BR!2sbr!4v1626718827764!5m2!1spt-BR!2sbr" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
@@ -276,7 +269,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 <section class="row">
     <div class="col-md-12">
         <div id="pontos">
-            <h1 class="h1pontos">sistema de pontos</h1>
+            <h1 class="h1pontos fonte2">sistema de pontos</h1>
             <p class="ppontos">o sistema de pontos funciona da seguinte forma: Primeiramente o cliente só terá esse benefício se tiver login em no nosso site. Ao acessar o site, o cliente entrará em nosso cardápio onde todos os produtos terão uma quantia de pontos, a cada produto que o cliente comprar ele acumulará pontos. Esse acumulo de pontos transformará em recompensas. Por exemplo, se o cliente acumulou 30 pontos, ele ganhará uma coxinha.</p>
             <img src="assets/images/fidelidade.png" alt="" class="fidelidade">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

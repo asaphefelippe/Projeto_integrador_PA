@@ -74,4 +74,8 @@ if ($idBebida) {
         <?php echo $imagem ?>
         <p> codigo: <?php echo  $cod ?> </p>
     </div>
+   
 </div>
+<button class="voltar">
+<a href="cardapio.php" class="letraMenu"> voltar</a>
+</button>
