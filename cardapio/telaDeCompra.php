@@ -53,7 +53,6 @@ if ($idBebida) {
 
         $imagem = '<img class= "tamanho" src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
     }
-
 }
 
 //$pts = "pts";
@@ -61,7 +60,8 @@ if ($idBebida) {
 
 
 ?>
-
+<img src="assets/images/botão-voltar-png-2.png">
+    <a href="cardapio.php" class="letraMenu"> voltar</a>
 <style>
     body {
         background-color: #fb5607;
@@ -74,8 +74,5 @@ if ($idBebida) {
         <?php echo $imagem ?>
         <p> codigo: <?php echo  $cod ?> </p>
     </div>
-   
+
 </div>
-<button class="voltar">
-<a href="cardapio.php" class="letraMenu"> voltar</a>
-</button>

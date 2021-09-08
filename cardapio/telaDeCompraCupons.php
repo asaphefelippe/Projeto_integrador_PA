@@ -30,7 +30,7 @@ foreach ($pdo->query($sql) as $values) {
     $codigo =  utf8_encode($values['codigo']);
 
     $img =  $values['imagem'];
-    $pontos = $values['acumulo'];
+    $pontos = $values['acumulos'];
     if ($nome1 != null) {
         $nome1 = "<div><p>↠$quantidade1 $nome1</p></div>";
     } else {

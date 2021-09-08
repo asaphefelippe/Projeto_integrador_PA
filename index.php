@@ -9,7 +9,7 @@ if (isset($_GET['logout'])) {
 if (@$_SESSION['logado']) {
     $email = $_SESSION['email'];
     include('inc/banco.php');
-    $sql = $pdo->prepare("SELECT * FROM alunospa WHERE email = '$email'");
+    $sql = $pdo->prepare("SELECT * FROM clientes WHERE email = '$email'");
 
     if ($sql->execute()) {
 

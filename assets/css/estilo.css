@@ -10,10 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-body,
-html {
-    /* overflow-x: hidden !important; */
-}
+
 
 .inicial {
     background-image: url(../images/branco.jpg);
@@ -684,13 +681,14 @@ padding: 30px; */
     background-color: #8338ec;
     width: 55%;
     height: 400px;
-    margin-left: 18%;
-    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 0 30px purple;
 }
 
 .login3 {
-    margin-left: 26%;
+    margin-left: auto;
+    margin-right: auto;
     color: white;
 }
 
@@ -724,7 +722,7 @@ padding: 30px; */
 
 .laranja {
     background-color: #fb5607;
-    margin-bottom: 300px;
+    /* margin-bottom: 300px; */
 }
 
 .fotosCa {
@@ -916,14 +914,6 @@ padding: 30px; */
     background-color: white;
 }
 
-.voltar{
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-top: 100px;
-}
-
-
 .lnr-eye {
     position: absolute;
     top: 5px;
@@ -942,6 +932,7 @@ padding: 30px; */
 .olho{
     width: 25px;
     height: 25px;
+    position: absolute;
 }
 
 .olho1{

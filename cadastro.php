@@ -12,7 +12,7 @@ if (isset($_POST['enviar'])) {
 
     //$pdo = new PDO('mysql:host=localhost:3308;dbname=pi', 'root', '');
 
-    $result = "SELECT * FROM alunospa WHERE email = '$email'";
+    $result = "SELECT * FROM clientes WHERE email = '$email'";
 
     $res = $pdo->query($result);
 
@@ -31,7 +31,7 @@ if (isset($_POST['enviar'])) {
             //$pdo = new PDO('mysql:host=localhost:3308;dbname=pi', 'root', '');
 
 
-            $sql = "INSERT INTO alunospa (email,senha,nome) VALUES ('$email' , '$senha', '$nome')";
+            $sql = "INSERT INTO clientes (email,senha,nome) VALUES ('$email' , '$senha', '$nome')";
 
             $teste =     $pdo->prepare($sql);
 

@@ -6,29 +6,26 @@ if (!isset($_SESSION['ADMIN']) || !$_SESSION['ADMIN']) {
     die();
 }
 if (isset($_POST['enviar'])) {
-    $values1['acumulos'] = 0;
-    $values2['acumulos'] = 0;
-    $values3['acumulos'] = 0;
-    $values4['acumulos'] = 0;
-    $values5['acumulos'] = 0;
+    $values1['gastarP'] = 0;
+    $values2['gastarP'] = 0;
+    $values3['gastarP'] = 0;
+    $values4['gastarP'] = 0;
+    $values5['gastarP'] = 0;
+
     $codigo = $_POST['codigo'];
-
-
     //*Infos aluno
     include_once('../inc/banco.php');
     $pdo = new PDO('mysql:host=localhost:3308;dbname=pi', 'root', '');
 
-    $sql = $pdo->prepare("SELECT * FROM alunospa WHERE codigo = '$codigo'");
-
+    $sql = $pdo->prepare("SELECT * FROM clientes WHERE codigo = '$codigo'");
 
     if ($sql->execute()) {
-
         $info = $sql->fetchALL();
-
         foreach ($info as $key => $values) {
-            echo 'acumulos do aluno ' . $values['acumulo']  . '<br>';
+            $acu = $values['acumulo'];
             $nom = $values['nome'];
             $cod = $values['codigo'];
+            echo 'O aluno(a) ' . $values['nome'] . ' tem ' . $values['acumulo'] . ' pontos acumulados.<br>';
         }
     }
     //* COMIDAAS
@@ -41,6 +38,7 @@ if (isset($_POST['enviar'])) {
     include_once('../inc/banco.php');
 
     $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo IN ('$comida1','$comida2','$comida3', '$comida4','$comida5')");
+
     if ($comida1 > 100) {
         if (isset($_POST['comida1'])) {
 
@@ -49,72 +47,71 @@ if (isset($_POST['enviar'])) {
             $sql->execute();
             $info = $sql->fetchAll();
             foreach ($info as $key => $values1) {
-                echo $values1['acumulos'] . '<br>';
-                echo 'Nome : ' . $values1['nome'] . '<br>';
+                echo 'Este cupom custa ' . $values1['gastarP'] . ' pontos<br>';
+                echo '<strong> Nele contem : <br></strong>';
+                echo 'Nome do produto1 : ' . $values1['nome1'] . '<br>';
+                echo 'Nome do produto2 : ' . $values1['nome2'] . '<br>';
             }
         }
     }
     if ($comida1 > 100) {
         if (isset($_POST['comida2'])) {
-
-
             $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida2");
             $sql->execute();
             $info = $sql->fetchAll();
             foreach ($info as $key => $values2) {
-                echo $values2['acumulos'] . '<br>';
-                echo 'Nome : ' . $values3['nome'] . '<br>';
+                echo 'Este cupom custa ' . $values2['gastarP'] . ' pontos<br>';
+                echo '<strong> Nele contem : <br></strong>';
+                echo 'Nome do produto1 : ' . $values2['nome1'] . '<br>';
+                echo 'Nome do produto2 : ' . $values2['nome2'] . '<br>';
             }
         }
     }
     if ($comida1 > 100) {
         if (isset($_POST['comida3'])) {
-
-
             $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida3");
             $sql->execute();
             $info = $sql->fetchAll();
             foreach ($info as $key => $values3) {
-                echo $values3['acumulos'] . '<br>';
-                echo 'Nome : ' . $values3['nome'] . '<br>';
+                echo 'Este cupom custa ' . $values3['gastarP'] . ' pontos<br>';
+                echo '<strong> Nele contem : <br></strong>';
+                echo 'Nome do produto1 : ' . $values3['nome1'] . '<br>';
+                echo 'Nome do produto2 : ' . $values3['nome2'] . '<br>';
             }
         }
     }
     if ($comida1 > 100) {
         if (isset($_POST['comida4'])) {
-
-
             $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida4");
             $sql->execute();
             $info = $sql->fetchAll();
             foreach ($info as $key => $values4) {
-                echo $values4['acumulos'] . '<br>';
-                echo 'Nome : ' . $values4['nome'] . '<br>';
+                'Este cupom custa ' . $values4['gastarP'] . ' pontos<br>';
+                echo '<strong> Nele contem : <br></strong>';
+                echo 'Nome do produto1 : ' . $values4['nome1'] . '<br>';
+                echo 'Nome do produto2 : ' . $values4['nome2'] . '<br>';
             }
         }
     }
     if ($comida1 > 100) {
         if (isset($_POST['comida5'])) {
-
-
             $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida5");
             $sql->execute();
             $info = $sql->fetchAll();
             foreach ($info as $key => $values5) {
-                echo $values5['acumulos'] . '<br>';
-                echo 'Nome : ' . $values5['nome'] . '<br>';
+                'Este cupom custa ' . $values5['gastarP'] . ' pontos<br>';
+                echo '<strong> Nele contem : <br></strong>';
+                echo 'Nome do produto1 : ' . $values5['nome1'] . '<br>';
+                echo 'Nome do produto2 : ' . $values5['nome2'] . '<br>';
             }
         }
     }
     if (isset($_POST['comida1'])) {
-
-
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida1");
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values1) {
-            echo $values1['acumulos'] . '<br>';
-            echo 'Nome : ' . $values1['nome'] . '<br>';
+            echo '    O cliente está comprando ' . $values1['nome'] . ' e perderá: ' . $values1['gastarP'] . 'pontos<br>';
         }
     }
     if (isset($_POST['comida2'])) {
@@ -124,54 +121,49 @@ if (isset($_POST['enviar'])) {
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values2) {
-            echo $values2['acumulos'] . '<br>';
-            echo 'Nome : ' . $values2['nome'] . '<br>';
+            echo '   O cliente está comprando ' . $values2['nome'] . ' e perderá: ' . $values2['gastarP'] . 'pontos<br>';
         }
     }
     if (isset($_POST['comida3'])) {
-
-
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida3");
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values3) {
-            echo $values3['acumulos'] . '<br>';
-            echo 'Nome : ' . $values3['nome'] . '<br>';
+            '   O cliente está comprando ' . $values3['nome'] . ' e perderá: ' . $values3['gastarP'] . 'pontos<br>';
         }
     }
     if (isset($_POST['comida4'])) {
-
-
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida4");
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values4) {
-            echo $values4['acumulos'] . '<br>';
-            echo 'Nome : ' . $values4['nome'] . '<br>';
+            echo '     O cliente está comprando' . $values4['nome'] . ' e perderá: ' . $values4['gastarP'] . 'pontos<br>';
         }
     }
     if (isset($_POST['comida5'])) {
-
-
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida5");
         $sql->execute();
         $info = $sql->fetchAll();
         foreach ($info as $key => $values5) {
-            echo $values5['acumulos'] . '<br>';
+            echo '   O cliente está comprando' . $values5['nome'] . ' e perderá: ' . $values5['gastarP'];
             echo 'Nome : ' . $values5['nome'] . '<br>';
         }
     }
-}
-if (isset($_POST['enviar'])) {
-    $soma = $values['acumulo'] + $values1['acumulos'] + $values2['acumulos'] + $values3['acumulos'] + $values4['acumulos'] + $values5['acumulos'];
-    echo $soma;
+    $soma =  $values['acumulo'] - $values1['gastarP'] - $values2['gastarP'] - $values3['gastarP'] - $values4['gastarP'] - $values5['gastarP'];
+
+    if (isset($soma)) {
+        echo '   cliente ' . $values['nome'] . ' ficou com : ' . $soma . ' pontos<br>';
+    }
     include_once('../inc/banco.php');
 
-    $sql = $pdo->prepare("UPDATE alunospa SET acumulo=? WHERE codigo=?");
-    if ($sql->execute(array($soma, $codigo))) {
-        //header("Refresh:3");
+    if ($soma >= 0) {
+        echo '<strong style="color: green;">dados cadastrados</strong>';
+        $sql = $pdo->prepare("UPDATE cliente SET acumulo=? WHERE codigo=?");
+        if ($sql->execute(array($soma, $codigo))) {
+            header("Refresh:3");
+        }
     } else {
-        echo 'Dados não cadastrado';
+        echo '<strong style="color: red;">Pontos Insuficiente</strong>';
     }
 }
 ?>
@@ -191,6 +183,7 @@ if (isset($_POST['enviar'])) {
 </head>
 
 <body>
+
     <?php include_once('../inc/menuADM.php') ?>
     <Form method="POST">
         <input type="text" name="codigo" placeholder="NOME DO CLIENTE"><br>
@@ -202,7 +195,6 @@ if (isset($_POST['enviar'])) {
         <input type="text" name="comida5" placeholder="CODIGO DA COMIDA"><br>
         <br>
         <button type="submit" class="btn btn-info botao" name="enviar"> enviar</button>
-        <!--<input type="submit" value="enviar" name="enviar" class="botao"> -->
     </Form>
 </body>
 
