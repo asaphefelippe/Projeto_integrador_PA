@@ -10,11 +10,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
-body,
-html {
-    /* overflow-x: hidden !important; */
-}
-
 .inicial {
     background-image: url(../images/branco.jpg);
     display: flex;
@@ -124,12 +119,11 @@ header {
     position: fixed;
     width: 100%;
     z-index: 9;
-
 }
 
 .logo {
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     display: block;
     width: 190px;
     position: relative;
@@ -324,8 +318,6 @@ padding: 30px; */
     height: 200px;
 }
 
-
-
 .imgPagamento {
     width: 50px;
     height: 50px;
@@ -359,18 +351,17 @@ padding: 30px; */
 
 .fonte2 {
     animation: ModernLetra 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    font-family:sans-serif;
+    font-family: sans-serif;
     color: #8338ec;
     font-weight: bold;
 }
+
 .fonte10 {
     animation: ModernLetra 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-    font-family:sans-serif;
+    font-family: sans-serif;
     color: #ff006e;
     font-weight: bold;
 }
-
-
 
 @keyframes ModernLetra {
     0% {
@@ -385,8 +376,6 @@ padding: 30px; */
         opacity: 1;
     }
 }
-
-
 
 .fonte3 {
     font-family: sans-serif;
@@ -495,10 +484,10 @@ padding: 30px; */
     display: flex;
     padding-left: 130px;
 }
+
 .flexCadastro1 {
     margin-left: 160px;
     display: flex;
-   
 }
 
 .buttonCadastroo {
@@ -889,6 +878,7 @@ padding: 30px; */
 
 .pontosh1p {
     font-weight: bold;
+    color: #fff;
 }
 
 .pontosP {
@@ -896,6 +886,7 @@ padding: 30px; */
     background-color: #f1f1f1;
     margin-left: 130px;
     width: 130px;
+    font-weight: bold;
 }
 
 .telaDeCompraPontos {
@@ -903,26 +894,27 @@ padding: 30px; */
     margin-top: 150px;
 }
 
-.menuADM{
+.menuADM {
     background-color: #8338ec;
     color: white;
     font-weight: bold;
     padding: 20px;
 }
-.menuADMA{
+
+.menuADMA {
     color: white;
 }
-.pãoDeQueijo{
+
+.pãoDeQueijo {
     background-color: white;
 }
 
-.voltar{
+.voltar {
     margin-left: auto;
     margin-right: auto;
     display: block;
     margin-top: 100px;
 }
-
 
 .lnr-eye {
     position: absolute;
@@ -931,86 +923,115 @@ padding: 30px; */
     cursor: pointer;
 }
 
-
 .form-group .glyphicon-eye-open {
     pointer-events: auto;
-  }
-  .form-group .glyphicon-eye-open:hover {
-    cursor: pointer;
-  }
+}
 
-.olho{
+.form-group .glyphicon-eye-open:hover {
+    cursor: pointer;
+}
+
+.olho {
     width: 25px;
     height: 25px;
 }
 
-.olho1{
+.olho1 {
     width: 25px;
     height: 25px;
     margin-left: 20px;
 }
 
-
-.phpOlaNome{
+.phpOlaNome {
     color: white;
 }
 
+.cardapioH1 {
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #3a86ff;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow: 0 0 30px #3a86ff;
+}
 
+.cardapioH12 {
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #ffbe0b;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow: 0 0 30px #ffbe0b;
+    color: #fff;
+}
 
+.cardapioH3 {
+    font-family: sans-serif;
+    font-weight: bold;
+    background-color: #ffbe0b;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    box-shadow: 0 0 30px #ffbe0b;
+    color: #fff;
+}
 
+.nomeCardapio {
+    font-family: sans-serif;
+    font-weight: bold;
+}
 
-
-
-
-
-
-@media screen and (max-width:700px){
+@media screen and (max-width:700px) {
     .borda {
-        margin: 0 auto ;
+        margin: 0 auto;
     }
-    .login-1{
+    .login-1 {
         height: 400px;
-    width: 100%;
-text-align: center;
-    align-content: center;
-    justify-content: center;
+        width: 100%;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
     }
-    .login{
+    .login {
         margin-left: 10px;
     }
     .login-1Cadastro {
         width: 100%;
         text-align: center;
-            align-content: center;
-            justify-content: center;
+        align-content: center;
+        justify-content: center;
     }
     .flexCadastro1 {
         margin-left: 30px;
         display: flex;
-       
     }
-    .confeiteiros{
+    .confeiteiros {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
         display: block;
     }
-    .fotosCa{
+    .fotosCa {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
         display: block;
     }
-  .localizacao{
-      display: none;
-  }
-  .fidelidade{
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  .pãoDeQueijo{
-      display: none;
-  }
+    .localizacao {
+        display: none;
+    }
+    .fidelidade {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    .pãoDeQueijo {
+        display: none;
+    }
 }
