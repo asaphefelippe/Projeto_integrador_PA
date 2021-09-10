@@ -31,9 +31,12 @@ if ($idProd) {
 }
 
 // -----------------------------------------> BEBIDAS <-----------------------------------------
+// recebe o id fa bebida
 if ($idBebida) {
+    //recebe da url a id da bebida
     $codigo = $_GET['idBebida'];
 
+    // ´prepara o sql para selecionar as bebidas correposndnenteioasfhlask hf whfçoasi ug~pao
     $sql = "SELECT * FROM bebidas WHERE codigo = '$codigo'";
 
     $prepar = $pdo->prepare($sql);
