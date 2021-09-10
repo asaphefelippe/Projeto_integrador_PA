@@ -100,7 +100,7 @@ function show() {
 </script>
 <body>
 
-    <div class="login-1Cadastro">
+    <div class="login-1Cadastro fadeInDown">
         <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
         <form action="" method="POST">
             <div class="loginCadastro">

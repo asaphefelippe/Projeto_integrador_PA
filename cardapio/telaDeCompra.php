@@ -75,5 +75,4 @@ if ($idBebida) {
             echo "<p> codigo: <?php echo  $cod ?> </p>";
         } ?>
     </div>
-
 </div>

@@ -113,7 +113,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
 
 </header>
 
-<section class="row">
+<section class="row gx-5">
     <div class="col-12">
         <div class="inicial">
             <div class="container-bolas">
@@ -181,33 +181,19 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
         </div>
     </div>
 </section>
-<section class="row">
-    <div class="sobreNos" id="sobreNos">
+<section class="row gx-5">
+    <div class="sobreNos col-12" id="sobreNos">
 
         <h1 class="fonte2"> SOBRE NÓS </h1>
-        <p class="fonte3">As primeiras cafeterias, conhecidas como Kaveh Kanes, surgiram em Meca, na Arábia Saudita, no
-            final do século
-            XV e início do século XVI. Os Kaveh Kanes eram locais onde se podia passar a tarde conversando, ouvindo
-            música e tomando café, uma vez que Meca era um centro religioso e a religião muçulmana proibia o consumo de
-            bebidas alcoólicas. Logo o café passou a ser apreciado nas regiões próximas, como Constantinopla e Síria, e
-            as cafeterias se espalharam pelo Oriente. As cafeterias eram locais luxuosos onde ocorriam encontros de
-            negócios e de lazer.
-
-            A partir de 1615, os comerciantes italianos levaram o café da Arábia para a Europa e a bebida café
-            conquistou o paladar dos europeus. Em Veneza, surgiram as Botteghe del Caffé, locais onde ocorriam encontros
-            sociais e se tomava café, ouvindo música. Na Europa, as cafeterias desenvolveram-se durante o século XVII e
-            se tornaram cenário de encontro de artistas, escritores, aristocratas, políticos e revolucionários.
-
-            Diz-se que a Revolução Francesa foi planejada ao redor das mesas de uma cafeteria. Era uma bebida apreciada
-            por pessoas famosas, como Johann Sebastian Bach, que compôs, em 1732, a Cantata ao Café.
+        <p class="fonte3">Somos uma equipe formada por 5 integrantes: Asaphe, Beatriz, Heitor, Ian e Emanuel. A ideia do Modern Canteen surgiu quando decidimos que queríamos fazer um site para cantinas, mas que tivesse um diferencial, um sistema dinâmico, que chamasse a atenção do cliente. Então surgiu a ideia de fazer um sistema de cupons e de pontos, assim chamaríamos atenção dos clientes e teríamos benefícios para eles. A partir disso o projeto foi sido desenvolvido.
         </p>
         <img src="assets/images/transferir.jpg" alt="" class="confeiteiros">
     </div>
 
 </section>
 
-<section class="row pãoDeQueijo">
-    <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt=""></div>
+<section class="row gx-5 pãoDeQueijo">
+    <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt="" class="img-fluid"></div>
     <div class="col-md-4">
         <div>
             <h1 class="PaoTitulo fonte2">Modern Canteen</h1>
@@ -227,7 +213,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
 
 
 
-<section class="row fotos" id="fotos">
+<section class="row gx-5 fotos" id="fotos">
     <div class="col-md-12">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -254,7 +240,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
 </section>
 
 
-<section class="row">
+<section class="row gx-5">
     <div class="col-md-12">
         <div class="imgRoda">
 
@@ -264,11 +250,11 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
 </section>
 
 
-<section class="row">
+<section class="row gx-5">
     <div class="col-md-12">
         <div class="localizacao" id="localizacao">
             <h1 class="fonte10">LOCALIZAÇÃO</h1>
-            <div class="mapa">
+            <div class="mapa d-flex">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14306.50717950108!2d-48.85367!3d-26.306196!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x661bda354760a096!2sFaculdade%20Senac%20Joinville!5e0!3m2!1spt-BR!2sbr!4v1626718827764!5m2!1spt-BR!2sbr" width="600" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
 
@@ -276,7 +262,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
     </div>
 </section>
 
-<section class="row">
+<section class="row gx-5">
     <div class="col-md-12">
         <div id="pontos">
             <h1 class="h1pontos fonte2">sistema de pontos</h1>

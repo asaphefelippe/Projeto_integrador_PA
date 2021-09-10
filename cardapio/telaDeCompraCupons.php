@@ -83,6 +83,7 @@ if (!$_SESSION['logado']) {
         background-color: #fb5607;
     }
 </style>
+<a href="cupons.php" class="letraMenu"> voltar</a>
 <div class="laranja">
     <div class="login container">
         <div class="login2 row">
