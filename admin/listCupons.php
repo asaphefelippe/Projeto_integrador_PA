@@ -17,6 +17,7 @@ if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
     echo 'voce nao pode acessar essa pagina';
     die();
 }
+include_once('../inc/menuBoot.php');
 include_once('../inc/banco.php');
 
 $sql = $pdo->prepare('SELECT * FROM cupons');
@@ -26,6 +27,7 @@ if ($sql->execute()) {
     $info = $sql->fetchALL(PDO::FETCH_ASSOC);
 
     foreach ($info as $key => $values) {
+        echo '<br>';
         echo 'Codigo: ' . $values['codigo'] . '<br>';
         echo 'Numero Do Combo: ' . $values['numero_comb'] . '<br>';
         echo '<div class="echoADM">nome1: ' . $values['nome1'] . '<br></div>';
@@ -50,5 +52,5 @@ if ($sql->execute()) {
     }
 }
 
- include_once('../inc/menuADM.php');
+
 ?>

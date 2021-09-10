@@ -34,7 +34,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 ?>
 
 <script>
-    //menu//
+    //menu
 
     var mostrarSub = function() {
         subMenu = document.querySelector('#subMenu');
@@ -42,7 +42,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
     }
 
 
-    //rodas giratorias//
+    //rodas giratorias
 
     var mostrarHover = function() {
         divBordaConteudo = document.getElementById('conteudo');

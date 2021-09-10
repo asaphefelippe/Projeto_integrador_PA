@@ -1,52 +1,305 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	a {
+		text-decoration: none;
+		width: 100%;
+		height: 100%;
+		font-family: 'Open Sans';
+		font-size: 14px;
+		cursor: default;
+		color: #838ea7;
+	}
+
+	nav {
+		width: 100%;
+		background-color: #FEFEFE;
+		border-radius: 2px;
+		display: inline-block;
+		height: 50px;
+		line-height: 50px;
+		width: 300px;
+	}
+
+	nav ul li ul {
+		display: none;
+		/* margin-top: 20px; */
+	}
+
+	nav ul li ul li {
+		display: block;
+		width: 300px;
+	}
+
+	nav ul li ul li:hover {
+		background-color: #F4F4F4;
+	}
+
+	nav ul li ul li svg {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	nav li li {
+		background-color: #FEFEFE;
+	}
+
+	.home {
+		border-top-left-radius: 1px;
+		border-top-right-radius: 1px;
+		border-bottom: 1px #d7d9dd solid;
+		position: relative;
+	}
+
+	.home svg {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		top: 4px;
+	}
+
+	.home:hover a {
+		color: #6d6c6c;
+	}
+
+	.home:hover .blue-box {
+		background-color: #3FA6FD;
+		position: absolute;
+		margin-left: 0;
+		height: 100%;
+		width: 4px;
+	}
+
+	.home:hover #home {
+		fill: #6d6c6c;
+	}
+
+	.settings {
+		border-bottom-left-radius: 1px;
+		border-bottom-right-radius: 1px;
+		border-top: 1px #d7d9dd solid;
+	}
+
+	.settings svg {
+		width: 20px;
+		height: 20px;
+		position: relative;
+		top: 4px;
+	}
+
+	.settings:hover a {
+		color: #6d6c6c;
+	}
+
+	.settings:hover .blue-box {
+		background-color: #3FA6FD;
+		position: absolute;
+		margin-left: 0;
+		height: 100%;
+		width: 4px;
+	}
+
+	.settings:hover #gear {
+		fill: #6d6c6c;
+	}
+
+	.messages:hover a {
+		color: #6d6c6c;
+	}
+
+	.messages:hover .blue-box {
+		background-color: #3FA6FD;
+		position: absolute;
+		margin-left: 0;
+		height: 100%;
+		width: 4px;
+	}
+
+	.messages:hover #mail {
+		fill: #6d6c6c;
+	}
+
+	.hamburger {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+
+	.arrow {
+		width: 0;
+		height: 0;
+		margin-left: 275px;
+		border-right: 9px solid transparent;
+		border-left: 9px solid transparent;
+		border-bottom: 9px solid #FEFEFE;
+		position: absolute;
+		top: -9px;
+	}
+
+	.fa-chevron-up {
+		margin-left: 110px;
+	}
+
+	.marked {
+		background-color: #3FA6FD;
+		border-radius: 2px;
+	}
+
+	.marked1 {
+		color: #ffffff;
+	}
+
+	.rotate {
+		moz-transition: all 0.3s linear;
+		webkit-transition: all 0.3s linear;
+		transition: all 0.3s linear;
+	}
+
+	.rotate.down {
+		moz-transform: rotate(180deg);
+		webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+
+	.icons {
+		width: 50px;
+		height: 50px;
+	}
+
+	.d-flex {
+		display: flex;
+		width: 100%;
+	}
+
+	/*# sourceMappingURL=main.css.map */
+</style>
+<html>
 
 <head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Google Nexus Website Menu</title>
-	<meta name="description" content="A sidebar menu as seen on the Google Nexus 7 website" />
-	<meta name="keywords" content="google nexus 7 menu, css transitions, sidebar, side menu, slide out menu" />
-	<meta name="author" content="Codrops" />
-	<link rel="shortcut icon" href="../favicon.ico">
-	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/demo.css" />
-	<link rel="stylesheet" type="text/css" href="css/component.css" />
-	<script src="js/modernizr.custom.js"></script>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width" />
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
-<body>
-	<div class="container">
-		<ul id="gn-menu" class="gn-menu-main">
-			<li class="gn-trigger">
-				<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-				<nav class="gn-menu-wrapper">
-					<div class="gn-scroller">
-						<ul class="gn-menu">
-							<li><a href="../admin/altBebidas.php">Alterar bebidas</a></li>
-							<li><a href="../admin/altComida.php">Alterar comidas</a></li>
-							<li><a href="../admin/altCupons.php">Alterar cupons</a></li>
-							<li><a href="../admin/altUsuario.php">Alterar usuarios</a></li>
-							<li><a href="../admin/cadastraComida.php">Cadastrar comidas</a></li>
-							<li><a href="../admin/cadastraBebidas.php">Cadastrar bebidas</a></li>
-							<li><a href="../admin/cadastraCupons.php">Cadastrar cupons</a></li>
-							<li><a href="../admin/listUsuario.php">Lista de usuario</a></li>
-							<li><a href="../admin/listComida.php">Lista de comidas</a></li>
-							<li><a href="../admin/listBebidas.php">Lista de bebidas</a></li>
-							<li><a href="../admin/listCupons.php">Lista de cupons</a></li>
-							<li><a href="../admin/telaADM2.php">Tela principal ADM</a></li>
-							<li><a href="../admin/gastaPontos.php">Tela gastar pontos</a></li>
-						</ul>
-					</div><!-- /gn-scroller -->
-				</nav>
-			</li>
-		</ul>
-	</div><!-- /container -->
-	<script src="js/classie.js"></script>
-	<script src="js/gnmenu.js"></script>
-	<script>
-		new gnMenu(document.getElementById('gn-menu'));
-	</script>
-</body>
+<nav>
+	<ul>
+		<li class="" id="dropMenu">
+			<div class="drop-box">
+				<a class="drop-text" href="#"><i class="hamburger fa fa-bars" aria-hidden="true"></i>Dropdown menu<i class="fa fa-chevron-up rotate"></i></a>
+			</div>
+			<ul id="ul">
+				<a href="../admin/altBebidas.php">
+					<div class="d-flex">
+						<li>Alterar Bebidas</li>
+					</div>
+				</a>
+
+				<a href="../admin/altComida.php">
+					<div class="d-flex">
+						<img src="../assets/images/troca.jpeg"class="icons" alt="">
+						<li>Alterar Comidas</li>
+					</div>
+				</a>
+				<a href="../admin/altCupons.php">
+					<div class="d-flex">
+					<img src="../assets/images/troca.jpeg"class="icons" alt="">
+
+						<li>alterar Cupons</li>
+					</div>
+				</a>
+				<a href="../admin/altUsuario.php">
+					<div class="d-flex">
+					<img src="../assets/images/troca.jpeg"class="icons" alt="">
+
+						<li>Alterar Usuarios</li>
+					</div>
+				</a>
+				<a href="../admin/cadastraBebida.php">
+					<div class="d-flex">
+						<img src="../assets//images/mais.jpeg" class="icons" alt="">
+						<li>Cadastrar Bebidas</li>
+					</div>
+				</a>
+				<a href="../admin/cadastraComida.php">
+					<div class="d-flex">
+						<img src="../assets//images/mais.jpeg" class="icons" alt="">
+						<li>Cadastrar Comidas</li>
+					</div>
+				</a>
+				<a href="../admin/cadastraCupons.php">
+					<div class="d-flex">
+						<img src="../assets//images/mais.jpeg" class="icons" alt="">
+						<li>Cadastrar Cupons</li>
+					</div>
+				</a>
+				<a href="../admin/listBebidas.php">
+					<div class="d-flex">
+					<img src="../assets/images/lista.jpge.jpg"class="icons" alt="">
+						<li>Lista De Bebidas</li>
+					</div>
+				</a>
+				<a href="../admin/listComida.php">
+					<div class="d-flex">
+						<img src="../assets/images/lista.jpge.jpg"class="icons" alt="">
+						<li>Lista De Comidas</li>
+					</div>
+				</a>
+				<a href="../admin/listCupons.php">
+					<div class="d-flex">
+						<img src="../assets/images/lista.jpge.jpg" class="icons"alt="">
+
+						<li>Lista De Cupons</li>
+					</div>
+				</a>
+				<a href="../admin/listUsuario.php">
+					<div class="d-flex">
+						<img src="../assets/images/lista.jpge.jpg"class="icons" alt="">
+
+						<li>Lista De Usuarios</li>
+					</div>
+				</a>
+				<a href="../admin/gastaPontos.php">
+					<div class="d-flex">
+					<img src="../assets/images/S.png"class="icons" alt="">
+						<li>Gastar Pontos</li>
+					</div>
+				</a>
+				<a href="../admin/telaADM2.php">
+					<div class="d-flex">
+					<img src="../assets/images/casa.jpg"class="icons" alt="">
+
+						<li>Tela Principal Admin</li>
+					</div>
+				</a>
+			</ul>
+		</li>
+	</ul>
+</nav>
+<script type="text/javascript" src="js/scripts.js"></script>
 
 </html>
+
+<script>
+	$(function() {
+
+		$('.drop-box').click(function() {
+			$('#ul')
+				.fadeToggle();
+		});
+
+		$('.drop-box').on('click', function() {
+			$(this).toggleClass('marked');
+			$('.drop-text').toggleClass('marked1');
+		});
+
+		$(".drop-box").click(function() {
+			$('.rotate').toggleClass("down");
+		});
+	});
+</script>

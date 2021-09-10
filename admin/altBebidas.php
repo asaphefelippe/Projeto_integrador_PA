@@ -30,11 +30,11 @@ if (isset($_POST['atualizar'])) {
         }
     }
 }
+include_once('../inc/menuBoot.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,9 +47,7 @@ if (isset($_POST['atualizar'])) {
         background-color: #fb5607;
     }
 </style>
-
 <body>
-<?php include_once('../inc/menuADM.php') ?>
     <div class="altUsuario py-5">
         <form action="" method="POST" class="altUsuario2">
             Codigo: <input type="text" name="codigo" disabled value=<?php echo $codigo ?>>
@@ -61,5 +59,4 @@ if (isset($_POST['atualizar'])) {
         </form>
     </div>
 </body>
-
 </html>

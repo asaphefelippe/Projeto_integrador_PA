@@ -1,4 +1,5 @@
-<head>
+<!--
+    <head>
     <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 
@@ -24,3 +25,4 @@
 </body>
 
 </html>
+-->
