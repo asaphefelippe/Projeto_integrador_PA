@@ -57,7 +57,7 @@ body{
   <path fill="#ffbe0b" fill-opacity="1" d="M0,32L48,74.7C96,117,192,203,288,213.3C384,224,480,160,576,160C672,160,768,224,864,240C960,256,1056,224,1152,192C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
 </svg>
 
-<h1 class="cardapioH3">cardápio</h1>
+<h1 class="cardapioH3">cupons</h1>
 
 
 <?php
@@ -148,12 +148,12 @@ $count = $res->fetchAll();
 }*/
 ?>
 
-<div class="container1 row row-cols-md-4  row-cols-xs-2" style="margin-left: 0px;">
+<div class="row row-cols-md-4  row-cols-sm-3  row-cols-xs-2" style="margin-left: 0px;">
 
     <?php
     foreach ($pdo->query($result) as $values) {
-        //echo '<div class="col p-3">';
-        //echo '<div class=" efeito-hover p-3 h-100">';
+       echo '<div class="col p-3">';
+       //echo '<div class=" efeito-hover1 p-3 h-100">';
 
         $nome1 =    utf8_encode($values['nome1']);
         $nome2 =  utf8_encode($values['nome2']);
@@ -171,7 +171,7 @@ $count = $res->fetchAll();
         $preco =  utf8_encode($values['preco']);
         $codigo =  utf8_encode($values['codigo']);
         $img =  $values['imagem'];
-        $pontos = $values['acumulo'];
+        $pontos = $values['acumulos'];
         $pts = "pts";
         if ($nome1 != null) {
             $nome1 = "<div><h2>↠$nome1</h2></div>";
@@ -224,7 +224,7 @@ $count = $res->fetchAll();
         <p class='preco' $preco </p>
         <a href='telaDeCompraCupons.php?idCupons=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
         </div>";
-        //echo "</div>";
+        echo "</div>";
         //echo "</div>";
     }
     ?>

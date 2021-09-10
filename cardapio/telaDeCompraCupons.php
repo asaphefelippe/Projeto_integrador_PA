@@ -30,7 +30,7 @@ foreach ($pdo->query($sql) as $values) {
     $codigo =  utf8_encode($values['codigo']);
 
     $img =  $values['imagem'];
-    $pontos = $values['acumulo'];
+    $pontos = $values['acumulos'];
     if ($nome1 != null) {
         $nome1 = "<div><p>↠$quantidade1 $nome1</p></div>";
     } else {
@@ -83,6 +83,7 @@ if (!$_SESSION['logado']) {
         background-color: #fb5607;
     }
 </style>
+<a href="cupons.php" class="letraMenu"> voltar</a>
 <div class="laranja">
     <div class="login container">
         <div class="login2 row">

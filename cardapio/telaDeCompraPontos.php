@@ -62,7 +62,7 @@ if ($_SESSION['logado']) {
         background-color: #fb5607;
     }
 </style>
-
+<a href="pontos.php" class="letraMenu"> voltar</a>
 
 <div class="laranja d-flex p-5 align-items-center align-center justify-content-center">
     <div class="telaDeCompraPontos text-black text-center shadow-lg p-5">
@@ -71,6 +71,3 @@ if ($_SESSION['logado']) {
         <p> codigo: <?php echo  $cod ?> </p>
     </div>
 </div>
-<button class="voltar">
-<a href="cardapio.php" class="letraMenu"> voltar</a>
-</button>

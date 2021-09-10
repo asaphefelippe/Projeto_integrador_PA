@@ -31,9 +31,12 @@ if ($idProd) {
 }
 
 // -----------------------------------------> BEBIDAS <-----------------------------------------
+// recebe o id fa bebida
 if ($idBebida) {
+    //recebe da url a id da bebida
     $codigo = $_GET['idBebida'];
 
+    // ´prepara o sql para selecionar as bebidas correposndnenteioasfhlask hf whfçoasi ug~pao
     $sql = "SELECT * FROM bebidas WHERE codigo = '$codigo'";
 
     $prepar = $pdo->prepare($sql);
@@ -53,7 +56,6 @@ if ($idBebida) {
 
         $imagem = '<img class= "tamanho" src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
     }
-
 }
 
 //$pts = "pts";
@@ -62,6 +64,7 @@ if ($idBebida) {
 
 ?>
 
+<a href="cardapio.php" class="letraMenu"> voltar</a>
 <style>
     body {
         background-color: #fb5607;
@@ -72,10 +75,9 @@ if ($idBebida) {
     <div class=" telaDeCompraPontos text-black text-center shadow-lg p-5">
         <h1><?php echo "<span class='  position-relative' > $comida <span class='pontos2'>$pontos $pts</span> </span> " ?></h1>
         <?php echo $imagem ?>
-        <p> codigo: <?php echo  $cod ?> </p>
+        <?php if (isset($_SESSION['logado'])) : ?>
+            <p> codigo: <?php echo  $cod ?> </p>
+        <?php endif; ?>
     </div>
-   
+
 </div>
-<button class="voltar">
-<a href="cardapio.php" class="letraMenu"> voltar</a>
-</button>

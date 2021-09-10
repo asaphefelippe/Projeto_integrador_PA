@@ -162,12 +162,12 @@ header {
     font-size: 20px;
     padding: 10px;
     cursor: pointer;
-    /* left: 200px; */
-    /* margin: 120px; */
+    left: 200px;
+    margin: 120px;
     list-style: none;
-    /* margin-left: 31%; */
-    /* margin-top: 250px; */
-    /* padding: 20px; */
+    margin-left: 31%;
+    margin-top: 250px;
+    padding: 20px;
 }
 
 .esquerda {
@@ -175,10 +175,10 @@ header {
     font-size: 20px;
     padding: 10px;
     cursor: pointer;
-    /* margin: 120px; */
+    margin: 120px;
     list-style: none;
-    /* margin-top: 250px; */
-    /* padding: 20px; */
+    margin-top: 250px;
+    padding: 20px;
 }
 
 .letraMenu {
@@ -228,6 +228,12 @@ h1 {
 
 .mapa {
     margin-left: 33%;
+    margin: 0 auto !important;
+    width: 100%;
+}
+
+.mapa iframe {
+    margin: 0 auto !important;
 }
 
 footer {
@@ -269,7 +275,8 @@ footer {
 }
 
 .comidas {
-    font-family: 'Oswald', sans-serif;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
 .preco {
@@ -436,7 +443,7 @@ padding: 30px; */
     width: 70px;
     height: 40px;
     border-radius: 50%;
-    margin-left: 17%;
+    /* margin-left: 17%; */
     background-color: #fb5607;
     font-size: 20px;
 }
@@ -536,12 +543,12 @@ padding: 30px; */
 
 .PaoParagra1 {
     font-size: 25px;
-    margin-left: 6%;
+    /* margin-left: 6%; //
 }
 
 .PaoParagra2 {
     font-size: 25px;
-    margin-left: 6%;
+    /* margin-left: 6%; */
 }
 
 .Pao {
@@ -601,7 +608,7 @@ padding: 30px; */
 
 .slideshow-container {
     position: relative;
-    margin-left: 35%;
+    /* margin-left: 35%; */
     width: 600px;
     height: 330px;
 }
@@ -652,7 +659,7 @@ padding: 30px; */
 
 .slideshow-container2 {
     position: relative;
-    margin-left: 10%;
+    /* margin-left: 10%; */
     width: 600px;
     height: 330px;
 }
@@ -665,7 +672,7 @@ padding: 30px; */
     color: black;
     font-weight: bold;
     margin-top: 2px;
-    /* margin-left: 300px; */
+    margin-left: 300px;
     font-size: 25px;
 }
 
@@ -673,13 +680,14 @@ padding: 30px; */
     background-color: #8338ec;
     width: 55%;
     height: 400px;
-    margin-left: 18%;
-    margin-top: 4%;
+    margin-left: auto;
+    margin-right: auto;
     box-shadow: 0 0 30px purple;
 }
 
 .login3 {
-    margin-left: 26%;
+    margin-left: auto;
+    margin-right: auto;
     color: white;
 }
 
@@ -713,7 +721,7 @@ padding: 30px; */
 
 .laranja {
     background-color: #fb5607;
-    margin-bottom: 300px;
+    /* margin-bottom: 300px; */
 }
 
 .fotosCa {
@@ -744,7 +752,8 @@ padding: 30px; */
     padding: 5px;
     text-align: center;
     background-color: cornsilk;
-    width: 440px;
+    margin: 15px;
+    width: 100%;
 }
 
 .cupom:hover {
@@ -842,7 +851,8 @@ padding: 30px; */
 }
 
 .fidelidade {
-    margin-left: 20%;
+    /* margin-left: 20%; */
+    margin: 0 auto !important;
 }
 
 .inicialMenu {
@@ -934,6 +944,7 @@ padding: 30px; */
 .olho {
     width: 25px;
     height: 25px;
+    position: absolute;
 }
 
 .olho1 {
@@ -955,6 +966,8 @@ padding: 30px; */
     margin-right: auto;
     display: block;
     box-shadow: 0 0 30px #3a86ff;
+    color: white;
+    border-radius: 100%;
 }
 
 .cardapioH12 {
@@ -967,6 +980,7 @@ padding: 30px; */
     display: block;
     box-shadow: 0 0 30px #ffbe0b;
     color: #fff;
+    border-radius: 100%;
 }
 
 .cardapioH3 {
@@ -979,6 +993,7 @@ padding: 30px; */
     display: block;
     box-shadow: 0 0 30px #ffbe0b;
     color: #fff;
+    border-radius: 100%;
 }
 
 .nomeCardapio {
