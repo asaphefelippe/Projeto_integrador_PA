@@ -42,6 +42,7 @@ if (isset($_POST['enviar'])) {
     }
     echo $statusMsg;
 }
+include_once('../inc/menuBoot.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -52,7 +53,7 @@ if (isset($_POST['enviar'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cadastro</title>
     <link rel="stylesheet" href="../assets/css/estilo.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 
 </head>
 
@@ -67,10 +68,10 @@ if (isset($_POST['enviar'])) {
         width: 550px;
         height: auto;
     }
-    </style>
+</style>
 
 <body>
-<?php include_once('../inc/menuADM.php') ?>
+
     <div class="login-1Cadastro">
         <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
         <form action="" method="POST" enctype="multipart/form-data">
@@ -90,22 +91,13 @@ if (isset($_POST['enviar'])) {
                     <br>
                     <input type="file" name="imagem" />
                 </div>
-
             </div>
-
             <div class="button">
                 <br>
                 <button type="submit" class="email buttonCadastro" name="enviar">cadastrar</button>
             </div>
         </form>
         <br>
-
-
-
-
-
-
-    </div>
     </div>
 </body>
 

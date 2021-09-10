@@ -814,6 +814,7 @@ padding: 30px; */
 
 .altUsuario {
     background-color: #8338ec;
+    margin-left: 300px;
     /* width: 700px; */
     /* margin-left: 30%;
     margin-top: 10%;
@@ -892,9 +893,14 @@ padding: 30px; */
 }
 
 .pontosP {
-    border-radius: 100%;
+    /*border-radius: 100%;
     background-color: #f1f1f1;
     margin-left: 130px;
+    width: 130px;*/
+    border-radius: 100%;
+    background-color: #f1f1f1;
+    margin-left: auto;
+    margin-right: auto;
     width: 130px;
     font-weight: bold;
 }

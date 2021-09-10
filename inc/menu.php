@@ -56,9 +56,14 @@ if (@$_SESSION['logado']) {
                 <a href="#" onclick="escondeSub();"> <img src="assets/images/marca-x.png" alt="" class="marca"> </a>
             </div>
             <div class="toptop">
-                <a href="login.php" class="signin">entrar</a>
-                <a href="?logout=true" class="signin"></a>
-                <a href="cadastro.php" class="signin">cadastrar</a>
+                <?php 
+                if($_SESSION['logado']){
+                    echo '<a href="?logout=true" class="signin">sair</a>';
+                }else{
+                    echo '<a href="login.php" class="signin">entrar</a>';
+                    echo '<a href="cadastro.php" class="signin">cadastrar</a>';
+                }
+                ?>
             </div>
             <a href="index.php" class="inicialMenu">inicial </a>
         </div>
@@ -78,9 +83,7 @@ if (@$_SESSION['logado']) {
         <div class="Ola">
             <?php
             if (@$_SESSION['logado']) : ?>
-
-                <h4 class="phpOlaNome"> Ola <?php echo $nom ?>
-
+                <?php echo '<h4 class="phpOlaNome">Olá, ' . $nom . ' </h4> <p> seu codigo é : ' . $cod . '</p>'?>
                 <?php else : $_SESSION['logado'] = "";
             endif
 

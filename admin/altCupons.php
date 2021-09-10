@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
             $numb_comb =    $values['numero_comb'];
             $img =  $values['imagem'];
             $gastarP =  $values['gastarP'];
-            $acumulos = $values['acumulo'];
+            $acumulos = $values['acumulos'];
         }
     }
 }
@@ -95,6 +95,7 @@ if (isset($_POST['atualizar'])) {
         }
     }
 }
+include_once('../inc/menuBoot.php');
 ?>
 
 <!DOCTYPE html>
@@ -114,7 +115,7 @@ if (isset($_POST['atualizar'])) {
 </style>
 
 <body>
-<?php include_once('../inc/menuADM.php') ?>
+
     <div class="altUsuario py-5">
         <form action="" method="POST" class="altUsuario2" enctype="multipart/form-data">
             Codigo: <input type="text" name="codigo" disabled value= <?php echo $codigo ?>>

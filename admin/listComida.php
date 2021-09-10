@@ -25,7 +25,7 @@ if($sql->execute()){
     }
 
 }
-
+include_once('../inc/menuBoot.php');
 ?>
 <style>
 body{
@@ -33,6 +33,6 @@ body{
 }
 </style>
 <div>
-<?php include_once('../inc/menuADM.php') ?>
+
 <link rel="stylesheet" href="../assets/css/estilo.css">
 </div>

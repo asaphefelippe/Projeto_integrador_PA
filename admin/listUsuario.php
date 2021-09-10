@@ -6,7 +6,7 @@ if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
 }
 include_once('../inc/banco.php');
 
-$sql = $pdo->prepare('SELECT * FROM alunospa');
+$sql = $pdo->prepare('SELECT * FROM clientes');
 
 
 if($sql->execute()){
@@ -28,7 +28,7 @@ if($sql->execute()){
 
 }
 
-
+include_once('../inc/menuBoot.php');
 ?>
 
 
@@ -48,7 +48,7 @@ body{
 
 </style>
 <body>
-<?php include_once('../inc/menuADM.php') ?>
+
 </body>
 
 </html>
