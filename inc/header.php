@@ -16,5 +16,5 @@
 <body>
 
     <?php
-
-    include_once(dirname(__FILE__) . "/menu.php");
+    session_start();
+    // include_once(dirname(__FILE__) . "/menu.php");

@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if (isset($_GET['logout'])) {
     session_destroy();
     header("location:login.php");
@@ -31,6 +29,7 @@ if (@$_SESSION['logado']) {
 }
 
 include_once(dirname(__FILE__) . '/inc/header.php');
+include_once(dirname(__FILE__) . '/inc/menu.php');
 ?>
 
 <script>
@@ -100,7 +99,18 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 </script>
 
 <header>
-    <img src="assets/images/logo.png" alt="" class="logo">
+
+
+    <div class="Ola">
+        <?php
+        if (@$_SESSION['logado']) : ?>
+            <?php echo '<h4 class="phpOlaNome">Olá, ' . $nom . ' </h4> <p> seu codigo é : ' . $cod . '</p>' ?>
+        <?php else : $_SESSION['logado'] = "";
+        endif
+        ?>
+        <img src="assets/images/logo.png" alt="" class="logo">
+    </div>
+
 </header>
 
 <section class="row">
@@ -108,62 +118,62 @@ include_once(dirname(__FILE__) . '/inc/header.php');
         <div class="inicial">
             <div class="container-bolas">
                 <div class="column row row-cols-md-4">
-                    
-                        <a href="#sobreNos">
-                            <div class="borda">
-                                <div class="borda-giro"> </div>
-                                <div class="borda-conteudo">
-                                    <h1 class="fonteBola1">sobre nós</h1>
+
+                    <a href="#sobreNos">
+                        <div class="borda">
+                            <div class="borda-giro"> </div>
+                            <div class="borda-conteudo">
+                                <h1 class="fonteBola1">sobre nós</h1>
+                                <div class="borda-conteudo-lala">
+                                    <h1 class="fonteBola">venha saber mais sobre a historia do Modern Canteen</h1>
+                                </div>
+                            </div>
+
+                        </div>
+                    </a>
+
+
+                    <a href="#fotos">
+                        <div class="borda" id="#fotos">
+                            <div class="borda-giro"> </div>
+                            <div class="borda-conteudo">
+                                <div>
+                                    <h1 class="fonteBola1">fotos</h1>
                                     <div class="borda-conteudo-lala">
-                                        <h1 class="fonteBola">venha saber mais sobre a historia do Modern Canteen</h1>
+                                        <h1 class="fonteBola">acesse nossa galeria de fotos</h1>
                                     </div>
                                 </div>
 
                             </div>
-                        </a>
-                   
-                    
-                        <a href="#fotos">
-                            <div class="borda" id="#fotos">
-                                <div class="borda-giro"> </div>
-                                <div class="borda-conteudo">
-                                    <div>
-                                        <h1 class="fonteBola1">fotos</h1>
-                                        <div class="borda-conteudo-lala">
-                                            <h1 class="fonteBola">acesse nossa galeria de fotos</h1>
-                                        </div>
-                                    </div>
+                        </div>
+                    </a>
 
+
+                    <a href="#pontos">
+                        <div class="borda">
+                            <div class="borda-giro"> </div>
+                            <div class="borda-conteudo">
+                                <h1 class="fonteBola1">pontos</h1>
+                                <div class="borda-conteudo-lala">
+                                    <h1 class="fonteBola">venha saber como funciona o sistema de pontos </h1>
                                 </div>
                             </div>
-                        </a>
-                   
-                  
-                        <a href="#pontos">
-                            <div class="borda">
-                                <div class="borda-giro"> </div>
-                                <div class="borda-conteudo">
-                                    <h1 class="fonteBola1">pontos</h1>
-                                    <div class="borda-conteudo-lala">
-                                        <h1 class="fonteBola">venha saber como funciona o sistema de pontos </h1>
-                                    </div>
+                        </div>
+                    </a>
+
+
+                    <a href="#localizacao">
+                        <div class="borda">
+                            <div class="borda-giro"></div>
+                            <div class="borda-conteudo">
+                                <h1 class="fonteBola1">localização</h1>
+                                <div class="borda-conteudo-lala">
+                                    <h1 class="fonteBola">conheça nossa localiação</h1>
                                 </div>
                             </div>
-                        </a>
-                  
-                   
-                        <a href="#localizacao">
-                            <div class="borda">
-                                <div class="borda-giro"></div>
-                                <div class="borda-conteudo">
-                                    <h1 class="fonteBola1">localização</h1>
-                                    <div class="borda-conteudo-lala">
-                                        <h1 class="fonteBola">conheça nossa localiação</h1>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                   
+                        </div>
+                    </a>
+
 
                 </div>
             </div>
@@ -219,27 +229,27 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 
 <section class="row fotos" id="fotos">
     <div class="col-md-12">
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/images/fotos (1).jpg" class="fotosCa">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/fotos(2).jpg" class="fotosCa">
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/fotos(3).jpg" class="fotosCa">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="margin-left: 20%;">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" style="margin-right: 20%;">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="assets/images/fotos (1).jpg" class="fotosCa">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/fotos(2).jpg" class="fotosCa">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/fotos(3).jpg" class="fotosCa">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="margin-left: 20%;">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" style="margin-right: 20%;">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
     </div>
 </section>
 
@@ -294,6 +304,6 @@ if (isset($_POST['enviar'])) {
 }
 
 
- include_once(dirname(__FILE__) . "/inc/footer.php");
+include_once(dirname(__FILE__) . "/inc/footer.php");
 
 ?>

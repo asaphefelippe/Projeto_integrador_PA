@@ -6,6 +6,7 @@ if (isset($_GET['logout'])) {
 
 if (@$_SESSION['logado']) {
     include('inc/banco.php');
+    $email = $_SESSION['email'];
     $sql = $pdo->prepare("SELECT * FROM clientes WHERE email = '$email'");
 
     if ($sql->execute()) {
@@ -80,15 +81,5 @@ if (@$_SESSION['logado']) {
 <div class="lala">
     <div class="menu" id="menu" onclick="mostrarSub()">
         <img src="assets/images/botao-de-menu-de-tres-linhas-horizontais.png" alt="" class="icon">
-        <div class="Ola">
-            <?php
-            if (@$_SESSION['logado']) : ?>
-                <?php echo '<h4 class="phpOlaNome">Olá, ' . $nom . ' </h4> <p> seu codigo é : ' . $cod . '</p>'?>
-                <?php else : $_SESSION['logado'] = "";
-            endif
-
-                ?>
-                </h4>
-        </div>
     </div>
 </div>

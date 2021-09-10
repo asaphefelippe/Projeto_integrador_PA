@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once(dirname(__FILE__) . '/../inc/header.php');
 include_once(dirname(__FILE__) . '/../inc/banco.php');
 $idCupons = isset($_GET['idCupuns']) ? $_GET['idCupons'] : false;
 

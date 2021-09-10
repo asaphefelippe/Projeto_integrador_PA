@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once(dirname(__FILE__) . '/../inc/header.php');
 include_once(dirname(__FILE__) . '/../inc/banco.php');
 
 $idProd = isset($_GET['idProduto']) ? $_GET['idProduto'] : false;
@@ -60,8 +60,7 @@ if ($idBebida) {
 
 
 ?>
-<img src="assets/images/botão-voltar-png-2.png">
-    <a href="cardapio.php" class="letraMenu"> voltar</a>
+<a href="cardapio.php" class="letraMenu"> voltar</a>
 <style>
     body {
         background-color: #fb5607;
@@ -72,7 +71,9 @@ if ($idBebida) {
     <div class=" telaDeCompraPontos text-black text-center shadow-lg p-5">
         <h1><?php echo "<span class='  position-relative' > $comida <span class='pontos2'>$pontos $pts</span> </span> " ?></h1>
         <?php echo $imagem ?>
-        <p> codigo: <?php echo  $cod ?> </p>
+        <?php if ($_SESSION['logado']) {
+            echo "<p> codigo: <?php echo  $cod ?> </p>";
+        } ?>
     </div>
 
 </div>

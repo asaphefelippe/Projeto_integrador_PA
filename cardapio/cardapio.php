@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once(dirname(__FILE__) . '/../inc/header.php');
 include_once(dirname(__FILE__) . '/../inc/banco.php');
 /*if ($_SESSION['logado']) {
     echo "Voce esta logado";
@@ -66,7 +66,7 @@ body{
             <div class='pontos'>
                 $pontos$pts   
             </div> 
-            <div class='text-center'>$imagem  </div>
+            <div class='text-center'>$imagem </div>
             <div class='desc text-center'>
                 <h1>$nome</h1>
                                 

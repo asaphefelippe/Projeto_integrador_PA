@@ -1,5 +1,5 @@
 <?php
-session_start();
+include_once(dirname(__FILE__) . '/../inc/header.php');
 include_once(dirname(__FILE__) . '/../inc/banco.php');
 /*if ($_SESSION['logado']) {
     echo "Voce esta logado";

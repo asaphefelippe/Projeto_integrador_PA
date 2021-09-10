@@ -121,7 +121,6 @@ header {
     position: fixed;
     width: 100%;
     z-index: 9;
-
 }
 
 .logo {
@@ -130,6 +129,7 @@ header {
     display: block;
     width: 190px;
     position: relative;
+    top: -60px;
 }
 
 .menu {
@@ -581,9 +581,11 @@ padding: 30px; */
 }
 
 .Ola {
-    margin-left: -1800px;
-    font-size: 30px;
+    /* margin-left: -1800px;
+    font-size: 30px; */
     color: white;
+    margin-top: 20px;
+    margin-left: 15px;
 }
 
 .tamanho {
