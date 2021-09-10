@@ -183,7 +183,7 @@ include_once(dirname(__FILE__) . '/inc/header.php');
 </section>
 
 <section class="row gx-5 pãoDeQueijo">
-    <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt=""></div>
+    <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt="" class="img-fluid"></div>
     <div class="col-md-4">
         <div>
             <h1 class="PaoTitulo fonte2">Modern Canteen</h1>

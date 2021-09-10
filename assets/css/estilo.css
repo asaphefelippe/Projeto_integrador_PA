@@ -165,7 +165,6 @@ header {
     left: 200px;
     margin: 120px;
     list-style: none;
-    margin-left: 31%;
     margin-top: 250px;
     padding: 20px;
 }
@@ -226,14 +225,11 @@ h1 {
     border-image: url(../images/border.png) 20% round;
 }
 
-.mapa {
-    margin-left: 33%;
-    margin: 0 auto !important;
-    width: 100%;
-}
-
 .mapa iframe {
-    margin: 0 auto !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    width: 50%;
 }
 
 footer {
@@ -418,12 +414,46 @@ padding: 30px; */
 
 .login-1 {
     background-color: #8338ec;
-    height: 500px;
     width: 400px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 4%;
+    margin-top: 8%;
     box-shadow: 0 0 30px purple;
+}
+
+.fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
 }
 
 .imgLogin {
@@ -478,9 +508,8 @@ padding: 30px; */
 
 .login-1Cadastro {
     background-color: #8338ec;
-    height: 580px;
     width: 400px;
-    margin-top: 3%;
+    margin-top: 5%;
     box-shadow: 0 0 30px purple;
     margin-left: auto;
     margin-right: auto;
@@ -535,6 +564,7 @@ padding: 30px; */
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 100%;
 }
 
 .PaoParagra {
@@ -543,18 +573,17 @@ padding: 30px; */
 
 .PaoParagra1 {
     font-size: 25px;
-    /* margin-left: 6%; //
 }
 
 .PaoParagra2 {
     font-size: 25px;
-    /* margin-left: 6%; */
 }
 
 .Pao {
     text-align: center;
     margin-top: 10%;
     font-family: 'Oswald', sans-serif;
+    font-weight: bold;
     color: #ffbe0b;
 }
 
@@ -852,8 +881,9 @@ padding: 30px; */
 }
 
 .fidelidade {
-    /* margin-left: 20%; */
-    margin: 0 auto !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
 }
 
 .inicialMenu {

@@ -71,7 +71,7 @@ function show() {
         }
     </style>
     <form action="" method="POST">
-        <div class="login-1">
+        <div class="login-1 fadeInDown">
             <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
             <div class="login">
                 <div>
