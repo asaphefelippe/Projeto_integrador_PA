@@ -73,7 +73,7 @@ $res = $pdo->query($result);
 $count = $res->fetchAll();
 
 ?>
-<div class="container1 row row-cols-md-4  row-cols-xs-2" style="margin-left: 0px;">
+<div class=" row row-cols-md-4 row-cols-sm-3 row-cols-xs-2" style="margin-left: 0px;">
 
     <?php
     foreach ($pdo->query($result) as $values) {
@@ -138,7 +138,7 @@ $count = $res->fetchAll();
             $nome6 = "<div></div>";
         }
         if ($_SESSION['logado']) {
-            $mostrarP = "<div class= 'pontos'>$pontos</div>";
+            $mostrarP = "<div class= 'pontosCupons'>$pontos</div>";
         } else {
             $mostrarP = "";
         }

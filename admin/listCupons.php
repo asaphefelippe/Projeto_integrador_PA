@@ -27,6 +27,7 @@ if ($sql->execute()) {
     $info = $sql->fetchALL(PDO::FETCH_ASSOC);
 
     foreach ($info as $key => $values) {
+        echo "<div style='margin-left:300px;'>";
         echo '<br>';
         echo 'Codigo: ' . $values['codigo'] . '<br>';
         echo 'Numero Do Combo: ' . $values['numero_comb'] . '<br>';
@@ -49,6 +50,7 @@ if ($sql->execute()) {
         echo "<a href='altCupons.php?id=" . $values['codigo'] . "'>Alterar</a>";
 
         echo '<hr style="color:blue">';
+        echo "</div>";
     }
 }
 

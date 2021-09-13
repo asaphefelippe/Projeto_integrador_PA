@@ -48,6 +48,7 @@ if ($idBebida) {
         $preco = utf8_encode($produto['preco']);
         $imagem = utf8_encode($produto['imagem']);
         $cod = utf8_encode($produto['codigo']);
+
         if (@$pontos == "") {
             $pontos = "";
             $pts = "";
@@ -75,7 +76,7 @@ if ($idBebida) {
         <h1><?php echo "<span class='  position-relative' > $comida <span class='pontos2'>$pontos $pts</span> </span> " ?></h1>
         <?php echo $imagem ?>
         <?php if ($_SESSION['logado']) {
-            echo "<p> codigo: <?php echo  $cod ?> </p>";
+            echo "<p> codigo: $cod </p>";
         } ?>
     </div>
 </div>

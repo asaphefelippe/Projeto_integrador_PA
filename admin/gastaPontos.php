@@ -170,25 +170,30 @@ include_once('../inc/menuBoot.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/estilo.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <title>Document</title>
 </head>
-<body>
 
-    <Form method="POST">
-        <input type="text" name="codigo" placeholder="NOME DO CLIENTE"><br>
-        <br>
-        <input type="text" name="comida1" placeholder="CODIGO DA COMIDA"><br>
-        <input type="text" name="comida2" placeholder="CODIGO DA COMIDA"><br>
-        <input type="text" name="comida3" placeholder="CODIGO DA COMIDA"><br>
-        <input type="text" name="comida4" placeholder="CODIGO DA COMIDA"><br>
-        <input type="text" name="comida5" placeholder="CODIGO DA COMIDA"><br>
-        <br>
-        <button type="submit" class="btn btn-info botao" name="enviar"> enviar</button>
+<body id="mundo" class="body">
+    <Form method="POST" class="formADM">
+        <div class="espaco-adm">
+            <input type="text" name="codigo" placeholder="NOME DO CLIENTE" required><br>
+            <br>
+            <input type="text" name="comida1" placeholder="CODIGO DA COMIDA"><br>
+            <input type="text" name="comida2" placeholder="CODIGO DA COMIDA"><br>
+            <input type="text" name="comida3" placeholder="CODIGO DA COMIDA"><br>
+            <input type="text" name="comida4" placeholder="CODIGO DA COMIDA"><br>
+            <input type="text" name="comida5" placeholder="CODIGO DA COMIDA"><br>
+            <br>
+            <button type="submit" class="btn btn-info email buttonCadastro" name="enviar"> enviar</button>
+        </div>
     </Form>
 </body>
+
 </html>

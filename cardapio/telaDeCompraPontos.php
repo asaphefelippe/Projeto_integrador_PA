@@ -51,7 +51,8 @@ if ($idBebida) {
 }
 
 $pts = "pts";
-if ($_SESSION['logado']) {
+
+if (!$_SESSION['logado']) {
     $pts = "";
     $pontos = "";
 }
@@ -68,6 +69,9 @@ if ($_SESSION['logado']) {
     <div class="telaDeCompraPontos text-black text-center shadow-lg p-5">
         <h1><?php echo "<span class='  position-relative' > $comida <span class='pontos2'>$pontos$pts </span> </span> " ?></h1>
         <?php echo $imagem ?>
-        <p> codigo: <?php echo  $cod ?> </p>
+        <?php if($_SESSION['logado']){
+            echo "<p> codigo: $cod </p>";
+        } ?>
+        
     </div>
 </div>

@@ -85,7 +85,7 @@ if (!$_SESSION['logado']) {
 </style>
 <a href="cupons.php" class="letraMenu"> voltar</a>
 <div class="laranja">
-    <div class="login container">
+    <div class="container">
         <div class="login2 row">
             <div class="login3 col-4">
                 <?php
@@ -97,8 +97,11 @@ if (!$_SESSION['logado']) {
                     $nome4
                     $nome5
                     $nome6
-                    
-                    </div> <div class='pontos2'>$pontos</div>";
+                    </div>";
+                if ($_SESSION['logado']) {
+                    echo "</div> <div class='pontos2'>$pontos</div>
+                    <p>codigo: $codigo</p>";
+                }
                 ?>
             </div>
         </div>

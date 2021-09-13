@@ -23,6 +23,7 @@
 		height: 50px;
 		line-height: 50px;
 		width: 300px;
+		z-index: 100;
 	}
 
 	nav ul li ul {
@@ -33,6 +34,7 @@
 	nav ul li ul li {
 		display: block;
 		width: 300px;
+		z-index: 100;
 	}
 
 	nav ul li ul li:hover {

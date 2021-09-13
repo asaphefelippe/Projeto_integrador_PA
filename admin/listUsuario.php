@@ -4,6 +4,7 @@ if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
     echo 'voce nao pode acessar essa pagina';
     die();
 }
+include_once('../inc/menuBoot.php');
 include_once('../inc/banco.php');
 
 $sql = $pdo->prepare('SELECT * FROM clientes');
@@ -13,6 +14,7 @@ if($sql->execute()){
     $info = $sql->fetchALL(PDO::FETCH_ASSOC);
 
     foreach($info as $key => $values){
+        echo "<div style='margin-left:300px;'>";
         echo '<div class="echoADM">nome: '.$values['nome'].'<br>';
         echo 'email: '.$values['email'].'<br>';
         echo 'senha: '.$values['senha'].'<br>';
@@ -24,11 +26,12 @@ if($sql->execute()){
         echo "<a href='altUsuario.php?id=".$values['codigo']."'>Alterar</a>";
         
         echo '<hr style="color:blue">';
+        echo "</div>";
     }
 
 }
 
-include_once('../inc/menuBoot.php');
+
 ?>
 
 
