@@ -61,10 +61,7 @@ body{
             ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
             
             $imagem = '<img class="fotosP izza img-fluid"  src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
-            echo   $texto = "
-            <div class='pontos'>
-                $pontos$pts   
-            </div> 
+            echo   $texto = " 
             <div class='text-center' style='min-height:300px'> $imagem  </div>
             <div class='desc text-center'>
             <div class=''>

@@ -138,7 +138,7 @@ $count = $res->fetchAll();
             $nome6 = "<div></div>";
         }
         if ($_SESSION['logado']) {
-            $mostrarP = "<div class= 'pontosCupons'>$pontos</div>";
+            $mostrarP = "<div class= 'pontosCupons'>$pontos pts</div>";
         } else {
             $mostrarP = "";
         }

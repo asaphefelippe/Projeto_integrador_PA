@@ -73,7 +73,7 @@ if ($idBebida) {
 
 <div class="laranja d-flex p-5 align-items-center align-center justify-content-center">
     <div class=" telaDeCompraPontos text-black text-center shadow-lg p-5">
-        <h1><?php echo "<span class='  position-relative' > $comida <span class='pontos2'>$pontos $pts</span> </span> " ?></h1>
+        <h1><?php echo "<span class='  position-relative' style='left:40px' > $comida <span class='pontos2'>$pontos $pts</span> </span> " ?></h1>
         <?php echo $imagem ?>
         <?php if ($_SESSION['logado']) {
             echo "<p> codigo: $cod </p>";

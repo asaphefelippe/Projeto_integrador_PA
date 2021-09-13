@@ -1,5 +1,6 @@
 <?php
 session_start();
+// Para verificar se a session admin foi setada ou foi retornada como TRUE caso contrario a pessoa nao podera ter acesso a essa pagina (Segurança)
 if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
     echo 'voce nao pode acessar essa pagina';
     die();
@@ -7,15 +8,14 @@ if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
 include_once('../inc/banco.php');
 
 
-
+//Pega o url para ver qual o codigo da comida que retorno da pagina listcupons.php 
 if (isset($_GET['id'])) {
     $codigo = $_GET['id'];
-
+// puxa o id do cupon
     $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo='$codigo'");
-
     if ($sql->execute()) {
         $info = $sql->fetchALL(PDO::FETCH_ASSOC);
-
+//tras as informações do id do cupon
         foreach ($info as $key => $values) {
 
             $nome1 =    utf8_encode($values['nome1']);
@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
 }
 
 
-
+// se o botao com o NAME : atualizar for setado entao executa
 if (isset($_POST['atualizar'])) {
     echo $codigo;
 
@@ -53,7 +53,7 @@ if (isset($_POST['atualizar'])) {
 
 
     if (!empty($_FILES["imagem"]["name"])) {
-        echo "TESTER2".$codigo;
+        echo "TESTER2" . $codigo;
         // Get file info 
         $fileName = basename($_FILES["imagem"]["name"]);
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
@@ -61,7 +61,7 @@ if (isset($_POST['atualizar'])) {
         // Allow certain file formats 
         $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
         if (in_array($fileType, $allowTypes)) {
-            echo "TESTER3".$codigo;
+            echo "TESTER3" . $codigo;
             $imagem = $_FILES['imagem']['tmp_name'];
             $imgContent = addslashes(file_get_contents($imagem));
             include_once('../inc/banco.php');
@@ -82,7 +82,7 @@ if (isset($_POST['atualizar'])) {
             $preco = $_POST['preco'];
             $acumulos = $_POST['acumulo'];
             $gastarP = $_POST['gastarP'];
-            echo "TESTER4".$codigo;
+            echo "TESTER4" . $codigo;
             $sql2 =  $pdo->prepare("UPDATE cupons SET numero_comb='$numb_comb',preco='$preco',acumulo='$acumulos',nome1='$nome1',nome2='$nome2',nome3='$nome3',nome4='$nome4',nome5='$nome5',nome6='$nome6',quantidade1='$quantidade1',quantidade2='$quantidade2',quantidade3='$quantidade3',quantidade4='$quantidade4',quantidade5='$quantidade5',quantidade6='$quantidade6',imagem='$imgContent',gastarP='$gastarP' WHERE codigo ='$codigo'");
             if ($sql2->execute()) {
                 echo "CAIU NO EXECUTE";
@@ -118,23 +118,23 @@ include_once('../inc/menuBoot.php');
 
     <div class="altUsuario py-5">
         <form action="" method="POST" class="altUsuario2" enctype="multipart/form-data">
-            Codigo: <input type="text" name="codigo" disabled value= <?php echo $codigo ?>>
-            <input type="text" name="nome1" placeholder="nome1" value= <?php echo $nome1 ?>>
-            <input type="text" name="nome2" placeholder="nome2" value= <?php echo $nome2 ?>>
-            <input type="text" name="nome3" placeholder="nome3" value= <?php echo $nome3 ?>>
-            <input type="text" name="nome4" placeholder="nome4" value= <?php echo $nome4 ?>>
-            <input type="text" name="nome5" placeholder="nome5" value= <?php echo $nome5 ?>>
-            <input type="text" name="nome6" placeholder="nome6" value= <?php echo $nome6 ?>>
-            <input type="text" name="quantidade1" placeholder="quantidade1" value= <?php echo $quantidade1 ?>>
-            <input type="text" name="quantidade2" placeholder="quantidade2" value= <?php echo $quantidade2 ?>>
-            <input type="text" name="quantidade3" placeholder="quantidade3" value= <?php echo $quantidade3 ?>>
-            <input type="text" name="quantidade4" placeholder="quantidade4" value= <?php echo $quantidade4 ?>>
-            <input type="text" name="quantidade5" placeholder="quantidade5" value= <?php echo $quantidade5 ?>>
-            <input type="text" name="quantidade6" placeholder="quantidade6" value= <?php echo $quantidade6 ?>>
-            <input type="text" name="numb_comb" placeholder="numero do combo" value= <?php echo $numb_comb ?>>
-            <input type="text" name="preco" placeholder="preço" value= <?php echo $preco ?>>
-            <input type="text" name="acumulo" placeholder="acumulos" value= <?php echo $acumulos ?>>
-            <input type="text" name="gastarP" placeholder="Gastar Pontos" value= <?php echo $gastarP ?>>
+            Codigo: <input type="text" name="codigo" disabled value=<?php echo $codigo ?>>
+            <input type="text" name="nome1" placeholder="nome1" value=<?php echo $nome1 ?>>
+            <input type="text" name="nome2" placeholder="nome2" value=<?php echo $nome2 ?>>
+            <input type="text" name="nome3" placeholder="nome3" value=<?php echo $nome3 ?>>
+            <input type="text" name="nome4" placeholder="nome4" value=<?php echo $nome4 ?>>
+            <input type="text" name="nome5" placeholder="nome5" value=<?php echo $nome5 ?>>
+            <input type="text" name="nome6" placeholder="nome6" value=<?php echo $nome6 ?>>
+            <input type="text" name="quantidade1" placeholder="quantidade1" value=<?php echo $quantidade1 ?>>
+            <input type="text" name="quantidade2" placeholder="quantidade2" value=<?php echo $quantidade2 ?>>
+            <input type="text" name="quantidade3" placeholder="quantidade3" value=<?php echo $quantidade3 ?>>
+            <input type="text" name="quantidade4" placeholder="quantidade4" value=<?php echo $quantidade4 ?>>
+            <input type="text" name="quantidade5" placeholder="quantidade5" value=<?php echo $quantidade5 ?>>
+            <input type="text" name="quantidade6" placeholder="quantidade6" value=<?php echo $quantidade6 ?>>
+            <input type="text" name="numb_comb" placeholder="numero do combo" value=<?php echo $numb_comb ?>>
+            <input type="text" name="preco" placeholder="preço" value=<?php echo $preco ?>>
+            <input type="text" name="acumulo" placeholder="acumulos" value=<?php echo $acumulos ?>>
+            <input type="text" name="gastarP" placeholder="Gastar Pontos" value=<?php echo $gastarP ?>>
             <input type="file" name="imagem">
             <input type="submit" name="atualizar" value="Atualizar">
         </form>

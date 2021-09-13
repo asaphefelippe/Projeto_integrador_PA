@@ -1,5 +1,6 @@
 <?php
 session_start();
+// Para verificar se a session admin foi setada ou foi retornada como TRUE caso contrario a pessoa nao podera ter acesso a essa pagina (Segurança)
 if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
     echo 'voce nao pode acessar essa pagina';
     die();
@@ -8,21 +9,22 @@ include_once('../inc/banco.php');
 
 $codigo = "";
 
-
+//Pega o url para ver qual o codigo da comida que retorno da pagina listbebidas.php
 if (isset($_GET['id'])) {
     $codigo = $_GET['id'];
 }
-
+// se o botao com o NAME : atualizar for setado entao executa
 if (isset($_POST['atualizar'])) {
 
-
+    // pega o nome e o preço que foi inserido no formulario
     $nome = $_POST['nome'];
     $preco = $_POST['preco'];
 
-
+    //prepara o banco para fazer as alterações setadas no formulario
     $sql = $pdo->prepare("UPDATE bebidas SET codigo=$codigo,nome=$nome,preco=$preco WHERE codigo=$codigo");
-
+    // executa
     if ($sql->execute(array($codigo, $nome, $preco, $codigo))) {
+        // testa para ver se alguma linha foi afetada e retorna para o admin se os dados foram ou NÃO cadastrados       
         if ($sql->rowCount() > 0) {
             echo 'Dados cadastrado';
         } else {
@@ -35,6 +37,7 @@ include_once('../inc/menuBoot.php');
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,6 +50,7 @@ include_once('../inc/menuBoot.php');
         background-color: #fb5607;
     }
 </style>
+
 <body>
     <div class="altUsuario py-5">
         <form action="" method="POST" class="altUsuario2">
@@ -59,4 +63,5 @@ include_once('../inc/menuBoot.php');
         </form>
     </div>
 </body>
+
 </html>

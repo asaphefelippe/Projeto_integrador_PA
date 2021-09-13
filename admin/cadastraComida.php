@@ -1,43 +1,46 @@
 <?php
 session_start();
+// Para verificar se a session admin foi setada ou foi retornada como TRUE caso contrario a pessoa nao podera ter acesso a essa pagina (Segurança)
 if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
     echo 'voce nao pode acessar essa pagina';
     die();
 }
+// se o botao com o NAME : enviar for setado entao executa
 if (isset($_POST['enviar'])) {
     $statusMsg = "";
-
+    // pega o nome os acumulos que o cliente ganha e a quantidade de acumulos que os cliente gasta que foi inserido no formulario
     $nome = $_POST['nome'];
     $acumulos = $_POST['acumulos'];
     $gastarP = $_POST['gastarP'];
 
-
+    //verifica se a imagem foi inserida
     if (!empty($_FILES["imagem"]["name"])) {
-        // Get file info 
+        // caso tenha sido inserida pega a imagem e o formato dela
         $fileName = basename($_FILES["imagem"]["name"]);
         $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
 
-        // Allow certain file formats 
+        // testa o formato que a imagem veio e ve se é compativel
         $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
         if (in_array($fileType, $allowTypes)) {
+            // se a imagem for compativel cria uma variavel para a imagem
             $imagem = $_FILES['imagem']['tmp_name'];
             $imgContent = addslashes(file_get_contents($imagem));
             include_once('../inc/banco.php');
             $preco = $_POST['preco'];
+            //prepara o banco para inseri os valores que veio do formulario
             $sql = "INSERT INTO comidas (nome,acumulos,gastarP,imagem,preco) VALUES ('$nome' , '$acumulos', '$gastarP' , '$imgContent','$preco')";
             $exe = $pdo->prepare($sql);
-            $exe->execute();
+            //envia as informaões para o banco
 
-            /*if( $exe->execute()){ 
-                $status = 'success'; 
-                $statusMsg = "File uploaded successfully."; 
-            }else{ 
-                $statusMsg = "File upload failed, please try again."; 
-            }*/
+            $exe->execute();
         } else {
+            // caso a imagem nao seja dos formatos que foram exigidos essa mensagem sera exibida
+
             $statusMsg = 'Sorry, only JPG, JPEG, PNG, & GIF files are allowed to upload.';
         }
     } else {
+        //se a imagem nao for inserida no formulario
+
         $statusMsg = 'Please select an image file to upload.';
     }
     echo $statusMsg;

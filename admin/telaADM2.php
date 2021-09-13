@@ -1,30 +1,36 @@
 <?php
 session_start();
-/*die() Nao deixa executa oque ta em baixo dele*/
+// Para verificar se a session admin foi setada ou foi retornada como TRUE caso contrario a pessoa nao podera ter acesso a essa pagina (Segurança)
+
 if (!isset($_SESSION['ADMIN']) || !$_SESSION['ADMIN']) {
     echo 'voce nao pode acessar essa pagina';
     die();
 }
+//se o botao de NAME: enviar for setado entao executa:
+
 if (isset($_POST['enviar'])) {
+    //valores começa setados como zero para nao ter erros caso eles nao sejam setados no formulario
+
     $values1['acumulos'] = 0;
     $values2['acumulos'] = 0;
     $values3['acumulos'] = 0;
     $values4['acumulos'] = 0;
     $values5['acumulos'] = 0;
+    //pega o codigo
     $codigo = $_POST['codigo'];
 
 
-    //*Infos aluno
+    //*----------------------------------------->I N F O   A L U N O S<-----------------------------------------
     include_once('../inc/banco.php');
     $pdo = new PDO('mysql:host=localhost:3308;dbname=pi', 'root', '');
-
+    //prepara o banco para busca as informações do codigo fornecido
     $sql = $pdo->prepare("SELECT * FROM clientes WHERE codigo = '$codigo'");
 
 
     if ($sql->execute()) {
 
         $info = $sql->fetchALL();
-
+        //pega as informações do ID fornecido
         foreach ($info as $key => $values) {
             echo 'acumulos do aluno : ' . $values['acumulo']  . '<br>';
             $nom = $values['nome'];
@@ -32,15 +38,17 @@ if (isset($_POST['enviar'])) {
         }
     }
     //* COMIDAAS
-
+    //Pega as informações setadas no formulario informações das comidas
     $comida1 = $_POST['comida1'];
     $comida2 = $_POST['comida2'];
     $comida3 = $_POST['comida3'];
     $comida4 = $_POST['comida4'];
     $comida5 = $_POST['comida5'];
     include_once('../inc/banco.php');
-
+    // prepara o banco para pesquisar os status das comidas.
     $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo IN ('$comida1','$comida2','$comida3', '$comida4','$comida5')");
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
+
     if ($comida1 > 100) {
         if (isset($_POST['comida1'])) {
             $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida1");
@@ -58,6 +66,7 @@ if (isset($_POST['enviar'])) {
             }
         }
     }
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
     if ($comida1 > 100) {
         if (isset($_POST['comida2'])) {
 
@@ -77,6 +86,7 @@ if (isset($_POST['enviar'])) {
             }
         }
     }
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
     if ($comida1 > 100) {
         if (isset($_POST['comida3'])) {
 
@@ -96,6 +106,7 @@ if (isset($_POST['enviar'])) {
             }
         }
     }
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
     if ($comida1 > 100) {
         if (isset($_POST['comida4'])) {
 
@@ -115,6 +126,7 @@ if (isset($_POST['enviar'])) {
             }
         }
     }
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
     if ($comida1 > 100) {
         if (isset($_POST['comida5'])) {
 
@@ -134,6 +146,7 @@ if (isset($_POST['enviar'])) {
             }
         }
     }
+    // caso a comida1 seja setada no formulario entao busca no banco de dados e mostra para o admin
     if (isset($_POST['comida1'])) {
 
 
@@ -145,6 +158,7 @@ if (isset($_POST['enviar'])) {
             echo 'Nome : ' . $values1['nome'] . '<br>';
         }
     }
+    // caso a comida2 seja setada no formulario entao busca no banco de dados e mostra para o admin
     if (isset($_POST['comida2'])) {
 
 
@@ -156,6 +170,7 @@ if (isset($_POST['enviar'])) {
             echo 'Nome : ' . $values2['nome'] . '<br>';
         }
     }
+    // caso a comida3 seja setada no formulario entao busca no banco de dados e mostra para o admin
     if (isset($_POST['comida3'])) {
 
 
@@ -167,6 +182,7 @@ if (isset($_POST['enviar'])) {
             echo 'Nome : ' . $values3['nome'] . '<br>';
         }
     }
+    // caso a comida4 seja setada no formulario entao busca no banco de dados e mostra para o admin
     if (isset($_POST['comida4'])) {
 
 
@@ -178,6 +194,7 @@ if (isset($_POST['enviar'])) {
             echo 'Nome : ' . $values4['nome'] . '<br>';
         }
     }
+    // caso a comida5 seja setada no formulario entao busca no banco de dados e mostra para o admin
     if (isset($_POST['comida5'])) {
 
 
@@ -190,13 +207,16 @@ if (isset($_POST['enviar'])) {
         }
     }
 }
+//se o botão enviar for setado
 if (isset($_POST['enviar'])) {
+    // pega o valor de acumulos que o cliente tem e soma pelo valor das comidas inseridas
     $soma = $values['acumulo'] + $values1['acumulos'] + $values2['acumulos'] + $values3['acumulos'] + $values4['acumulos'] + $values5['acumulos'];
     echo '<strong>' . $values['nome'] . ' ficou com ' . $soma . ' pontos</strong>';
     include_once('../inc/banco.php');
-
+    //Pega as informações do cliente e coloca a soma
     $sql = $pdo->prepare("UPDATE clientes SET acumulo=? WHERE codigo=?");
     if ($sql->execute(array($soma, $codigo))) {
+        //reseta a pagina em 5segundos
         header("Refresh:5");
     } else {
         echo 'Dados não cadastrado';

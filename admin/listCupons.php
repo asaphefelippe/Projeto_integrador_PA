@@ -13,19 +13,21 @@
 </style>
 <?php
 session_start();
+// Para verificar se a session admin foi setada ou foi retornada como TRUE caso contrário a pessoa não poderá ter acesso a essa página (Segurança)
 if (!isset($_SESSION['ADMIN']) || $_SESSION['ADMIN'] == false) {
     echo 'voce nao pode acessar essa pagina';
     die();
 }
 include_once('../inc/menuBoot.php');
 include_once('../inc/banco.php');
-
+//seleciona todos os cupons que estão no banco de dados
 $sql = $pdo->prepare('SELECT * FROM cupons');
 
-
+//executa
 if ($sql->execute()) {
+    //vai no banco de dados e procura:
     $info = $sql->fetchALL(PDO::FETCH_ASSOC);
-
+//busca as informações e mostra para o admin a lista de cupons retornados na variavel $values
     foreach ($info as $key => $values) {
         echo "<div style='margin-left:300px;'>";
         echo '<br>';
