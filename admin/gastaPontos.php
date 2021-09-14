@@ -19,7 +19,7 @@ if (isset($_POST['enviar'])) {
     $codigo = $_POST['codigo'];
     //*----------------------------------------->I N F O   A L U N O S<-----------------------------------------
     include_once('../inc/banco.php');
-    $pdo = new PDO('mysql:host=localhost:3308;dbname=pi', 'root', '');
+    // $pdo = new PDO('mysql:host=localhost:3308;dbname=pi', 'root', '');
     //prepara o banco para busca as informações do codigo fornecido
     $sql = $pdo->prepare("SELECT * FROM clientes WHERE codigo = '$codigo'");
     if ($sql->execute()) {

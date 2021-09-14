@@ -1,18 +1,21 @@
 <?php
+// caso a pessoa clique em sair destroi a sessão
 if (isset($_GET['logout'])) {
     session_destroy();
     header("location:login.php");
 }
-
+// verifica se o cliente ta logada
 if (@$_SESSION['logado']) {
+    // armazena email do cliente em uma variavel
     $email = $_SESSION['email'];
     include('inc/banco.php');
+    //vai no banco e procura pelo email do client
     $sql = $pdo->prepare("SELECT * FROM clientes WHERE email = '$email'");
 
     if ($sql->execute()) {
 
         $info = $sql->fetchALL();
-
+        // pega as informações do cliente
         foreach ($info as $key => $values) {
 
             $acu = $values['acumulo'];
@@ -21,6 +24,7 @@ if (@$_SESSION['logado']) {
         }
     }
 } else {
+    // se o client nao for logado deixa tudo setado como vazio
     $_SESSION['logado'] = false;
     $email = "";
     $acu = "";
@@ -103,6 +107,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
 
     <div class="Ola">
         <?php
+        //caso o cliente esteja logado entao mostra o "ola,......" caso contrario não
         if (@$_SESSION['logado']) : ?>
             <?php echo '<h4 class="phpOlaNome">Olá, ' . $nom . ' </h4> <p> seu codigo é : ' . $cod . '</p>' ?>
         <?php else : $_SESSION['logado'] = "";
@@ -196,7 +201,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
     <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt="" class="img-fluid"></div>
     <div class="col-md-4">
         <div>
-            <h1 class="PaoTitulo fonte2">Modern Canteen</h1>
+            <h1 class="PaoTitulo fonte2">MODERN CANTEEN </h1>
             <div class="Pao">
                 <p class="PaoParagra">Fui em busca de felicidade</p>
                 <p class="PaoParagra1">voltei com</p>
@@ -218,13 +223,13 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/images/fotos (1).jpg" class="fotosCa">
+                    <img src="assets/images/slide11.jpg" class="fotosCa">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/fotos(2).jpg" class="fotosCa">
+                    <img src="assets/images/slide22.jpg" class="fotosCa">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/fotos(3).jpg" class="fotosCa">
+                    <img src="assets/images/slide33.jpg" class="fotosCa">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="margin-left: 20%;">
@@ -265,7 +270,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
 <section class="row gx-5">
     <div class="col-md-12">
         <div id="pontos">
-            <h1 class="h1pontos fonte2">sistema de pontos</h1>
+            <h1 class="h1pontos fonte2">SISTEMA DE PONTOS</h1>
             <p class="ppontos">o sistema de pontos funciona da seguinte forma: Primeiramente o cliente só terá esse benefício se tiver login em no nosso site. Ao acessar o site, o cliente entrará em nosso cardápio onde todos os produtos terão uma quantia de pontos, a cada produto que o cliente comprar ele acumulará pontos. Esse acumulo de pontos transformará em recompensas. Por exemplo, se o cliente acumulou 30 pontos, ele ganhará uma coxinha.</p>
             <img src="assets/images/fidelidade.png" alt="" class="fidelidade">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -281,10 +286,11 @@ if (isset($_POST['enviar'])) {
     $emailF = $_POST['email'];
     $msg = $_POST['msg'];
 
-    $sql = new PDO("mysql:host=localhost:3308;dbname=pi", "root", "");
-    $pdo = "INSERT INTO formfooter (cod,nome,email,mensagem) VALUES (null,'$nome' , '$email', '$msg')";
+    include_once(dirname(__FILE__) . '/inc/banco.php');
 
-    $exe = $sql->prepare($pdo);
+    $sql = "INSERT INTO formfooter (cod,nome,email,mensagem) VALUES (null,'$nome' , '$email', '$msg')";
+
+    $exe = $pdo->prepare($sql);
 
     $exe->execute();
 }

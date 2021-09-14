@@ -274,7 +274,7 @@ footer {
 }
 
 .comidas {
-    font-family: sans-serif;
+
     font-weight: bold;
 }
 
@@ -575,17 +575,7 @@ padding: 30px; */
     border-radius: 100%;
 }
 
-.PaoParagra {
-    font-size: 25px;
-}
 
-.PaoParagra1 {
-    font-size: 25px;
-}
-
-.PaoParagra2 {
-    font-size: 25px;
-}
 
 .Pao {
     text-align: center;
@@ -593,6 +583,8 @@ padding: 30px; */
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     color: #ffbe0b;
+    text-shadow: 0 0 30px #ffbe0b;
+    font-size: 35px;
 }
 
 .ContainerPontos {
@@ -715,10 +707,21 @@ padding: 30px; */
     font-size: 25px;
 }
 
+.pontos5{
+    position: relative;
+    background-color: yellow;
+    width: 60px;
+    border-radius: 100%;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    height: 40px;
+}
+
 .login2 {
     background-color: #8338ec;
-    width: 55%;
-    height: 400px;
+    width: 35%;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 0 30px purple;
@@ -729,6 +732,8 @@ padding: 30px; */
     margin-left: auto;
     margin-right: auto;
     color: white;
+    text-align: center;
+    font-weight: bold;
 }
 
 .codigo {

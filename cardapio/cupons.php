@@ -65,9 +65,9 @@ include_once(dirname(__FILE__) . '/../inc/menu.php');
 <?php
 /*---------------------------------------------------------------------------------------------------------> INICIO PHP <---------------------------------------------------------------------------------------------------------*/
 include_once(dirname(__FILE__) . '/../inc/banco.php');
-
+// consulta o banco sobre os dados registrados na tabela cupons
 $result = "SELECT * FROM cupons";
-
+// query consulta os resultados
 $res = $pdo->query($result);
 
 $count = $res->fetchAll();
@@ -76,10 +76,11 @@ $count = $res->fetchAll();
 <div class=" row row-cols-md-4 row-cols-sm-3 row-cols-xs-2" style="margin-left: 0px;">
 
     <?php
+    // pega os resultados do banco de dados
     foreach ($pdo->query($result) as $values) {
-       echo '<div class="col p-3">';
-       //echo '<div class=" efeito-hover1 p-3 h-100">';
-
+        echo '<div class="col p-3">';
+        //echo '<div class=" efeito-hover1 p-3 h-100">';
+        //armazena todos os resultados em variaveis 
         $nome1 =    utf8_encode($values['nome1']);
         $nome2 =  utf8_encode($values['nome2']);
         $nome3 =  utf8_encode($values['nome3']);
@@ -98,51 +99,55 @@ $count = $res->fetchAll();
         $img =  $values['imagem'];
         $pontos = $values['acumulos'];
         $pts = "pts";
+        //verifica se a variavel foi setada caso sim cria uma tag HTML
         if ($nome1 != null) {
             $nome1 = "<div><h2>↠$nome1</h2></div>";
         } else {
             $nome1 = "<div></div>";
         }
 
-
+        //verifica se a variavel foi setada caso sim cria uma tag HTML
         if ($nome2 != null) {
             $nome2 = "<div><h2>↠$nome2</h2></div>";
         } else {
             $nome2 = "<div></div>";
         }
 
-
+        //verifica se a variavel foi setada caso sim cria uma tag HTML
         if ($nome3 != null) {
             $nome3 = "<div><h2>↠$nome3</h2></div>";
         } else {
             $nome3 = "<div></div>";
         }
 
-
+        //verifica se a variavel foi setada caso sim cria uma tag HTML
         if ($nome4 != null) {
             $nome4 = "<div><h2>↠$nome4</h2></div>";
         } else {
             $nome4 = "<div></div>";
         }
 
-
+        //verifica se a variavel foi setada caso sim cria uma tag HTML
         if ($nome5 != null) {
             $nome5 = "<div><h2>↠$nome5</h2></div>";
         } else {
             $nome5 = "<div></div>";
         }
-
+        //verifica se a variavel foi setada caso sim cria uma tag HTML
         if ($nome6 != null) {
             $nome6 = "<div><h2>↠$nome6</h2></div>";
         } else {
             $nome6 = "<div></div>";
         }
+        // verifica se a pessoa que esta acessando a pagina esta logada os pontos aparecem caso contrario NÃO
         if ($_SESSION['logado']) {
             $mostrarP = "<div class= 'pontosCupons'>$pontos pts</div>";
         } else {
             $mostrarP = "";
         }
         ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
+
+        //armazena a imagem em uma variavel
         $imagem = '<img class="cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
 
 

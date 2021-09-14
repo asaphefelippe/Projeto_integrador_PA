@@ -1,29 +1,30 @@
 <?php
 session_start();
+// começa setando email e logado como falso
 $_SESSION['email'] = "";
 $_SESSION['logado'] = false;
 
-
+// caso o botão com NAME: enviar seja setado então executa
 if (isset($_POST['enviar'])) {
-
+    // puxa o email e senha fornecida
     $email = $_POST['email'];
     $senha = md5($_POST['senha']);
 
-    $pdo = new PDO("mysql:host=localhost:3308;dbname=pi", "root", "");
-
+    // $pdo = new PDO("mysql:host=localhost:3308;dbname=pi", "root", "");
+    include_once(dirname(__FILE__) . '/inc/banco.php');
+    // vai no banco e verifica a senha e o email do client
     $result = "SELECT * FROM clientes WHERE email = '$email' AND senha = '$senha'";
 
     $res = $pdo->query($result);
-
+    // conta as linhas afetadas
     $count = $res->fetchColumn();
 
-    //echo "There are" . $count . " machine.";  -----------------------------------------PARA TESTES-----------------------------------------
-
+    // verifica se é um admin ou um cliente
     foreach ($pdo->query($result) as $values) {
         $admin = $values['is_admin'];
     }
     //echo $admin;                              -----------------------------------------PARA TESTES-----------------------------------------
-
+    // verifica se a senha e o login inseridos estao corretos
     if ($count == "") {
         echo 'Senha ou login errado';
     } else {
@@ -43,6 +44,7 @@ if (isset($_POST['enviar'])) {
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,15 +54,16 @@ if (isset($_POST['enviar'])) {
     <link rel="stylesheet" href="assets/css/estilo.css">
 </head>
 <script>
-function show() {
-  var senha = document.getElementById("senha");
-  if (senha.type === "password") {
-    senha.type = "text";
-  } else {
-    senha.type = "password";
-  }
-}
+    function show() {
+        var senha = document.getElementById("senha");
+        if (senha.type === "password") {
+            senha.type = "text";
+        } else {
+            senha.type = "password";
+        }
+    }
 </script>
+
 <body>
 
     <!-- NAO DA PARA COLOCAR INCLUIDE POR CAUSA DO MENU NA TELA DE LOGIN NAO TEM MENU-->
@@ -77,15 +80,15 @@ function show() {
                 <div>
                     <img src="assets/images/perfil.png" alt="" class="perfil"> <label for="email" class="email">email</label>
                     <br>
-                    <input type="text" name="email" required/>
+                    <input type="text" name="email" required />
                 </div>
                 <div>
                     <img src="assets/images/cadeado-trancado.png" alt="" class="cadeado"> <label for="senha" class="email">senha</label>
                     <br>
-                    <input type="password" name="senha" id="senha" placeholder="Digite a Senha"  required />
+                    <input type="password" name="senha" id="senha" placeholder="Digite a Senha" required />
                     <img id="olho" onclick="show()" src="assets/images/olho.png" class="olho">
                 </div>
-                <div style="padding-left: 45px;"class="button">
+                <div style="padding-left: 45px;" class="button">
                     <br>
                     <button type="submit" class="email buttonLogin aCadastro" name="enviar"> login</button>
                 </div>
