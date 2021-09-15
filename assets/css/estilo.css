@@ -17,6 +17,11 @@
     justify-content: center;
 }
 
+
+
+
+/*  BOLAS GIRATÓRIAS     */
+
 .container-bolas {
     padding: 10% 0;
 }
@@ -113,6 +118,13 @@
     }
 }
 
+ /*    ------------------------------------------------------------------------------        */
+
+
+
+/*    HEADER: menu,submenu      */
+
+
 header {
     background-color: #8338ec;
     height: 120px;
@@ -128,6 +140,18 @@ header {
     width: 190px;
     position: relative;
     top: -60px;
+}
+
+.Ola {
+    /* margin-left: -1800px;
+    font-size: 30px; */
+    color: white;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.phpOlaNome {
+    color: white;
 }
 
 .menu {
@@ -195,6 +219,39 @@ header {
     width: 30px;
 }
 
+.png {
+    width: 80px;
+    height: 110px;
+    /* margin-top: 250px; */
+}
+
+.marca {
+    width: 40px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.padding {
+    padding: 25px;
+}
+
+.signin {
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    border-radius: 100%;
+    display: block;
+}
+
+
+/*      -----------------------------------------------------------------------            */
+
+
+
+/*       PÁGINA PRINCIPAL          */
+
 .sobreNos {
     background-color: #fb5607;
     border: 10px solid transparent;
@@ -235,80 +292,53 @@ h1 {
     width: 50%;
 }
 
-footer {
-    background-color: black;
+
+.imgRoda {
+    background-image: url("../images/comidaWhite.jpg");
+    height: 600px;
+    background-attachment: fixed;
 }
 
-.efeito-hover {
-    background-color: cornsilk;
-    box-shadow: none;
-    transform: translateY(0px);
-    transition-duration: 0.3s;
-    /* height: 100%; */
+.FundoBranco {
+    display: flex;
+    background-color: white;
 }
 
-.efeito-hover:hover {
-    /* background-color: #3a86ff; */
-    box-shadow: 0 0 30px #ff006e;
-    /*transform: translate(0, -20px) rotate(10deg);*/
-    transform: translateY(-8px);
-    transition-duration: 0.3s;
-}
-
-.botaoComprar {
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #ff006e;
+.PaoTitulo {
     font-family: 'Oswald', sans-serif;
-    font-size: 15px;
-}
-
-.titulo {
     background-color: #ffbe0b;
-    box-shadow: 0 0 30px #ffbe0b;
-    height: 40px;
+    width: 300px;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100%;
+}
+
+.Pao {
     text-align: center;
-    margin-top: 120px;
-    font-family: 'Love Ya Like A Sister', cursive;
-    font-size: 30px;
-}
-
-.comidas {
-
-    font-weight: bold;
-}
-
-.preco {
+    margin-top: 10%;
     font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    color: #ffbe0b;
+    text-shadow: 0 0 30px #ffbe0b;
+    font-size: 35px;
 }
 
-.png {
-    width: 80px;
-    height: 110px;
-    /* margin-top: 250px; */
+.pãoDeQueijo {
+    background-color: white;
 }
 
-.marca {
-    width: 40px;
-    height: 30px;
-    margin-top: 30px;
-    margin-left: 20px;
-}
+/*    -------------------------------------------------------------------         */
 
-.padding {
-    padding: 25px;
-}
+
+
+/*   FOOTER     */
+
 
 footer {
-    /* display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-column-gap: 20px;
-row-gap: 20px;
-height: 100px;
-padding: 30px; */
     background-color: black;
-    /* height: 200px; */
 }
+
 
 .footer2 {
     padding: 5px;
@@ -318,6 +348,7 @@ padding: 30px; */
 .form1 {
     margin-top: 25px;
 }
+
 
 .imgF {
     width: 200px;
@@ -340,6 +371,74 @@ padding: 30px; */
     color: white;
     font-family: 'Pacifico', cursive;
 }
+
+
+/*     -----------------------------------------------------       */
+
+
+/* HOVER */
+
+.efeito-hover {
+    background-color: cornsilk;
+    box-shadow: none;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+    /* height: 100%; */
+}
+
+.efeito-hover:hover {
+    /* background-color: #3a86ff; */
+    box-shadow: 0 0 30px #ff006e;
+    /*transform: translate(0, -20px) rotate(10deg);*/
+    transform: translateY(-8px);
+    transition-duration: 0.3s;
+}
+
+.efeito-hover1 {
+    background-color: #ffbe0b;
+    box-shadow: none;
+    transform: translateY(0px);
+    transition-duration: 0.3s;
+}
+
+.efeito-hover1:hover {
+    /* background-color: #3a86ff; */
+    box-shadow: 0 0 30px #ff006e;
+    /*transform: translate(0, -20px) rotate(10deg);*/
+    transform: translateY(-8px);
+    transition-duration: 0.3s;
+}
+
+/*  ------------------------ */
+
+.botaoComprar {
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #ff006e;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+}
+
+.titulo {
+    background-color: #ffbe0b;
+    box-shadow: 0 0 30px #ffbe0b;
+    height: 40px;
+    text-align: center;
+    margin-top: 120px;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-size: 30px;
+}
+
+.comidas {
+    font-weight: bold;
+}
+
+.preco {
+    font-family: 'Oswald', sans-serif;
+}
+
+
+/*     FONTES       */
 
 .fonteBola {
     font-family: sans-serif;
@@ -389,6 +488,14 @@ padding: 30px; */
     padding: 10px;
 }
 
+
+
+
+/* ------------------------------ */
+
+
+/*  BOTÃO DE SUBIR  */
+
 #subir {
     text-decoration: none;
     background: rgba(158, 86, 199, 0.9);
@@ -410,6 +517,13 @@ padding: 30px; */
 #subir:hover {
     opacity: 1;
 }
+
+
+/*  -------------------------------------   */
+
+
+
+/*    LOGIN     */
 
 .login {
      margin-left: auto;
@@ -496,6 +610,39 @@ padding: 30px; */
     height: 15px;
 }
 
+.login2 {
+    background-color: #8338ec;
+    width: 35%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 30px purple;
+    margin-top: 150px;
+}
+
+.login3 {
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
+.h1Login {
+    background-color: #3a86ff;
+    height: 79px;
+    margin: 0px;
+    margin-top: 10%;
+    box-shadow: 0 0 30px #3a86ff;
+    color: white;
+}
+
+/*   -------------------------------------------  */
+
+
+/* CADASTRO */
+
+
 .buttonCadastro {
     width: 90px;
     height: 40px;
@@ -550,57 +697,24 @@ padding: 30px; */
     margin-left: 5px;
 }
 
+.olho {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+}
+
+
+/*     ------------------------------------------           */
+
+
+
+
+
+
 .JaTemConta {
     color: white;
 }
 
-.imgRoda {
-    background-image: url("../images/comidaWhite.jpg");
-    height: 600px;
-    background-attachment: fixed;
-}
-
-.FundoBranco {
-    display: flex;
-    background-color: white;
-}
-
-.PaoTitulo {
-    font-family: 'Oswald', sans-serif;
-    background-color: #ffbe0b;
-    width: 300px;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 100%;
-}
-
-
-
-.Pao {
-    text-align: center;
-    margin-top: 10%;
-    font-family: 'Oswald', sans-serif;
-    font-weight: bold;
-    color: #ffbe0b;
-    text-shadow: 0 0 30px #ffbe0b;
-    font-size: 35px;
-}
-
-.ContainerPontos {
-    background-color: #fb5607;
-    height: 900px;
-    width: 40%;
-    margin-left: 30%;
-    box-shadow: 0 0 15px #ffbe0b;
-}
-
-.TituloPontos {
-    margin-top: 5%;
-    color: #fb5607;
-    background-color: #ffbe0b;
-    box-shadow: 0 0 15px #ffbe0b;
-}
 
 .Codigo {
     color: white;
@@ -608,13 +722,6 @@ padding: 30px; */
     font-size: 20px;
 }
 
-.Ola {
-    /* margin-left: -1800px;
-    font-size: 30px; */
-    color: white;
-    margin-top: 20px;
-    margin-left: 15px;
-}
 
 .tamanho {
     max-width: 100%;
@@ -622,20 +729,8 @@ padding: 30px; */
     height: 200px;
 }
 
-.mySlides1,
-.mySlides2 {
-    display: none
-}
 
-.carrosel {
-    vertical-align: middle;
-    margin-top: 40px;
-    width: 800px;
-    height: 330px;
-}
-
-
-/* Slideshow container */
+/* SLIDES */
 
 .slideshow-container {
     position: relative;
@@ -644,8 +739,6 @@ padding: 30px; */
     height: 330px;
 }
 
-
-/* Next & previous buttons */
 
 .prev,
 .next {
@@ -663,16 +756,11 @@ padding: 30px; */
     user-select: none;
 }
 
-
-/* Position the "next button" to the right */
-
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-
-/* On hover, add a grey background color */
 
 .prev:hover,
 .next:hover {
@@ -694,6 +782,43 @@ padding: 30px; */
     width: 600px;
     height: 330px;
 }
+
+.fotosCa {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 30%;
+    height: 380px;
+}
+
+
+.fotosCa1 {
+    margin-left: 25%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 50%;
+    height: 380px;
+}
+
+.mySlides1,
+.mySlides2 {
+    display: none
+}
+
+.carrosel {
+    vertical-align: middle;
+    margin-top: 40px;
+    width: 800px;
+    height: 330px;
+}
+
+/*  -------------------------------------      */
+
+
+/*   PONTOS    */
+
 
 .pontos2 {
     position: relative;
@@ -718,41 +843,6 @@ padding: 30px; */
     height: 40px;
 }
 
-.login2 {
-    background-color: #8338ec;
-    width: 35%;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 0 30px purple;
-    margin-top: 150px;
-}
-
-.login3 {
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-}
-
-.codigo {
-    margin-left: 20%;
-    font-size: 22px;
-    font-family: sans-serif;
-    color: white;
-}
-
-.tamanho {
-    max-width: 100%;
-    width: 300px;
-    height: 200px;
-}
-
-.comida {
-    display: flex;
-}
-
 .pontos {
     position: absolute;
     background-color: yellow;
@@ -775,36 +865,85 @@ padding: 30px; */
     margin-left: 400px;
 }
 
+.ContainerPontos {
+    background-color: #fb5607;
+    height: 900px;
+    width: 40%;
+    margin-left: 30%;
+    box-shadow: 0 0 15px #ffbe0b;
+}
+
+.TituloPontos {
+    margin-top: 5%;
+    color: #fb5607;
+    background-color: #ffbe0b;
+    box-shadow: 0 0 15px #ffbe0b;
+}
+
+.ppontos {
+    font-weight: bold;
+    padding: 10px;
+}
+
+
+.pontosh1p {
+    font-weight: bold;
+    color: #fff;
+}
+
+.pontosP {
+    /*border-radius: 100%;
+    background-color: #f1f1f1;
+    margin-left: 130px;
+    width: 130px;*/
+    border-radius: 100%;
+    background-color: #f1f1f1;
+    margin-left: auto;
+    margin-right: auto;
+    width: 130px;
+    font-weight: bold;
+}
+
+
+.h1pontos {
+    color: #8338ec;
+    font-weight: bold;
+}
+
+.fidelidade {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+/*  -------------------------------------   */
+
+
+.codigo {
+    margin-left: 20%;
+    font-size: 22px;
+    font-family: sans-serif;
+    color: white;
+}
+
+.tamanho {
+    max-width: 100%;
+    width: 300px;
+    height: 200px;
+}
+
+.comida {
+    display: flex;
+}
+
+
 .laranja {
     background-color: #fb5607;
     /* margin-bottom: 300px; */
 }
 
-.fotosCa {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 30%;
-    height: 380px;
-}
 
-/* .AntPro {
-    margin-left: 90px;
-} */
+/* CUPOM */
 
-.fotosCa1 {
-    margin-left: 25%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width: 50%;
-    height: 380px;
-}
-
-/* .AntPro1 {
-    margin-left: 90px;
-} */
 
 .cupom {
     padding: 5px;
@@ -826,164 +965,16 @@ padding: 30px; */
     cursor: pointer;
 }
 
-.container1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    column-gap: 20px;
-    row-gap: 20px;
-    margin-top: 65px;
-    width: 900px;
-}
-
 .cupomIMG {
     width: 400px;
     height: 200px;
 }
 
-.adm {
-    margin-left: 39%;
-}
 
-.adm2 {
-    background-color: #ff006e;
-    height: 300px;
-    width: 900px;
-    margin-left: 28%;
-    margin-top: 50px;
-    box-shadow: 0 0 30px #ff006e;
-}
+/* ------------------------------ */
 
-.botao {
-    margin-left: 55px;
-    background-color: #3a86ff;
-}
 
-.h1Login {
-    background-color: #3a86ff;
-    height: 79px;
-    margin: 0px;
-    margin-top: 10%;
-    box-shadow: 0 0 30px #3a86ff;
-    color: white;
-}
-
-.echoADM {
-    font-weight: bold;
-}
-
-.altUsuario {
-    background-color: #8338ec;
-    margin-left: 300px;
-    /* width: 700px; */
-    /* margin-left: 30%;
-    margin-top: 10%;
-    height: 100px; */
-}
-
-.altUsuario2 {
-    text-align: center;
-    padding: 15px;
-}
-
-.h1pontos {
-    color: #8338ec;
-    font-weight: bold;
-}
-
-.ppontos {
-    font-weight: bold;
-    padding: 10px;
-}
-
-.signin {
-    color: #fff;
-    font-family: sans-serif;
-    font-size: 15px;
-    text-decoration: none;
-    border-radius: 100%;
-    display: block;
-}
-
-.toptop {
-    margin-top: 30px;
-    margin-left: 18px;
-    font-weight: bold;
-}
-
-.fidelidade {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-}
-
-.inicialMenu {
-    font-weight: bold;
-    color: #d6d700;
-    margin-left: 10px;
-    font-family: sans-serif;
-    font-size: 25px;
-    text-decoration: none;
-    border-radius: 100%;
-    font-weight: bold;
-}
-
-.fotosPizza {
-    width: 200px;
-    height: 200px;
-}
-
-.efeito-hover1 {
-    background-color: #ffbe0b;
-    box-shadow: none;
-    transform: translateY(0px);
-    transition-duration: 0.3s;
-}
-
-.efeito-hover1:hover {
-    /* background-color: #3a86ff; */
-    box-shadow: 0 0 30px #ff006e;
-    /*transform: translate(0, -20px) rotate(10deg);*/
-    transform: translateY(-8px);
-    transition-duration: 0.3s;
-}
-
-.pontosh1p {
-    font-weight: bold;
-    color: #fff;
-}
-
-.pontosP {
-    /*border-radius: 100%;
-    background-color: #f1f1f1;
-    margin-left: 130px;
-    width: 130px;*/
-    border-radius: 100%;
-    background-color: #f1f1f1;
-    margin-left: auto;
-    margin-right: auto;
-    width: 130px;
-    font-weight: bold;
-}
-
-.telaDeCompraPontos {
-    background-color: #8338ec;
-    margin-top: 150px;
-}
-
-.menuADM {
-    background-color: #8338ec;
-    color: white;
-    font-weight: bold;
-    padding: 20px;
-}
-
-.menuADMA {
-    color: white;
-}
-
-.pãoDeQueijo {
-    background-color: white;
-}
+/* TELA DE COMPRA */
 
 .voltar {
     margin-left: auto;
@@ -992,6 +983,26 @@ padding: 30px; */
     margin-top: 100px;
 }
 
+.telaDeCompraPontos {
+    background-color: #8338ec;
+    margin-top: 150px;
+}
+/* --------------- */
+
+
+/* aleatorios */
+
+.botao {
+    margin-left: 55px;
+    background-color: #3a86ff;
+}
+
+
+.toptop {
+    margin-top: 30px;
+    margin-left: 18px;
+    font-weight: bold;
+}
 .lnr-eye {
     position: absolute;
     top: 5px;
@@ -1007,21 +1018,11 @@ padding: 30px; */
     cursor: pointer;
 }
 
-.olho {
-    width: 25px;
-    height: 25px;
-    position: absolute;
-}
+/* ------------------------------------------------------------------------------------ */
 
-.olho1 {
-    width: 25px;
-    height: 25px;
-    margin-left: 20px;
-}
 
-.phpOlaNome {
-    color: white;
-}
+
+/*  CARDAPIO */
 
 .cardapioH1 {
     font-family: sans-serif;
@@ -1066,12 +1067,32 @@ padding: 30px; */
     font-family: sans-serif;
     font-weight: bold;
 }
+
+.fotosPizza {
+    width: 200px;
+    height: 200px;
+}
+
+.container1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 65px;
+    width: 900px;
+}
+
+/* ------------------- */
+
+
+
 /* -------------------------------------------------------------- A D M I N --------------------------------------------------------------*/
 .formADM{
     text-align: center;
     position: absolute;
     width:100%;
     margin-top: 300px;
+    margin-left: 300px;
     background-color: #8338ec;
     height: 250px;
 }
@@ -1081,7 +1102,58 @@ padding: 30px; */
 #mundo.body{
     background-color: #fb5607;
 }
+
+.menuADM {
+    background-color: #8338ec;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.menuADMA {
+    color: white;
+}
+
+.adm {
+    margin-left: 39%;
+}
+
+.adm2 {
+    background-color: #ff006e;
+    height: 300px;
+    width: 900px;
+    margin-left: 28%;
+    margin-top: 50px;
+    box-shadow: 0 0 30px #ff006e;
+}
+
+.echoADM {
+    font-weight: bold;
+}
+
+.altUsuario {
+    background-color: #8338ec;
+    margin-left: 300px;
+    /* width: 700px; */
+    /* margin-left: 30%;
+    margin-top: 10%;
+    height: 100px; */
+}
+
+.altUsuario2 {
+    text-align: center;
+    padding: 15px;
+}
 /* -------------------------------------------------------------- A D M I N --------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
 @media screen and (max-width:700px) {
     .borda {
         margin: 0 auto;

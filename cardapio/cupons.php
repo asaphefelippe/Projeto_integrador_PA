@@ -1,4 +1,12 @@
 <?php
+if(!$_SESSION['logado']){
+    echo "<center>";
+    echo "Essa pagina so pode ser acessada caso voce seja cadastrado";
+    echo "<br>";
+    echo "cadastre-se <a href='cadastro.php'>A Q U I</a>";
+    echo "</center>";
+    die();
+}
 include_once(dirname(__FILE__) . '/../inc/header.php');
 include_once(dirname(__FILE__) . '/../inc/menu.php');
 ?>
@@ -148,7 +156,7 @@ $count = $res->fetchAll();
         ///$imagem = '<img src="data:image/jpeg;base64,' . base64_encode($values['imagem']) . '" />';
 
         //armazena a imagem em uma variavel
-        $imagem = '<img class="cupomIMG" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
+        $imagem = '<img class="cupomIMG img-fluid" src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
 
 
 

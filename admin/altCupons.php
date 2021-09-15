@@ -60,9 +60,8 @@ if (isset($_GET['id'])) {
 
 
 // se o botao com o NAME : atualizar for setado entao executa
-
 if (isset($_POST['atualizar'])) {
-
+    
     if (!empty($_FILES["imagem"]["name"])) {
         echo "TESTER2" . $codigo;
         // Get file info 
@@ -76,15 +75,14 @@ if (isset($_POST['atualizar'])) {
             $imagem = $_FILES['imagem']['tmp_name'];
             $imgContent = addslashes(file_get_contents($imagem));
         }
-    }
-    echo '<pre>';
-    print_r($_FILES);
-    echo '</pre>';
+    } 
+    
+    //echo '<pre>';
+    //print_r($_FILES);
+    //echo '</pre>';
 
     include_once('../inc/banco.php');
-    if (!isset($imgContent)) {
-        $imgContent = "";
-    }
+
     $numb_comb = $_POST['numb_comb'];
     $nome1 = $_POST['nome1'];
     $nome2 = $_POST['nome2'];
@@ -102,11 +100,17 @@ if (isset($_POST['atualizar'])) {
     $acumulos = $_POST['acumulo'];
     $gastarP = $_POST['gastarP'];
     $codigo = $_POST['codigo'];
-    echo "TESTER4" . $codigo;
-    $sql2 =  $pdo->prepare("UPDATE cupons SET numero_comb='$numb_comb',preco='$preco',acumulo='$acumulos',nome1='$nome1',nome2='$nome2',nome3='$nome3',nome4='$nome4',nome5='$nome5',nome6='$nome6',quantidade1='$quantidade1',quantidade2='$quantidade2',quantidade3='$quantidade3',quantidade4='$quantidade4',quantidade5='$quantidade5',quantidade6='$quantidade6',imagem='$imgContent',gastarP='$gastarP' WHERE codigo ='$codigo'");
-    if ($sql2->execute()) {
-        echo "CAIU NO EXECUTE";
+    //echo "TESTER4  " . $codigo;
+    $sql2="";
+    if (isset($imgContent)){
+        $sql2 =  $pdo->prepare("UPDATE cupons SET numero_comb='$numb_comb',preco='$preco',acumulos='$acumulos',nome1='$nome1',nome2='$nome2',nome3='$nome3',nome4='$nome4',nome5='$nome5',nome6='$nome6',quantidade1='$quantidade1',quantidade2='$quantidade2',quantidade3='$quantidade3',quantidade4='$quantidade4',quantidade5='$quantidade5',quantidade6='$quantidade6',imagem='$imgContent',gastarP='$gastarP' WHERE codigo ='$codigo'");
+    } else {
+        $sql2 =  $pdo->prepare("UPDATE cupons SET numero_comb='$numb_comb',preco='$preco',acumulos='$acumulos',nome1='$nome1',nome2='$nome2',nome3='$nome3',nome4='$nome4',nome5='$nome5',nome6='$nome6',quantidade1='$quantidade1',quantidade2='$quantidade2',quantidade3='$quantidade3',quantidade4='$quantidade4',quantidade5='$quantidade5',quantidade6='$quantidade6',gastarP='$gastarP' WHERE codigo ='$codigo'");
     }
+    //print_r($sql2);
+
+    $sql2->execute();
+
     if ($sql2->rowCount() > 0) {
         echo 'Dados cadastrado';
     } else {
