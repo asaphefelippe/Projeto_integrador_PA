@@ -117,145 +117,150 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
     </div>
 
 </header>
+<div class="container-fluid">
+    <section class="row -5">
+        <div class="col-12">
+            <div class="inicial">
+                <div class="container-bolas">
+                    <div class="column row row-cols-md-4">
 
-<section class="row gx-5">
-    <div class="col-12">
-        <div class="inicial">
-            <div class="container-bolas">
-                <div class="column row row-cols-md-4">
-
-                    <a href="#sobreNos">
-                        <div class="borda">
-                            <div class="borda-giro"> </div>
-                            <div class="borda-conteudo">
-                                <h1 class="fonteBola1">sobre nós</h1>
-                                <div class="borda-conteudo-lala">
-                                    <h1 class="fonteBola">venha saber mais sobre a historia do Modern Canteen</h1>
-                                </div>
-                            </div>
-
-                        </div>
-                    </a>
-
-
-                    <a href="#fotos">
-                        <div class="borda" id="#fotos">
-                            <div class="borda-giro"> </div>
-                            <div class="borda-conteudo">
-                                <div>
-                                    <h1 class="fonteBola1">fotos</h1>
+                        <a href="#sobreNos">
+                            <div class="borda">
+                                <div class="borda-giro"> </div>
+                                <div class="borda-conteudo">
+                                    <h1 class="fonteBola1">sobre nós</h1>
                                     <div class="borda-conteudo-lala">
-                                        <h1 class="fonteBola">acesse nossa galeria de fotos</h1>
+                                        <h1 class="fonteBola">venha saber mais sobre a historia do Modern Canteen</h1>
                                     </div>
                                 </div>
 
                             </div>
-                        </div>
-                    </a>
+                        </a>
 
 
-                    <a href="#pontos">
-                        <div class="borda">
-                            <div class="borda-giro"> </div>
-                            <div class="borda-conteudo">
-                                <h1 class="fonteBola1">pontos</h1>
-                                <div class="borda-conteudo-lala">
-                                    <h1 class="fonteBola">venha saber como funciona o sistema de pontos </h1>
+                        <a href="#fotos">
+                            <div class="borda" id="#fotos">
+                                <div class="borda-giro"> </div>
+                                <div class="borda-conteudo">
+                                    <div>
+                                        <h1 class="fonteBola1">fotos</h1>
+                                        <div class="borda-conteudo-lala">
+                                            <h1 class="fonteBola">acesse nossa galeria de fotos</h1>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
 
 
-                    <a href="#localizacao">
-                        <div class="borda">
-                            <div class="borda-giro"></div>
-                            <div class="borda-conteudo">
-                                <h1 class="fonteBola1">localização</h1>
-                                <div class="borda-conteudo-lala">
-                                    <h1 class="fonteBola">conheça nossa localiação</h1>
+                        <a href="#pontos">
+                            <div class="borda">
+                                <div class="borda-giro"> </div>
+                                <div class="borda-conteudo">
+                                    <h1 class="fonteBola1">pontos</h1>
+                                    <div class="borda-conteudo-lala">
+                                        <h1 class="fonteBola">venha saber como funciona o sistema de pontos </h1>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
 
 
+                        <a href="#localizacao">
+                            <div class="borda">
+                                <div class="borda-giro"></div>
+                                <div class="borda-conteudo">
+                                    <h1 class="fonteBola1">localização</h1>
+                                    <div class="borda-conteudo-lala">
+                                        <h1 class="fonteBola">conheça nossa localiação</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+<div class="container-fluid">
+    <section class="row -5">
+        <div class="sobreNos col-12" id="sobreNos">
+
+            <h1 class="fonte2"> SOBRE NÓS </h1>
+            <p class="fonte3">Somos uma equipe formada por 5 integrantes: Asaphe, Beatriz, Heitor, Ian e Emanuel. A ideia do Modern Canteen surgiu quando decidimos que queríamos fazer um site para cantinas, mas que tivesse um diferencial, um sistema dinâmico, que chamasse a atenção do cliente. Então surgiu a ideia de fazer um sistema de cupons e de pontos, assim chamaríamos atenção dos clientes e teríamos benefícios para eles. A partir disso o projeto foi sido desenvolvido.
+            </p>
+            <img src="assets/images/transferir.jpg" alt="" class="confeiteiros">
+        </div>
+
+    </section>
+</div>
+<div class="container-fluid">
+    <section class="row -5 pãoDeQueijo">
+        <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt="" class="img-fluid"></div>
+        <div class="col-md-4">
+            <div>
+                <h1 class="PaoTitulo fonte2">MODERN CANTEEN </h1>
+                <div class="Pao">
+                    <p class="PaoParagra">Fui em busca de felicidade</p>
+                    <p class="PaoParagra1">voltei com</p>
+                    <p class="PaoParagra2">um pão de queijo</p>
                 </div>
             </div>
 
         </div>
-    </div>
-</section>
-<section class="row gx-5">
-    <div class="sobreNos col-12" id="sobreNos">
+        <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt="" class="img-fluid"></div>
 
-        <h1 class="fonte2"> SOBRE NÓS </h1>
-        <p class="fonte3">Somos uma equipe formada por 5 integrantes: Asaphe, Beatriz, Heitor, Ian e Emanuel. A ideia do Modern Canteen surgiu quando decidimos que queríamos fazer um site para cantinas, mas que tivesse um diferencial, um sistema dinâmico, que chamasse a atenção do cliente. Então surgiu a ideia de fazer um sistema de cupons e de pontos, assim chamaríamos atenção dos clientes e teríamos benefícios para eles. A partir disso o projeto foi sido desenvolvido.
-        </p>
-        <img src="assets/images/transferir.jpg" alt="" class="confeiteiros">
-    </div>
+    </section>
+</div>
 
-</section>
 
-<section class="row gx-5 pãoDeQueijo">
-    <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt="" class="img-fluid"></div>
-    <div class="col-md-4">
-        <div>
-            <h1 class="PaoTitulo fonte2">MODERN CANTEEN </h1>
-            <div class="Pao">
-                <p class="PaoParagra">Fui em busca de felicidade</p>
-                <p class="PaoParagra1">voltei com</p>
-                <p class="PaoParagra2">um pão de queijo</p>
+<div class="container-fluid">
+
+    <section class="row -5 fotos" id="fotos">
+        <div class="col-md-12">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/images/slide11.jpg" class="fotosCa">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/images/slide22.jpg" class="fotosCa">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/images/slide33.jpg" class="fotosCa">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="margin-left: 20%;">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" style="margin-right: 20%;">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
         </div>
+    </section>
+</div>
+<div class="container-fluid">
 
-    </div>
-    <div class="col-md-4"><img src="assets/images/paoQueijo.png" alt="" class="img-fluid"></div>
-
-</section>
-
+    <section class="row -5">
+        <div class="col-md-12">
+            <div class="imgRoda">
 
 
-
-
-<section class="row gx-5 fotos" id="fotos">
-    <div class="col-md-12">
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/images/slide11.jpg" class="fotosCa">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/slide22.jpg" class="fotosCa">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/slide33.jpg" class="fotosCa">
-                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev" style="margin-left: 20%;">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next" style="margin-right: 20%;">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 
 
-<section class="row gx-5">
-    <div class="col-md-12">
-        <div class="imgRoda">
-
-
-        </div>
-    </div>
-</section>
-
-
-<section class="row gx-5">
+<section class="row -5">
     <div class="col-md-12">
         <div class="localizacao" id="localizacao">
             <h1 class="fonte10">LOCALIZAÇÃO</h1>
@@ -267,7 +272,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
     </div>
 </section>
 
-<section class="row gx-5">
+<section class="row -5">
     <div class="col-md-12">
         <div id="pontos">
             <h1 class="h1pontos fonte2">SISTEMA DE PONTOS</h1>

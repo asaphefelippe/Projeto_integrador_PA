@@ -75,9 +75,8 @@ include_once('../inc/menuBoot.php');
 
 <body>
 
-    <div class="login-1Cadastro">
-        <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
-        <form action="" method="POST" enctype="multipart/form-data">
+    <div class="centerADM">
+        <form class="formADM" action="" method="POST" enctype="multipart/form-data">
             <div class="loginCadastro">
                 <div>
                     <label for="nome" class="">Nome:</label>
@@ -103,7 +102,7 @@ include_once('../inc/menuBoot.php');
                     <input type="text" name="gastarP" />
                 </div>
                 <div>
-                    <label for="imagem" class="">Quantos pontos gasta:</label>
+                    <label for="imagem" class="">Imagem da comida:</label>
                     <br>
                     <input type="file" name="imagem" />
                 </div>

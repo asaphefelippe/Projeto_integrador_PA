@@ -57,8 +57,6 @@ if (isset($_GET['id'])) {
     $gastarP = "";
     $acumulos = "";
 }
-
-
 // se o botao com o NAME : atualizar for setado entao executa
 if (isset($_POST['atualizar'])) {
     
@@ -76,13 +74,7 @@ if (isset($_POST['atualizar'])) {
             $imgContent = addslashes(file_get_contents($imagem));
         }
     } 
-    
-    //echo '<pre>';
-    //print_r($_FILES);
-    //echo '</pre>';
-
     include_once('../inc/banco.php');
-
     $numb_comb = $_POST['numb_comb'];
     $nome1 = $_POST['nome1'];
     $nome2 = $_POST['nome2'];
@@ -145,8 +137,8 @@ include_once('../inc/menuBoot.php');
     }
 
     ?>
-    <div class="altUsuario py-5">
-        <form action="" method="POST" class="altUsuario2" enctype="multipart/form-data">
+    <div class="centerADM">
+        <form action="" method="POST" class="formADM" enctype="multipart/form-data">
             Codigo: <input type="text" name="codigo" <?php $disable ?> value=<?php echo $codigo ?>>
             <input type="text" name="nome1" placeholder="nome1" value=<?php echo $nome1 ?>>
             <input type="text" name="nome2" placeholder="nome2" value=<?php echo $nome2 ?>>

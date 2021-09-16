@@ -1,11 +1,29 @@
+
 <?php
-if(!$_SESSION['logado']){
+if (!$_SESSION['logado']) {
+     echo '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+     <path fill="#8338ec" fill-opacity="1" d="M0,288L48,256C96,224,192,160,288,154.7C384,149,480,203,576,208C672,213,768,171,864,170.7C960,171,1056,213,1152,240C1248,267,1344,277,1392,282.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+   </svg>';
+    echo "<style>
+    body{
+        background-color:#fb5607;
+    }
+    .error{
+        position:absolute;
+        width: 100%;
+        bottom:0;
+    }
+    </style>";
     echo "<center>";
-    echo "Essa pagina so pode ser acessada caso voce seja cadastrado";
+    echo "<strong><h5>Essa página só pode ser acessada caso você seja cadastrado</h5></strong>";
     echo "<br>";
-    echo "cadastre-se <a href='cadastro.php'>A Q U I</a>";
+    echo "<strong><h5>cadastre-se <a href='cadastro.php'> aqui</a></h5></strong>";
     echo "</center>";
+    echo '<div class="error"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#8338ec" fill-opacity="1" d="M0,224L48,218.7C96,213,192,203,288,197.3C384,192,480,192,576,208C672,224,768,256,864,250.7C960,245,1056,203,1152,202.7C1248,203,1344,245,1392,266.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+    </svg></div>';
     die();
+
 }
 include_once(dirname(__FILE__) . '/../inc/header.php');
 include_once(dirname(__FILE__) . '/../inc/menu.php');
@@ -81,7 +99,7 @@ $res = $pdo->query($result);
 $count = $res->fetchAll();
 
 ?>
-<div class=" row row-cols-md-4 row-cols-sm-3 row-cols-xs-2" style="margin-left: 0px;">
+<div class=" row row-cols-md-4 row-cols-sm-3" style="margin-left: 0px;">
 
     <?php
     // pega os resultados do banco de dados

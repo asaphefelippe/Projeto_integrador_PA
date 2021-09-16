@@ -48,7 +48,6 @@ if (isset($_POST['enviar'])) {
     // prepara o banco para pesquisar os status das comidas.
     $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo IN ('$comida1','$comida2','$comida3', '$comida4','$comida5')");
     // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
-
     if ($comida1 > 100) {
         if (isset($_POST['comida1'])) {
             $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida1");
@@ -241,19 +240,20 @@ include_once('../inc/menuBoot.php');
 </head>
 
 <body id="mundo" class="body">
-    <Form method="POST" class="formADM">
-        <div class="espaco-adm">
-            <input type="text" name="codigo" placeholder="NOME DO CLIENTE" required><br>
-            <br>
-            <input type="text" name="comida1" placeholder="CODIGO DA COMIDA"><br>
-            <input type="text" name="comida2" placeholder="CODIGO DA COMIDA"><br>
-            <input type="text" name="comida3" placeholder="CODIGO DA COMIDA"><br>
-            <input type="text" name="comida4" placeholder="CODIGO DA COMIDA"><br>
-            <input type="text" name="comida5" placeholder="CODIGO DA COMIDA"><br>
-            <br>
-            <button type="submit" class="btn btn-info email buttonCadastro" name="enviar"> enviar</button>
-        </div>
-    </Form>
+    <div class="centerADM">
+        <Form method="POST" class="formADM">
+            <!-- <div class="espaco-adm"> -->
+                <input type="text" name="codigo" placeholder="NOME DO CLIENTE" required><br>
+                <br>
+                <input type="text" name="comida1" placeholder="CODIGO DA COMIDA"><br>
+                <input type="text" name="comida2" placeholder="CODIGO DA COMIDA"><br>
+                <input type="text" name="comida3" placeholder="CODIGO DA COMIDA"><br>
+                <input type="text" name="comida4" placeholder="CODIGO DA COMIDA"><br>
+                <input type="text" name="comida5" placeholder="CODIGO DA COMIDA"><br>
+                <br>
+                <button type="submit" class="btn btn-info email buttonCadastro" name="enviar"> enviar</button>
+        </Form>
+    </div>
 </body>
 
 </html>

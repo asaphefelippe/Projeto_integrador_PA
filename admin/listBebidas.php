@@ -23,8 +23,8 @@ if ($sql->execute()) {
         echo 'preço: ' . utf8_encode($values['preco']) . '<br>';
 
 
-        echo "<a href='delBebidas.php?id=" . $values['codigo'] . "'>(-)</a>";
-        echo "<a href='altBebidas.php?id=" . $values['codigo'] . "'>Alterar</a>";
+        echo "<a class='ablue'href='delBebidas.php?id=" . $values['codigo'] . "'>(-)</a>";
+        echo "<a class='ablue'href='altBebidas.php?id=" . $values['codigo'] . "'>Alterar</a>";
 
         echo '<hr>';
         echo '</div>';
@@ -35,8 +35,9 @@ if ($sql->execute()) {
 ?>
 <style>
     body {
-        background-color: #ff006e;
+        background-color: #fb5607;
     }
+
 </style>
 <div>
 

@@ -24,8 +24,8 @@ if($sql->execute()){
         echo 'Codigo: '.$values['codigo'].'<br>';
         echo 'Is_Admin: '.$values['is_admin'].'<br></div>';
 
-        echo "<a href='delUsuario.php?id=".$values['codigo']."'>(-)</a>";
-        echo "<a href='altUsuario.php?id=".$values['codigo']."'>Alterar</a>";
+        echo "<a  class='ablue' href='delUsuario.php?id=".$values['codigo']."'>(-)</a>";
+        echo "<a  class='ablue' href='altUsuario.php?id=".$values['codigo']."'>Alterar</a>";
         
         echo '<hr style="color:blue">';
         echo "</div>";
@@ -48,7 +48,7 @@ if($sql->execute()){
 <style>
 
 body{
-    background-color:#ff006e;
+    background-color:#fb5607;
 }
 
 </style>

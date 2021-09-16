@@ -52,8 +52,8 @@ include_once('../inc/menuBoot.php');
 </style>
 
 <body>
-    <div class="altUsuario py-5">
-        <form action="" method="POST" class="altUsuario2">
+    <div class="centerADM">
+        <form action="" method="POST" class="formADM">
             Codigo: <input type="text" name="codigo" disabled value=<?php echo $codigo ?>>
             <br />
             NOME: <input type="text" name="nome" required>

@@ -22,8 +22,8 @@ if($sql->execute()){
         echo 'acumulos dados: '. utf8_encode($values['acumulos']).'<br>';
         echo 'Gastar pontos: '. utf8_encode($values['gastarP']).'<br> </div>';
 
-        echo "<a href='delComida.php?id=".$values['codigo']."'>(-)</a>";
-        echo "<a href='altComida.php?id=".$values['codigo']."'>Alterar</a>";
+        echo "<a class='ablue' href='delComida.php?id=".$values['codigo']."'>(-)</a>";
+        echo "<a class='ablue' href='altComida.php?id=".$values['codigo']."'>Alterar</a>";
         
         echo '<hr>';
         echo "</div>";
@@ -34,7 +34,7 @@ if($sql->execute()){
 ?>
 <style>
 body{
-    background-color:#ff006e; 
+    background-color:#fb5607; 
 }
 </style>
 <div>

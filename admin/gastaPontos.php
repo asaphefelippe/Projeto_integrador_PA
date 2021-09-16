@@ -132,7 +132,7 @@ if (isset($_POST['enviar'])) {
             echo '   O cliente está comprando ' . $values2['nome'] . ' e perderá: ' . $values2['gastarP'] . 'pontos<br>';
         }
     }
-        // caso a comida3 seja setada no formulario entao busca no banco de dados e mostra para o admin
+    // caso a comida3 seja setada no formulario entao busca no banco de dados e mostra para o admin
     if (isset($_POST['comida3'])) {
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida3");
         $sql->execute();
@@ -141,7 +141,7 @@ if (isset($_POST['enviar'])) {
             '   O cliente está comprando ' . $values3['nome'] . ' e perderá: ' . $values3['gastarP'] . 'pontos<br>';
         }
     }
-        // caso a comida4 seja setada no formulario entao busca no banco de dados e mostra para o admin
+    // caso a comida4 seja setada no formulario entao busca no banco de dados e mostra para o admin
     if (isset($_POST['comida4'])) {
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida4");
         $sql->execute();
@@ -150,7 +150,7 @@ if (isset($_POST['enviar'])) {
             echo '     O cliente está comprando' . $values4['nome'] . ' e perderá: ' . $values4['gastarP'] . 'pontos<br>';
         }
     }
-        // caso a comida5 seja setada no formulario entao busca no banco de dados e mostra para o admin
+    // caso a comida5 seja setada no formulario entao busca no banco de dados e mostra para o admin
     if (isset($_POST['comida5'])) {
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida5");
         $sql->execute();
@@ -196,8 +196,8 @@ include_once('../inc/menuBoot.php');
 </head>
 
 <body id="mundo" class="body">
-    <Form method="POST" class="formADM">
-        <div class="espaco-adm">
+    <div class="centerADM">
+        <Form method="POST" class="formADM">
             <input type="text" name="codigo" placeholder="NOME DO CLIENTE" required><br>
             <br>
             <input type="text" name="comida1" placeholder="CODIGO DA COMIDA"><br>
@@ -207,7 +207,7 @@ include_once('../inc/menuBoot.php');
             <input type="text" name="comida5" placeholder="CODIGO DA COMIDA"><br>
             <br>
             <button type="submit" class="btn btn-info email buttonCadastro" name="enviar"> enviar</button>
-        </div>
+    </div>
     </Form>
 </body>
 

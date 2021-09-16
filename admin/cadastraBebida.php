@@ -72,9 +72,8 @@ include_once('../inc/menuBoot.php');
 
 <body>
 
-    <div class="login-1Cadastro">
-        <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
-        <form action="" method="POST" enctype="multipart/form-data">
+    <div class="centerADM">
+        <form action="" method="POST" class="formADM" enctype="multipart/form-data">
             <div class="loginCadastro">
                 <div>
                     <label for="nome" class="">Nome:</label>

@@ -87,40 +87,41 @@ include_once('../inc/menuBoot.php');
 </style>
 
 <body>
-    <div class="login-1Cadastro">
-        <img src="../assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
-        <form action="" method="POST" enctype="multipart/form-data">
-            <div class="loginCadastro ">
+    <div class="centerADM">
+        <form class="formADM" action="" method="POST" enctype="multipart/form-data">
+            <div class="">
                 <input type="text" name="numb_comb" placeholder="Numero Do Combo">
-                <div class="d-flex">
-                    <label for="nome" class="">comida1</label>
-                    <input type="text" name="nome1" />
-                    <input type="text" name="quantidade1" placeholder="quantidade1" />
-                </div>
-                <div class="d-flex">
-                    <label for="nome" class="">comida2</label>
-                    <input type="text" name="nome2" />
-                    <input type="text" name="quantidade2" placeholder="quantidade2" />
-                </div>
-                <div class="d-flex">
-                    <label for="nome" class="">comida3</label>
-                    <input type="text" name="nome3" />
-                    <input type="text" name="quantidade3" placeholder="quantidade3" />
-                </div>
-                <div class="d-flex">
-                    <label for="nome" class="">comida4</label>
-                    <input type="text" name="nome4" />
-                    <input type="text" name="quantidade4" placeholder="quantidade4" />
-                </div>
-                <div class="d-flex">
-                    <label for="nome" class="">comida5</label>
-                    <input type="text" name="nome5" />
-                    <input type="text" name="quantidade5" placeholder="quantidade5" />
-                </div>
-                <div class="d-flex">
-                    <label for="nome" class="">comida6</label>
-                    <input type="text" name="nome6" />
-                    <input type="text" name="quantidade6" placeholder="quantidade6" />
+                <div style="padding-left: 120px;">
+                    <div class="d-flex">
+                        <label for="nome" class="">comida1</label>
+                        <input type="text" name="nome1" />
+                        <input type="text" name="quantidade1" placeholder="quantidade1" />
+                    </div>
+                    <div class="d-flex">
+                        <label for="nome" class="">comida2</label>
+                        <input type="text" name="nome2" />
+                        <input type="text" name="quantidade2" placeholder="quantidade2" />
+                    </div>
+                    <div class="d-flex">
+                        <label for="nome" class="">comida3</label>
+                        <input type="text" name="nome3" />
+                        <input type="text" name="quantidade3" placeholder="quantidade3" />
+                    </div>
+                    <div class="d-flex">
+                        <label for="nome" class="">comida4</label>
+                        <input type="text" name="nome4" />
+                        <input type="text" name="quantidade4" placeholder="quantidade4" />
+                    </div>
+                    <div class="d-flex">
+                        <label for="nome" class="">comida5</label>
+                        <input type="text" name="nome5" />
+                        <input type="text" name="quantidade5" placeholder="quantidade5" />
+                    </div>
+                    <div class="d-flex">
+                        <label for="nome" class="">comida6</label>
+                        <input type="text" name="nome6" />
+                        <input type="text" name="quantidade6" placeholder="quantidade6" />
+                    </div>
                 </div>
                 <br>
                 <div>

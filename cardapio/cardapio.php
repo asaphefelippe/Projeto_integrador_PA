@@ -76,7 +76,6 @@ $contador = $resultado->fetchAll();
                 <p class='nomeCardapio'>R$:$preco</p>
                 <a href='telaDeCompra.php?idProduto=" . $codigo . "'><button class='botaoComprar'>comprar</button></a>
             </div>";
-
         echo '</div>'; // acaba a column
         echo '</div>'; // acaba a column
     }

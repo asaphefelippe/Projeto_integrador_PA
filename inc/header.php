@@ -14,7 +14,7 @@
 </head>
 
 <body>
-
+<div class="container-fluid g-0">
     <?php
     session_start();
     // include_once(dirname(__FILE__) . "/menu.php");

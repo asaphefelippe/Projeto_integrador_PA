@@ -8,7 +8,7 @@
 </head>
 <style>
     body {
-        background-color: #ff006e;
+        background-color: #fb5607;
     }
 </style>
 <?php
@@ -48,8 +48,8 @@ if ($sql->execute()) {
         echo '<div class="echoADM">preço: ' . $values['preco'] . '<br></div>';
         echo 'acumulos: ' . $values['acumulo'] . '<br>';
         echo 'Gastar Pontos: ' . $values['gastarP'] . '<br></div>';
-        echo "<a href='delCupons.php?id=" . $values['codigo'] . "'>(-)</a>";
-        echo "<a href='altCupons.php?id=" . $values['codigo'] . "'>Alterar</a>";
+        echo "<a  class='ablue' href='delCupons.php?id=" . $values['codigo'] . "'>(-)</a>";
+        echo "<a  class='ablue' href='altCupons.php?id=" . $values['codigo'] . "'>Alterar</a>";
 
         echo '<hr style="color:blue">';
         echo "</div>";
