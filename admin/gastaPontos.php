@@ -44,78 +44,17 @@ if (isset($_POST['enviar'])) {
     $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo IN ('$comida1','$comida2','$comida3', '$comida4','$comida5')");
     // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
     if ($comida1 > 100) {
-        if (isset($_POST['comida1'])) {
-
-
-            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida1");
-            $sql->execute();
-            $info = $sql->fetchAll();
-            foreach ($info as $key => $values1) {
-                echo 'Este cupom custa ' . $values1['gastarP'] . ' pontos<br>';
-                echo '<strong> Nele contem : <br></strong>';
-                echo 'Nome do produto1 : ' . $values1['nome1'] . '<br>';
-                echo 'Nome do produto2 : ' . $values1['nome2'] . '<br>';
-            }
+        $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida1");
+        $sql->execute();
+        $info = $sql->fetchAll();
+        foreach ($info as $key => $values1) {
+            echo 'Este cupom custa ' . $values1['gastarP'] . ' pontos<br>';
+            echo '<strong> Nele contem : <br></strong>';
+            echo 'Nome do produto1 : ' . $values1['nome1'] . '<br>';
+            echo 'Nome do produto2 : ' . $values1['nome2'] . '<br>';
         }
-    }
-    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
-    if ($comida1 > 100) {
-        if (isset($_POST['comida2'])) {
-            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida2");
-            $sql->execute();
-            $info = $sql->fetchAll();
-            foreach ($info as $key => $values2) {
-                echo 'Este cupom custa ' . $values2['gastarP'] . ' pontos<br>';
-                echo '<strong> Nele contem : <br></strong>';
-                echo 'Nome do produto1 : ' . $values2['nome1'] . '<br>';
-                echo 'Nome do produto2 : ' . $values2['nome2'] . '<br>';
-            }
-        }
-    }
-    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
-    if ($comida1 > 100) {
-        if (isset($_POST['comida3'])) {
-            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida3");
-            $sql->execute();
-            $info = $sql->fetchAll();
-            foreach ($info as $key => $values3) {
-                echo 'Este cupom custa ' . $values3['gastarP'] . ' pontos<br>';
-                echo '<strong> Nele contem : <br></strong>';
-                echo 'Nome do produto1 : ' . $values3['nome1'] . '<br>';
-                echo 'Nome do produto2 : ' . $values3['nome2'] . '<br>';
-            }
-        }
-    }
-    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
-    if ($comida1 > 100) {
-        if (isset($_POST['comida4'])) {
-            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida4");
-            $sql->execute();
-            $info = $sql->fetchAll();
-            foreach ($info as $key => $values4) {
-                'Este cupom custa ' . $values4['gastarP'] . ' pontos<br>';
-                echo '<strong> Nele contem : <br></strong>';
-                echo 'Nome do produto1 : ' . $values4['nome1'] . '<br>';
-                echo 'Nome do produto2 : ' . $values4['nome2'] . '<br>';
-            }
-        }
-    }
-    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
-    if ($comida1 > 100) {
-        if (isset($_POST['comida5'])) {
-            $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida5");
-            $sql->execute();
-            $info = $sql->fetchAll();
-            foreach ($info as $key => $values5) {
-                'Este cupom custa ' . $values5['gastarP'] . ' pontos<br>';
-                echo '<strong> Nele contem : <br></strong>';
-                echo 'Nome do produto1 : ' . $values5['nome1'] . '<br>';
-                echo 'Nome do produto2 : ' . $values5['nome2'] . '<br>';
-            }
-        }
-    }
-    // caso a comida1 seja setada no formulario entao busca no banco de dados e mostra para o admin
-    if (isset($_POST['comida1'])) {
+    } else {
+        // caso seja menor que 100 é identificado como uma unidade
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida1");
         $sql->execute();
         $info = $sql->fetchAll();
@@ -123,8 +62,19 @@ if (isset($_POST['enviar'])) {
             echo '    O cliente está comprando ' . $values1['nome'] . ' e perderá: ' . $values1['gastarP'] . 'pontos<br>';
         }
     }
-    // caso a comida2 seja setada no formulario entao busca no banco de dados e mostra para o admin
-    if (isset($_POST['comida2'])) {
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
+    if ($comida2 > 100) {
+        $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida2");
+        $sql->execute();
+        $info = $sql->fetchAll();
+        foreach ($info as $key => $values2) {
+            echo 'Este cupom custa ' . $values2['gastarP'] . ' pontos<br>';
+            echo '<strong> Nele contem : <br></strong>';
+            echo 'Nome do produto1 : ' . $values2['nome1'] . '<br>';
+            echo 'Nome do produto2 : ' . $values2['nome2'] . '<br>';
+        }
+    } else {
+        // caso seja menor que 100 é identificado como uma unidade
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida2");
         $sql->execute();
         $info = $sql->fetchAll();
@@ -132,8 +82,19 @@ if (isset($_POST['enviar'])) {
             echo '   O cliente está comprando ' . $values2['nome'] . ' e perderá: ' . $values2['gastarP'] . 'pontos<br>';
         }
     }
-    // caso a comida3 seja setada no formulario entao busca no banco de dados e mostra para o admin
-    if (isset($_POST['comida3'])) {
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
+    if ($comida3 > 100) {
+        $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida3");
+        $sql->execute();
+        $info = $sql->fetchAll();
+        foreach ($info as $key => $values3) {
+            echo 'Este cupom custa ' . $values3['gastarP'] . ' pontos<br>';
+            echo '<strong> Nele contem : <br></strong>';
+            echo 'Nome do produto1 : ' . $values3['nome1'] . '<br>';
+            echo 'Nome do produto2 : ' . $values3['nome2'] . '<br>';
+        }
+    } else {
+        // caso seja menor que 100 é identificado como uma unidade
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida3");
         $sql->execute();
         $info = $sql->fetchAll();
@@ -141,8 +102,19 @@ if (isset($_POST['enviar'])) {
             '   O cliente está comprando ' . $values3['nome'] . ' e perderá: ' . $values3['gastarP'] . 'pontos<br>';
         }
     }
-    // caso a comida4 seja setada no formulario entao busca no banco de dados e mostra para o admin
-    if (isset($_POST['comida4'])) {
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
+    if ($comida4 > 100) {
+        $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida4");
+        $sql->execute();
+        $info = $sql->fetchAll();
+        foreach ($info as $key => $values4) {
+            'Este cupom custa ' . $values4['gastarP'] . ' pontos<br>';
+            echo '<strong> Nele contem : <br></strong>';
+            echo 'Nome do produto1 : ' . $values4['nome1'] . '<br>';
+            echo 'Nome do produto2 : ' . $values4['nome2'] . '<br>';
+        }
+    } else {
+        // caso seja menor que 100 é identificado como uma unidade 
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida4");
         $sql->execute();
         $info = $sql->fetchAll();
@@ -150,8 +122,19 @@ if (isset($_POST['enviar'])) {
             echo '     O cliente está comprando' . $values4['nome'] . ' e perderá: ' . $values4['gastarP'] . 'pontos<br>';
         }
     }
-    // caso a comida5 seja setada no formulario entao busca no banco de dados e mostra para o admin
-    if (isset($_POST['comida5'])) {
+    // Se o codigo da comida for maior que 100 cai neste if OBS: todas comidas acima de codigo 100 sao cupons
+    if ($comida5 > 100) {
+        $sql = $pdo->prepare("SELECT * FROM cupons WHERE codigo = $comida5");
+        $sql->execute();
+        $info = $sql->fetchAll();
+        foreach ($info as $key => $values5) {
+            'Este cupom custa ' . $values5['gastarP'] . ' pontos<br>';
+            echo '<strong> Nele contem : <br></strong>';
+            echo 'Nome do produto1 : ' . $values5['nome1'] . '<br>';
+            echo 'Nome do produto2 : ' . $values5['nome2'] . '<br>';
+        }
+    } else {
+        // caso seja menor que 100 é identificado como uma unidade
         $sql = $pdo->prepare("SELECT * FROM comidas WHERE codigo = $comida5");
         $sql->execute();
         $info = $sql->fetchAll();
@@ -160,18 +143,21 @@ if (isset($_POST['enviar'])) {
             echo 'Nome : ' . $values5['nome'] . '<br>';
         }
     }
-    // pega o valor de acumulos que o cliente tem e subtrai pelo valor das comidas inseridas
     $soma =  $values['acumulo'] - $values1['gastarP'] - $values2['gastarP'] - $values3['gastarP'] - $values4['gastarP'] - $values5['gastarP'];
     // caso soma seja setado então mostra isso para o adm
     if (isset($soma)) {
-        echo '   cliente ' . $values['nome'] . ' ficou com : ' . $soma . ' pontos<br>';
+        if ($soma >= 0) {
+            echo '   cliente ' . $values['nome'] . ' ficou com : ' . $soma . ' pontos<br>';
+        } else {
+            echo "";
+        }
     }
-    include_once('../inc/banco.php');
     // verifica se o cliente tem pontos suficientes
     if ($soma >= 0) {
+        include_once('../inc/banco.php');
         echo '<strong style="color: green;">dados cadastrados</strong>';
         //prepara o banco para alterar o valor de pontos na conta do cliente
-        $sql = $pdo->prepare("UPDATE cliente SET acumulo=? WHERE codigo=?");
+        $sql = $pdo->prepare("UPDATE clientes SET acumulo=? WHERE codigo=?");
         //executa
         if ($sql->execute(array($soma, $codigo))) {
             //reseta a pagina em 3segundos

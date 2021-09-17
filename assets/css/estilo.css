@@ -1193,6 +1193,9 @@ footer {
     #subir {
         display: none;
     }
+    .iconesPERFIL{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 400px) and (min-width: 370px) {

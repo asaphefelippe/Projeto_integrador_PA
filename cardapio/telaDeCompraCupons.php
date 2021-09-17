@@ -3,6 +3,14 @@ include_once(dirname(__FILE__) . '/../inc/header.php');
 include_once(dirname(__FILE__) . '/../inc/banco.php');
 //verifica se a variavel foi setada caso seja é armazenada dentro de outra variavel
 $idCupons = isset($_GET['idCupuns']) ? $_GET['idCupons'] : false;
+
+$email = $_SESSION['email'];
+
+$cliente="SELECT * FROM clientes WHERE email='$email'";
+
+$informacoes = $pdo->query($cliente);
+
+foreach($pdo->query($cliente) as $informacoesF)
 //pega o id da comida que o client escolheu
 $codigo = $_GET['idCupons'];
 //seleciona no banco de dados dos cupons qual cupon corresponde
@@ -103,6 +111,7 @@ foreach ($pdo->query($sql) as $values) {
                 if ($_SESSION['logado']) {
                     echo "</div> <div class='pontos5'>$pontos</div>
                     <p class='login3' style='text-align:center'>codigo: $codigo</p>";
+                    echo "<p style='color:white'> Ola," . $informacoesF['nome'] . " seu codigo como cliente é: <strong>" . $informacoesF['codigo'] . "</strong>";
                 }else{
                     echo "";
                 }

@@ -5,7 +5,13 @@ include_once(dirname(__FILE__) . '/../inc/banco.php');
 $idProd = isset($_GET['idProduto']) ? $_GET['idProduto'] : false;
 $idBebida = isset($_GET['idBebida']) ? $_GET['idBebida'] : false;
 
+$email = $_SESSION['email'];
 
+$cliente="SELECT * FROM clientes WHERE email='$email'";
+
+$informacoes = $pdo->query($cliente);
+
+foreach($pdo->query($cliente) as $informacoesF)
 // -----------------------------------------> COMIDAS <-----------------------------------------
 // caso a variavel idProduto seja setada então executa
 if ($idProd) {
@@ -82,6 +88,7 @@ if ($idBebida) {
         <!-- verifica se o client esta logado caso nao esteja não aparece -->
         <?php if ($_SESSION['logado']) {
             echo "<p style='color:white'> codigo: $cod </p>";
+            echo "<p style='color:white'> Ola," . $informacoesF['nome'] . " seu codigo como cliente é: <strong>" . $informacoesF['codigo'] . "</strong>";
         } ?>
     </div>
 </div>

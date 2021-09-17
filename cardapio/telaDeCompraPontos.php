@@ -5,34 +5,40 @@ include_once(dirname(__FILE__) . '/../inc/banco.php');
 $idProd = isset($_GET['idProduto']) ? $_GET['idProduto'] : false;
 $idBebida = isset($_GET['idBebida']) ? $_GET['idBebida'] : false;
 
+$email = $_SESSION['email'];
 
-// -----------------------------------------> COMIDAS <-----------------------------------------
-// caso a variavel idProduto seja setada então executa
-if ($idProd) {
-    //pega o id que veio da pagina cardapio
+$cliente = "SELECT * FROM clientes WHERE email='$email'";
 
-    $codigo = $_GET['idProduto'];
-    //pesquisa no banco qual comida é 
+$informacoes = $pdo->query($cliente);
 
-    $sql = "SELECT * FROM comidas WHERE codigo = '$codigo'";
+foreach ($pdo->query($cliente) as $informacoesF)
+    // -----------------------------------------> COMIDAS <-----------------------------------------
+    // caso a variavel idProduto seja setada então executa
+    if ($idProd) {
+        //pega o id que veio da pagina cardapio
 
-    $prepar = $pdo->prepare($sql);
-    //executa
+        $codigo = $_GET['idProduto'];
+        //pesquisa no banco qual comida é 
 
-    $prepar->execute();
-    //pesquisa no banco de dados e tras as informações 
+        $sql = "SELECT * FROM comidas WHERE codigo = '$codigo'";
 
-    foreach ($pdo->query($sql) as $produto) {
-        //armazena os resultados em variaveis
+        $prepar = $pdo->prepare($sql);
+        //executa
 
-        $comida = utf8_encode($produto['nome']);
-        $preco = utf8_encode($produto['preco']);
-        $imagem = utf8_encode($produto['imagem']);
-        $cod = utf8_encode($produto['codigo']);
-        $pontos = $produto['acumulos'];
-        $imagem = '<img src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
+        $prepar->execute();
+        //pesquisa no banco de dados e tras as informações 
+
+        foreach ($pdo->query($sql) as $produto) {
+            //armazena os resultados em variaveis
+
+            $comida = utf8_encode($produto['nome']);
+            $preco = utf8_encode($produto['preco']);
+            $imagem = utf8_encode($produto['imagem']);
+            $cod = utf8_encode($produto['codigo']);
+            $pontos = $produto['acumulos'];
+            $imagem = '<img src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
+        }
     }
-}
 
 // -----------------------------------------> BEBIDAS <-----------------------------------------
 // recebe o id da bebida
@@ -87,12 +93,13 @@ if (!$_SESSION['logado']) {
 
 <div class="laranja d-flex p-5 align-items-center align-center justify-content-center">
     <div class="telaDeCompraPontos text-black text-center shadow-lg p-5">
-        <h1><?php echo "<span class='  position-relative' style='font-weight: bold' > $comida <span class='pontos2'>$pontos$pts </span> </span> " ?></h1>
+        <h1><?php echo "<span class='  position-relative' style='font-weight: bold' > $comida" ?></h1>
         <?php echo $imagem ?>
         <!-- verifica se o client esta logado caso nao esteja não aparece -->
 
         <?php if ($_SESSION['logado']) {
             echo "<p style='color:white'> codigo: $cod </p>";
+            echo "<p style='color:white'> Ola," . $informacoesF['nome'] . " seu codigo como cliente é: <strong>" . $informacoesF['codigo'] . "</strong>";
         } ?>
 
     </div>

@@ -16,12 +16,15 @@ $count = $res->fetchAll();
 
 //echo "There are" . $count . " machine.";  -----------------------------------------PARA TESTES-----------------------------------------
 
-
 include_once(dirname(__FILE__) . '/../inc/menu.php');
 
 include_once(dirname(__FILE__) . '/../inc/banco.php');
 
+$result2 = "SELECT * FROM clientes WHERE email='$email'";
 
+$res2 = $pdo->query($result2);
+
+foreach ($pdo->query($result2) as $values)
 ?>
 
 
@@ -30,11 +33,71 @@ include_once(dirname(__FILE__) . '/../inc/banco.php');
     body {
         background-color: #fb5607;
     }
+
+    .container {
+        margin-left: 17px;
+        margin-bottom: 130px;
+    }
+
+    .container .img {
+        text-align: center;
+    }
+
+    .container .details {
+        border-left: 3px solid #fb5607;
+    }
+
+    .container .details p {
+        font-size: 15px;
+        font-weight: bold;
+    }
+
+    .caixa {
+        background-color: #ffbe0b;
+        width: 30%;
+        border-radius: 10px;
+    }
+
+    .iconesPERFIL {
+        width: 50px;
+        height: 50px;
+        margin: 13px;
+    }
 </style>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
     <path fill="#ffbe0b" fill-opacity="1" d="M0,32L48,74.7C96,117,192,203,288,213.3C384,224,480,160,576,160C672,160,768,224,864,240C960,256,1056,224,1152,192C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
 </svg>
+
+<?php
+if ($_SESSION['logado']) :
+?>
+    <div class="container">
+        <div class="row caixa">
+            <div class="col-md-6 details">
+                <blockquote>
+                    <h5 style="text-align:center"><?php echo $values['nome'] ?></h5>
+                </blockquote>
+                <p>
+                    acumulo de pontos: <?php echo $values['acumulo'] ?> <br>
+                    seu código: <?php echo $values['codigo'] ?><br>
+
+                </p>
+
+                <div class="d-flex">
+                    <img src="cardapio/assets/images/coxinha.png" alt="" class="iconesPERFIL">
+                    <img src="cardapio/assets/images/pastelaria (1).png" alt="" class="iconesPERFIL">
+                    <img src="cardapio/assets/images/pizza.png" alt="" class="iconesPERFIL">
+                    <img src="cardapio/assets/images/pao-de-queijo.png" alt="" class="iconesPERFIL">
+                </div>
+
+            </div>
+        </div>
+    </div>
+<?php
+endif;
+?>
+
 <h1 class="cardapioH12">pontos</h1>
 
 <div class="row row-cols-md-4  row-cols-sm-3 row-cols-xs-2">
@@ -61,7 +124,7 @@ include_once(dirname(__FILE__) . '/../inc/banco.php');
         $imagem = '<img class="fotosP izza img-fluid"  src="data:image/png;base64,' . base64_encode($values['imagem']) . '">';
 
         echo "<div class='text-center' style='min-height:300px'> $imagem  </div>";
-        
+
         echo "<div class='desc text-center'>";
         echo "<div class=''>";
         echo "<h1 class='pontosh1p'>$nome</h1>";
