@@ -285,22 +285,5 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
     </div>
 </section>
 <?php
-if (isset($_POST['enviar'])) {
-
-    $nome = $_POST['name'];
-    $emailF = $_POST['email'];
-    $msg = $_POST['msg'];
-
-    include_once(dirname(__FILE__) . '/inc/banco.php');
-
-    $sql = "INSERT INTO formfooter (cod,nome,email,mensagem) VALUES (null,'$nome' , '$email', '$msg')";
-
-    $exe = $pdo->prepare($sql);
-
-    $exe->execute();
-}
-
-
 include_once(dirname(__FILE__) . "/inc/footer.php");
-
 ?>

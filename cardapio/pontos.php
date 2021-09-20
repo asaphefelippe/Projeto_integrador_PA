@@ -56,6 +56,7 @@ foreach ($pdo->query($result2) as $values)
         background-color: #ffbe0b;
         width: 30%;
         border-radius: 10px;
+        color: white;
     }
 
     .iconesPERFIL {
@@ -74,7 +75,7 @@ if ($_SESSION['logado']) :
 ?>
     <div class="container">
         <div class="row caixa">
-            <div class="col-md-6 details">
+            <div class="details">
                 <blockquote>
                     <h5 style="text-align:center"><?php echo $values['nome'] ?></h5>
                 </blockquote>

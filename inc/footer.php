@@ -1,3 +1,18 @@
+<?php if (@isset($_POST['enviar'])) {
+
+    $nome = $_POST['name'];
+    $emailF = $_POST['email'];
+    $msg = $_POST['msg'];
+
+    include_once(dirname(__FILE__) . '/banco.php');
+
+    $sql = "INSERT INTO formfooter (cod,nome,email,mensagem) VALUES (null,'$nome' , '$email', '$msg')";
+
+    $exe = $pdo->prepare($sql);
+
+    $exe->execute();
+}
+?>
 <footer class="container-fluid">
     <div class="row">
         <div class="footer2 col col-md-3" id="contato">
@@ -15,7 +30,7 @@
                 <div>
                     <label for="msg" class="letrasFO">Mensagem:</label>
                     <br>
-                    <input type="mensagem" name="mensagem" required>
+                    <input type="mensagem" name="msg" required>
                 </div>
 
                 <div class="button">

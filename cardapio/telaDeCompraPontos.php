@@ -4,41 +4,43 @@ include_once(dirname(__FILE__) . '/../inc/banco.php');
 // verifica se a variavel foi setada em outra pagina caso sim é armazenada em outra variavel
 $idProd = isset($_GET['idProduto']) ? $_GET['idProduto'] : false;
 $idBebida = isset($_GET['idBebida']) ? $_GET['idBebida'] : false;
+if ($_SESSION['logado']) {
+    $email = $_SESSION['email'];
 
-$email = $_SESSION['email'];
+    $cliente = "SELECT * FROM clientes WHERE email='$email'";
 
-$cliente = "SELECT * FROM clientes WHERE email='$email'";
+    $informacoes = $pdo->query($cliente);
 
-$informacoes = $pdo->query($cliente);
-
-foreach ($pdo->query($cliente) as $informacoesF)
-    // -----------------------------------------> COMIDAS <-----------------------------------------
-    // caso a variavel idProduto seja setada então executa
-    if ($idProd) {
-        //pega o id que veio da pagina cardapio
-
-        $codigo = $_GET['idProduto'];
-        //pesquisa no banco qual comida é 
-
-        $sql = "SELECT * FROM comidas WHERE codigo = '$codigo'";
-
-        $prepar = $pdo->prepare($sql);
-        //executa
-
-        $prepar->execute();
-        //pesquisa no banco de dados e tras as informações 
-
-        foreach ($pdo->query($sql) as $produto) {
-            //armazena os resultados em variaveis
-
-            $comida = utf8_encode($produto['nome']);
-            $preco = utf8_encode($produto['preco']);
-            $imagem = utf8_encode($produto['imagem']);
-            $cod = utf8_encode($produto['codigo']);
-            $pontos = $produto['acumulos'];
-            $imagem = '<img src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
-        }
+    foreach ($pdo->query($cliente) as $informacoesF) {
     }
+}
+// -----------------------------------------> COMIDAS <-----------------------------------------
+// caso a variavel idProduto seja setada então executa
+if ($idProd) {
+    //pega o id que veio da pagina cardapio
+
+    $codigo = $_GET['idProduto'];
+    //pesquisa no banco qual comida é 
+
+    $sql = "SELECT * FROM comidas WHERE codigo = '$codigo'";
+
+    $prepar = $pdo->prepare($sql);
+    //executa
+
+    $prepar->execute();
+    //pesquisa no banco de dados e tras as informações 
+
+    foreach ($pdo->query($sql) as $produto) {
+        //armazena os resultados em variaveis
+
+        $comida = utf8_encode($produto['nome']);
+        $preco = utf8_encode($produto['preco']);
+        $imagem = utf8_encode($produto['imagem']);
+        $cod = utf8_encode($produto['codigo']);
+        $pontos = $produto['acumulos'];
+        $imagem = '<img src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
+    }
+}
 
 // -----------------------------------------> BEBIDAS <-----------------------------------------
 // recebe o id da bebida

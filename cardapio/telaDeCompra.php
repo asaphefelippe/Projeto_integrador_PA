@@ -4,14 +4,16 @@ include_once(dirname(__FILE__) . '/../inc/banco.php');
 // identifica qual variavel foi setada e é armazenada em outra variavel
 $idProd = isset($_GET['idProduto']) ? $_GET['idProduto'] : false;
 $idBebida = isset($_GET['idBebida']) ? $_GET['idBebida'] : false;
+if ($_SESSION['logado']) {
+    $email = $_SESSION['email'];
 
-$email = $_SESSION['email'];
+    $cliente = "SELECT * FROM clientes WHERE email='$email'";
 
-$cliente="SELECT * FROM clientes WHERE email='$email'";
+    $informacoes = $pdo->query($cliente);
 
-$informacoes = $pdo->query($cliente);
-
-foreach($pdo->query($cliente) as $informacoesF)
+    foreach ($pdo->query($cliente) as $informacoesF) {
+    }
+}
 // -----------------------------------------> COMIDAS <-----------------------------------------
 // caso a variavel idProduto seja setada então executa
 if ($idProd) {
@@ -59,11 +61,6 @@ if ($idBebida) {
         $preco = utf8_encode($produto['preco']);
         $imagem = utf8_encode($produto['imagem']);
         $cod = utf8_encode($produto['codigo']);
-        //verifica se o cliente esta logado, caso nao esteja nao aparece os pontos
-        if (@$pontos == "") {
-            $pontos = "";
-            $pts = "";
-        }
         // armazena a imagem em uma variavel
         $imagem = '<img class= "tamanho" src="data:image/png;base64,' . base64_encode($produto['imagem']) . '">';
     }

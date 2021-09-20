@@ -3,14 +3,16 @@ include_once(dirname(__FILE__) . '/../inc/header.php');
 include_once(dirname(__FILE__) . '/../inc/banco.php');
 //verifica se a variavel foi setada caso seja é armazenada dentro de outra variavel
 $idCupons = isset($_GET['idCupuns']) ? $_GET['idCupons'] : false;
+if ($_SESSION['logado']) {
+    $email = $_SESSION['email'];
 
-$email = $_SESSION['email'];
+    $cliente = "SELECT * FROM clientes WHERE email='$email'";
 
-$cliente="SELECT * FROM clientes WHERE email='$email'";
+    $informacoes = $pdo->query($cliente);
 
-$informacoes = $pdo->query($cliente);
-
-foreach($pdo->query($cliente) as $informacoesF)
+    foreach ($pdo->query($cliente) as $informacoesF) {
+    }
+}
 //pega o id da comida que o client escolheu
 $codigo = $_GET['idCupons'];
 //seleciona no banco de dados dos cupons qual cupon corresponde
@@ -40,41 +42,41 @@ foreach ($pdo->query($sql) as $values) {
 
     $img =  $values['imagem'];
     $pontos = $values['acumulos'];
-            //verifica se a variavel foi setada caso sim cria uma tag HTML
+    //verifica se a variavel foi setada caso sim cria uma tag HTML
     if ($nome1 != null) {
         $nome1 = "<div><p>↠$quantidade1 $nome1</p></div>";
     } else {
         $nome1 = "<div></div>";
     }
 
-        //verifica se a variavel foi setada caso sim cria uma tag HTML
+    //verifica se a variavel foi setada caso sim cria uma tag HTML
     if ($nome2 != null) {
         $nome2 = "<div><p>↠$quantidade2 $nome2</p></div>";
     } else {
         $nome2 = "<div></div>";
     }
 
-        //verifica se a variavel foi setada caso sim cria uma tag HTML
+    //verifica se a variavel foi setada caso sim cria uma tag HTML
     if ($nome3 != null) {
         $nome3 = "<div><p>↠$quantidade3 $nome3</p></div>";
     } else {
         $nome3 = "<div></div>";
     }
 
-        //verifica se a variavel foi setada caso sim cria uma tag HTML
+    //verifica se a variavel foi setada caso sim cria uma tag HTML
     if ($nome4 != null) {
         $nome4 = "<div><p>↠$quantidade4 $nome4</p></div>";
     } else {
         $nome4 = "<div></div>";
     }
 
-        //verifica se a variavel foi setada caso sim cria uma tag HTML
+    //verifica se a variavel foi setada caso sim cria uma tag HTML
     if ($nome5 != null) {
         $nome5 = "<div><p>↠$quantidade5 $nome5</p></div>";
     } else {
         $nome5 = "<div></div>";
     }
-        //verifica se a variavel foi setada caso sim cria uma tag HTML
+    //verifica se a variavel foi setada caso sim cria uma tag HTML
     if ($nome6 != null) {
         $nome6 = "<div><p>↠$quantidade6 $nome6</p></div>";
     } else {
@@ -112,7 +114,7 @@ foreach ($pdo->query($sql) as $values) {
                     echo "</div> <div class='pontos5'>$pontos</div>
                     <p class='login3' style='text-align:center'>codigo: $codigo</p>";
                     echo "<p style='color:white'> Ola," . $informacoesF['nome'] . " seu codigo como cliente é: <strong>" . $informacoesF['codigo'] . "</strong>";
-                }else{
+                } else {
                     echo "";
                 }
                 ?>
