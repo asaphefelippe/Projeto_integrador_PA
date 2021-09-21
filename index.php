@@ -4,11 +4,11 @@ if (isset($_GET['logout'])) {
     session_destroy();
     header("location:login.php");
 }
+include_once('inc/banco.php');
 // verifica se o cliente ta logada
 if (@$_SESSION['logado']) {
     // armazena email do cliente em uma variavel
     $email = $_SESSION['email'];
-    include('inc/banco.php');
     //vai no banco e procura pelo email do client
     $sql = $pdo->prepare("SELECT * FROM clientes WHERE email = '$email'");
 
@@ -113,7 +113,7 @@ include_once(dirname(__FILE__) . '/inc/menu.php');
         <?php else : $_SESSION['logado'] = "";
         endif
         ?>
-        <img src="assets/images/logo.png" alt="" class="logo">
+        <a href="<?php echo HOME; ?>"><img src="<?php echo HOME; ?>assets/images/logo.png" alt="" class="logo"></a>
     </div>
 
 </header>

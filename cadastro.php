@@ -108,7 +108,9 @@ if (isset($_POST['enviar'])) {
 <body>
 
     <div class="login-1Cadastro fadeInDown">
-        <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
+        <!-- <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin"> -->
+        <img src="assets/images/logo.png" alt="" class="imgLogin">
+
         <form action="" method="POST">
             <div class="loginCadastro">
                 <div>

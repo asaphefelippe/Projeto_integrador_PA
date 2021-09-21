@@ -62,7 +62,8 @@
 
 
         <div class="footer2 col col-md-3">
-            <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgF">
+            <!-- <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgF"> -->
+            <img src="assets/images/logo.png" alt="" class="imgF">
         </div>
 
     </div>

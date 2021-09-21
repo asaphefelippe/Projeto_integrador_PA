@@ -75,7 +75,8 @@ if (isset($_POST['enviar'])) {
     </style>
     <form action="" method="POST">
         <div class="login-1 fadeInDown">
-            <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin">
+            <!-- <img src="assets/images/90d6eed98ed84924b651223770e85165.png" alt="" class="imgLogin"> -->
+            <img src="assets/images/logo.png" alt="" class="imgLogin">
             <div class="login">
                 <div>
                     <img src="assets/images/perfil.png" alt="" class="perfil"> <label for="email" class="email">email</label>
