@@ -6,9 +6,7 @@ Equipe:
 * @Leun4me
 * @iansergio
 ## Objetivo do projeto 
-* Acumular pontos a cada compra, que no final lucrará um brinde. 
-* Fazer um colab com os alunos do curso de gastronomia, para as comidas que eles produzissem fossem transformados em cupons para o site.  
-* Disponibilizar preços fracionados no site, para haver a opção de doar o troco para instituições de sociais. 
+* O objetivo do projeto é ter um site de cantina mais tecnológico que vai otimizar o funcionamento de uma cantina, deixar mais interativo, prático,fácil e divertido. Tendo um cardápio, uma tela de compra, um sistema de pontos onde a pessoa acumula e retira seus pontos para ganhar brindes, um sistema de cupons onde você compra combos de produtos do cardápio mas com um preço mais acessível. 
 ## Modo de uso
 ### Instalação
 * Como instalar o projeto
